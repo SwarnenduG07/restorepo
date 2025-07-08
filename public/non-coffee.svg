@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tea Cup -->
+  <path d="M40 80 L40 150 Q40 170 60 170 L140 170 Q160 170 160 150 L160 80 Z" fill="#8FBC8F" stroke="#556B2F" stroke-width="2"/>
+  
+  <!-- Matcha Tea -->
+  <path d="M45 85 L45 145 Q45 165 60 165 L140 165 Q155 165 155 145 L155 85 Z" fill="#9ACD32"/>
+  
+  <!-- Foam -->
+  <ellipse cx="100" cy="85" rx="55" ry="8" fill="#F0FFF0"/>
+  
+  <!-- Handle -->
+  <path d="M160 100 Q180 100 180 120 Q180 140 160 140" fill="none" stroke="#8FBC8F" stroke-width="6"/>
+  
+  <!-- Tea Leaves Decoration -->
+  <ellipse cx="80" cy="90" rx="8" ry="4" fill="#228B22" transform="rotate(45 80 90)"/>
+  <ellipse cx="120" cy="90" rx="8" ry="4" fill="#228B22" transform="rotate(-45 120 90)"/>
+  <ellipse cx="100" cy="95" rx="6" ry="3" fill="#32CD32" transform="rotate(15 100 95)"/>
+</svg>

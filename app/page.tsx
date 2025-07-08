@@ -51,24 +51,17 @@ export default function Home() {
       {/* Brand Story Section */}
       <section id="brand" className="relative h-screen overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-          {/* Left Side - Image/Visual */}
-          <div className="relative bg-gradient-to-br from-amber-100 via-orange-100 to-amber-50 flex items-center justify-center">
-            {/* Coffee Cup Image Placeholder */}
-            <div className="relative">
-              <div className="w-80 h-96 bg-gradient-to-b from-amber-600 via-orange-500 to-amber-700 rounded-t-full rounded-b-lg shadow-2xl transform rotate-12">
-                {/* Coffee foam effect */}
-                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-64 h-16 bg-gradient-to-r from-white via-gray-50 to-white rounded-full opacity-90"></div>
-                {/* Latte art effect */}
-                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-gradient-to-r from-amber-800 to-amber-900 rounded-full opacity-70"></div>
-              </div>
-              {/* Hand holding coffee */}
-              <div className="absolute -bottom-8 -left-12 w-32 h-20 bg-gradient-to-br from-orange-200 to-orange-300 rounded-3xl transform -rotate-12 shadow-lg"></div>
-            </div>
-            {/* Background decorative elements */}
-            <div className="absolute top-20 left-20 w-4 h-4 bg-amber-400 rounded-full opacity-60"></div>
-            <div className="absolute bottom-32 right-24 w-6 h-6 bg-orange-400 rounded-full opacity-40"></div>
-            <div className="absolute top-1/2 right-16 w-3 h-3 bg-amber-500 rounded-full opacity-50"></div>
+          {/* Left Side - Image */}
+          <div className="relative overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGNhZmV8ZW58MHx8MHx8fDA%3D"
+              alt="Coffee Cup"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20"></div>
           </div>
+          
 
           {/* Right Side - Dark Content */}
           <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16">
@@ -141,57 +134,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Side - Image/Visual */}
-          <div className="relative bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-50 flex items-center justify-center">
-            {/* Franchise Store Illustration */}
-            <div className="relative">
-              {/* Store Front */}
-              <div className="w-96 h-80 bg-gradient-to-b from-gray-100 to-gray-200 rounded-lg shadow-2xl">
-                {/* Store Window */}
-                <div className="absolute top-8 left-8 right-8 h-32 bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg border-4 border-gray-300">
-                  {/* Window Frame */}
-                  <div className="absolute inset-4 border-2 border-gray-400 rounded">
-                    {/* Store Interior View */}
-                    <div className="h-full bg-gradient-to-r from-amber-100 to-orange-100 rounded flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 bg-gray-700 rounded-full mx-auto mb-2"></div>
-                        <div className="w-8 h-2 bg-gray-600 rounded mx-auto mb-1"></div>
-                        <div className="w-6 h-2 bg-gray-500 rounded mx-auto"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Store Sign */}
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-gray-800 rounded flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">GRAYPIPPLE</span>
-                </div>
-                
-                {/* Door */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-32 bg-gradient-to-b from-amber-800 to-amber-900 rounded-t-lg">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full absolute top-16 right-2"></div>
-                </div>
-              </div>
-              
-              {/* Success Elements */}
-              <div className="absolute -top-8 -right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white text-2xl">✓</span>
-              </div>
-              
-              <div className="absolute -bottom-4 -left-8 w-20 h-12 bg-blue-500 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white text-xs font-bold">SUCCESS</span>
-              </div>
-            </div>
-            
-            {/* Background decorative elements */}
-            <div className="absolute top-16 left-16 w-6 h-6 bg-blue-400 rounded-full opacity-60"></div>
-            <div className="absolute bottom-24 right-20 w-4 h-4 bg-indigo-400 rounded-full opacity-50"></div>
-            <div className="absolute top-1/3 right-12 w-8 h-8 bg-blue-300 rounded-full opacity-40"></div>
-            
-            {/* Floating money/profit icons */}
-            <div className="absolute top-20 right-32 text-2xl">💰</div>
-            <div className="absolute bottom-32 left-20 text-2xl">📈</div>
-            <div className="absolute top-1/2 left-16 text-2xl">🏪</div>
+          {/* Right Side - Image */}
+          <div className="relative overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1655968692023-21cf3f021054?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJyZWFkJTIwaW4lMjBjYWZlfGVufDB8fDB8fHww"
+              alt="Cafe Bread and Pastries"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20"></div>
           </div>
         </div>
 
@@ -248,7 +199,7 @@ export default function Home() {
               <CardContent className="p-0">
                 <div className="h-64 relative overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                    src="https://plus.unsplash.com/premium_photo-1723773731793-79fbc649a9c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhZmUlMjB3YWl0ZXJ8ZW58MHx8MHx8fDA%3D"
                     alt="Young entrepreneur cafe owner"
                     fill
                     className="object-cover"
@@ -315,23 +266,108 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <Card key={index} className="overflow-hidden border-0 shadow-md hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-0">
-                  <div className="h-32 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-8 h-8 bg-orange-400 rounded-full mx-auto mb-1"></div>
-                      <span className="text-orange-600 text-xs">Menu {index + 1}</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Cookie Choux Card */}
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-black">
+              <CardContent className="p-0 relative h-96">
+                <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <p className="text-orange-300 text-sm font-medium uppercase tracking-wider mb-2">CRISPY AND CREAMY</p>
+                    <h3 className="text-4xl font-bold text-orange-200 mb-2">COOKIE</h3>
+                    <h3 className="text-4xl font-bold text-orange-200 mb-4">CHOUX</h3>
+                    <p className="text-orange-300 italic text-lg">Sweet Delight</p>
+                  </div>
+                  
+                  <div className="flex justify-between items-end">
+                    <div>
+                      <p className="text-white text-xs mb-1">바닐라 쿠키슈</p>
+                      <p className="text-gray-300 text-xs">Vanilla Cookie Choux</p>
+                      <p className="text-white text-xs mt-2">초코 쿠키슈</p>
+                      <p className="text-gray-300 text-xs">Chocolate Cookie Choux</p>
+                    </div>
+                    <div className="w-32 h-32 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
+                      <div className="w-24 h-24 bg-orange-300 rounded-full flex items-center justify-center">
+                        <span className="text-xs text-gray-800 font-bold">CHOUX</span>
+                      </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Winter Delights Card */}
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <CardContent className="p-0 relative h-96">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-800 via-teal-700 to-green-800"></div>
+                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <p className="text-pink-300 text-sm font-medium uppercase tracking-wider mb-2">HOLIDAY SPECIALS</p>
+                    <h3 className="text-4xl font-bold text-pink-200 mb-2">COZY WINTER</h3>
+                    <h3 className="text-4xl font-bold text-pink-200 mb-4">DELIGHTS</h3>
+                  </div>
+                  
+                  <div className="flex justify-between items-end">
+                    <div className="space-y-3">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2">
+                        <p className="text-white text-xs font-medium">Red Velvet</p>
+                        <p className="text-pink-200 text-xs">Cheesecake Latte</p>
+                        <p className="text-gray-200 text-xs">레드벨벳치즈케이크라떼</p>
+                      </div>
+                      <div className="flex space-x-2">
+                        <div className="w-8 h-8 bg-green-400 rounded-full"></div>
+                        <div className="w-8 h-8 bg-pink-400 rounded-full"></div>
+                        <div className="w-8 h-8 bg-red-400 rounded-full"></div>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="w-16 h-16 bg-gradient-to-b from-green-300 to-green-500 rounded-full"></div>
+                      <div className="w-16 h-16 bg-gradient-to-b from-pink-300 to-pink-500 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Signature Latte Card */}
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <CardContent className="p-0 relative h-96">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-900 via-teal-800 to-gray-900"></div>
+                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div>
+                    <p className="text-blue-300 text-sm font-medium uppercase tracking-wider mb-2">TASTE THE EXCLUSIVE FLAVORS</p>
+                    <h3 className="text-4xl font-bold text-white mb-2">SIGNATURE</h3>
+                    <h3 className="text-4xl font-bold text-white mb-4">LATTE</h3>
+                  </div>
+                  
+                  <div className="flex justify-between items-end">
+                    <div className="space-y-3">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                        <p className="text-blue-200 text-xs">ICED / HOT</p>
+                        <p className="text-white text-xs font-medium">스트로베리크림라떼</p>
+                        <p className="text-gray-300 text-xs">Strawberry Cream Latte</p>
+                      </div>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                        <p className="text-blue-200 text-xs">ICED</p>
+                        <p className="text-white text-xs font-medium">캐러멜리조또</p>
+                        <p className="text-gray-300 text-xs">Caramel Risotto</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="w-20 h-20 bg-gradient-to-b from-amber-200 to-amber-400 rounded-lg transform rotate-12"></div>
+                      <div className="w-16 h-16 bg-gradient-to-b from-blue-200 to-blue-400 rounded-lg transform -rotate-6"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Hand illustration */}
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-orange-200 rounded-full opacity-70"></div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
           
           <div className="text-center">
-            <Button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3">
+            <Button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full">
               VIEW MORE
             </Button>
           </div>
@@ -339,28 +375,58 @@ export default function Home() {
       </section>
 
       {/* News & Notice Section */}
-      <section id="news" className="py-20 bg-white">
+      <section id="news" className="py-20 bg-gradient-to-br from-green-800 via-green-700 to-green-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-light text-white mb-4">
+              Latest Updates
+            </h2>
+            <p className="text-green-200 text-lg">
+              Stay informed with our latest news and announcements
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Notice */}
             <div>
               <div className="flex justify-between items-center mb-8">
-                <h3 className="text-2xl font-medium text-gray-800">NOTICE</h3>
-                <Button variant="outline" className="text-gray-600 border-gray-300 hover:bg-gray-50">
+                <h3 className="text-2xl font-medium text-white">NOTICE</h3>
+                <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-white">
                   VIEW MORE
                 </Button>
               </div>
               <div className="space-y-4">
                 {[
-                  { title: "GrayPipple surpasses $800,000 monthly revenue, franchise inquiries increase", date: "2025.02.19." },
-                  { title: "GrayPipple's successful participation in Busan startup expo - 'Full consultations for 3 days'", date: "2024.12.04." },
-                  { title: "'First month rent support' GrayPipple participates in 'KFA Franchise Startup Expo 2024 Busan'", date: "2024.11.26." }
+                  { 
+                    title: "GrayPipple surpasses $800,000 monthly revenue, franchise inquiries increase", 
+                    date: "2025.02.19.",
+                    content: "Our franchise program has reached a new milestone with record-breaking revenue. We're now accepting applications for new franchise locations nationwide. Contact us for exclusive territory opportunities."
+                  },
+                  { 
+                    title: "GrayPipple's successful participation in Busan startup expo - 'Full consultations for 3 days'", 
+                    date: "2024.12.04.",
+                    content: "Our team provided comprehensive franchise consultations at the Busan startup expo. Over 200 potential franchisees showed interest in our proven business model and support system."
+                  },
+                  { 
+                    title: "'First month rent support' GrayPipple participates in 'KFA Franchise Startup Expo 2024 Busan'", 
+                    date: "2024.11.26.",
+                    content: "We're offering first month rent support for new franchisees. This limited-time promotion includes comprehensive training and ongoing business support to ensure your success."
+                  }
                 ].map((notice, index) => (
-                  <div key={index} className="border-b border-gray-100 pb-4 hover:bg-gray-50 p-3 rounded transition-colors cursor-pointer">
-                    <h4 className="text-gray-800 hover:text-gray-600 transition-colors text-sm leading-relaxed">
-                      {notice.title}
-                    </h4>
-                    <p className="text-xs text-gray-500 mt-2">{notice.date}</p>
+                  <div key={index} className="group border border-white/20 rounded-lg overflow-hidden hover:border-white/40 transition-all duration-300 cursor-pointer">
+                    <div className="p-4 hover:bg-white/10 transition-colors">
+                      <h4 className="text-white group-hover:text-green-100 transition-colors text-sm leading-relaxed font-medium">
+                        {notice.title}
+                      </h4>
+                      <p className="text-xs text-green-200 mt-2">{notice.date}</p>
+                    </div>
+                    <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-in-out">
+                      <div className="p-4 pt-0 bg-white/5">
+                        <p className="text-green-100 text-sm leading-relaxed">
+                          {notice.content}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -369,22 +435,43 @@ export default function Home() {
             {/* News */}
             <div>
               <div className="flex justify-between items-center mb-8">
-                <h3 className="text-2xl font-medium text-gray-800">NEWS</h3>
-                <Button variant="outline" className="text-gray-600 border-gray-300 hover:bg-gray-50">
+                <h3 className="text-2xl font-medium text-white">NEWS</h3>
+                <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-white">
                   VIEW MORE
                 </Button>
               </div>
               <div className="space-y-4">
                 {[
-                  { title: "GrayPipple Coffee launches '3 peach beverages' and signature dessert 'New York Cheesecake' for summer season", date: "2025.06.19." },
-                  { title: "GrayPipple successfully concludes Daegu startup expo - 'Daegu Store #1' confirmed and additional openings announced", date: "2025.05.16." },
-                  { title: "GrayPipple participates in 'KFA Franchise Startup Expo 2025 Daegu' - Provides startup benefits worth $52,500", date: "2025.04.12." }
+                  { 
+                    title: "GrayPipple Coffee launches '3 peach beverages' and signature dessert 'New York Cheesecake' for summer season", 
+                    date: "2025.06.19.",
+                    content: "Our summer menu features three refreshing peach beverages and our signature New York Cheesecake. These seasonal offerings have been crafted to provide the perfect balance of flavor and refreshment during the warmer months."
+                  },
+                  { 
+                    title: "GrayPipple successfully concludes Daegu startup expo - 'Daegu Store #1' confirmed and additional openings announced", 
+                    date: "2025.05.16.",
+                    content: "Following our successful participation in the Daegu startup expo, we've confirmed the opening of our first Daegu location. Additional store openings are planned for the region based on overwhelming response from local entrepreneurs."
+                  },
+                  { 
+                    title: "GrayPipple participates in 'KFA Franchise Startup Expo 2025 Daegu' - Provides startup benefits worth $52,500", 
+                    date: "2025.04.12.",
+                    content: "We're offering comprehensive startup benefits including equipment financing, training programs, and marketing support. This package is designed to ensure new franchisees have everything needed for a successful launch."
+                  }
                 ].map((news, index) => (
-                  <div key={index} className="border-b border-gray-100 pb-4 hover:bg-gray-50 p-3 rounded transition-colors cursor-pointer">
-                    <h4 className="text-gray-800 hover:text-gray-600 transition-colors text-sm leading-relaxed">
-                      {news.title}
-                    </h4>
-                    <p className="text-xs text-gray-500 mt-2">{news.date}</p>
+                  <div key={index} className="group border border-white/20 rounded-lg overflow-hidden hover:border-white/40 transition-all duration-300 cursor-pointer">
+                    <div className="p-4 hover:bg-white/10 transition-colors">
+                      <h4 className="text-white group-hover:text-green-100 transition-colors text-sm leading-relaxed font-medium">
+                        {news.title}
+                      </h4>
+                      <p className="text-xs text-green-200 mt-2">{news.date}</p>
+                    </div>
+                    <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-in-out">
+                      <div className="p-4 pt-0 bg-white/5">
+                        <p className="text-green-100 text-sm leading-relaxed">
+                          {news.content}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -394,41 +481,41 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-white text-black py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-2">
-              <h3 className="text-3xl font-bold mb-4">GRAYPIPPLE</h3>
-              <p className="text-gray-300 mb-6 text-lg">
+              <h3 className="text-3xl font-bold mb-4 text-black">GRAYPIPPLE</h3>
+              <p className="text-gray-900 mb-6 text-lg">
                 A change of mood in a busy daily life
               </p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-600 text-sm">
                 Premium coffee for your daily moments
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-medium mb-6">Site Map</h4>
-              <ul className="space-y-3 text-gray-300">
-                <li><a href="#brand" className="hover:text-white transition-colors">Brand</a></li>
-                <li><a href="#menu" className="hover:text-white transition-colors">Menu</a></li>
-                <li><a href="#store" className="hover:text-white transition-colors">Stores</a></li>
-                <li><a href="#news" className="hover:text-white transition-colors">News</a></li>
-                <li><a href="#franchise" className="hover:text-white transition-colors">Franchise</a></li>
+              <h4 className="text-lg font-medium mb-6 text-black">Site Map</h4>
+              <ul className="space-y-3 text-gray-700">
+                <li><a href="#brand" className="hover:text-black transition-colors">Brand</a></li>
+                <li><a href="#menu" className="hover:text-black transition-colors">Menu</a></li>
+                <li><a href="#store" className="hover:text-black transition-colors">Stores</a></li>
+                <li><a href="#news" className="hover:text-black transition-colors">News</a></li>
+                <li><a href="#franchise" className="hover:text-black transition-colors">Franchise</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-medium mb-6">Contact Us</h4>
-              <Button className="w-full bg-white text-gray-900 hover:bg-gray-100 mb-4 py-3">
+              <h4 className="text-lg font-medium mb-6 text-black">Contact Us</h4>
+              <Button className="w-full bg-black text-white hover:bg-gray-800 mb-4 py-3">
                 Franchise Inquiry
               </Button>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-600 text-sm">
                 Monday - Friday: 9:00 - 18:00<br />
                 Saturday, Sunday: Closed
               </p>
             </div>
           </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center">
-            <p className="text-gray-400">
+          <div className="border-t border-gray-300 mt-12 pt-8 text-center">
+            <p className="text-gray-600">
               COPYRIGHT © GRAYPIPPLE COFFEE ALL RIGHTS RESERVED.
             </p>
           </div>

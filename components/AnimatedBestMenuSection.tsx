@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from './ui/button'
+import Image from 'next/image'
 
 interface BestMenuCard {
   id: number
@@ -21,7 +22,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "SIGNATURE BLEND",
     price: "$6.50",
     description: "Our premium house blend with silky steamed milk",
-    image: "🥛",
+    image: "/signature-latte.svg",
     category: "SIGNATURE"
   },
   {
@@ -30,7 +31,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "NUTTY PREMIUM",
     price: "$7.20",
     description: "Creamy pistachio with cloud-like foam art",
-    image: "🌰",
+    image: "/signature-latte.svg",
     category: "SIGNATURE"
   },
   {
@@ -39,7 +40,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "RICH & SMOOTH",
     price: "$6.80",
     description: "Luxurious butter cream with espresso perfection",
-    image: "🧈",
+    image: "/signature-latte.svg",
     category: "SIGNATURE"
   },
   {
@@ -48,7 +49,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "HOUSE SPECIAL",
     price: "$7.50",
     description: "Exclusive signature blend with premium beans",
-    image: "☕",
+    image: "/signature-latte.svg",
     category: "SIGNATURE"
   },
   // COFFEE Category
@@ -58,7 +59,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "ICED PERFECTION",
     price: "$5.50",
     description: "18-hour cold brew with nitrogen infusion",
-    image: "🧊",
+    image: "/coffee.png",
     category: "COFFEE"
   },
   {
@@ -67,7 +68,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "ITALIAN STYLE",
     price: "$4.80",
     description: "Traditional espresso with lemon twist",
-    image: "☕",
+    image: "/coffee2.pmg",
     category: "COFFEE"
   },
   {
@@ -76,7 +77,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "BOLD & RICH",
     price: "$5.20",
     description: "Full-bodied coffee with deep flavor notes",
-    image: "☕",
+    image: "/coffee3.png",
     category: "COFFEE"
   },
   {
@@ -85,7 +86,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "FOAM ART",
     price: "$5.80",
     description: "Perfect cappuccino with artistic foam design",
-    image: "☕",
+    image: "/coffee.svg",
     category: "COFFEE"
   },
   // NON-COFFEE Category
@@ -95,7 +96,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "GREEN HARMONY",
     price: "$6.00",
     description: "Premium Japanese matcha with steamed milk",
-    image: "🍵",
+    image: "/non-coffee.svg",
     category: "NON-COFFEE"
   },
   {
@@ -104,7 +105,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "AROMATIC BLEND",
     price: "$5.70",
     description: "Traditional chai spices with creamy milk",
-    image: "🫖",
+    image: "/non-coffee.svg",
     category: "NON-COFFEE"
   },
   {
@@ -113,7 +114,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "WELLNESS DRINK",
     price: "$6.20",
     description: "Healthy turmeric blend with coconut milk",
-    image: "🥛",
+    image: "/non-coffee.svg",
     category: "NON-COFFEE"
   },
   {
@@ -122,7 +123,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "RICH INDULGENCE",
     price: "$5.50",
     description: "Premium cocoa with whipped cream",
-    image: "🍫",
+    image: "/non-coffee.svg",
     category: "NON-COFFEE"
   },
   // BEVERAGE Category
@@ -132,7 +133,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "FRUIT BLEND",
     price: "$5.80",
     description: "Fresh tropical fruits with sparkling water",
-    image: "🥭",
+    image: "/beverage.svg",
     category: "BEVERAGE"
   },
   {
@@ -141,7 +142,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "ANTIOXIDANT RICH",
     price: "$7.20",
     description: "Mixed berries with granola and honey",
-    image: "🫐",
+    image: "/beverage.svg",
     category: "BEVERAGE"
   },
   {
@@ -150,7 +151,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "HEALTHY CHOICE",
     price: "$6.50",
     description: "Spinach, apple, and cucumber blend",
-    image: "🥬",
+    image: "/beverage.svg",
     category: "BEVERAGE"
   },
   {
@@ -159,7 +160,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "CLASSIC REFRESH",
     price: "$4.80",
     description: "Fresh squeezed lemons with mint",
-    image: "🍋",
+    image: "/beverage.svg",
     category: "BEVERAGE"
   },
   // DESSERT Category
@@ -169,7 +170,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "ITALIAN CLASSIC",
     price: "$8.50",
     description: "Authentic tiramisu with coffee-soaked layers",
-    image: "🍰",
+    image: "/dessert.svg",
     category: "DESSERT"
   },
   {
@@ -178,7 +179,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "WARM INDULGENCE",
     price: "$9.20",
     description: "Decadent chocolate soufflé served warm",
-    image: "🍫",
+    image: "/dessert.svg",
     category: "DESSERT"
   },
   {
@@ -187,7 +188,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "FRENCH ELEGANCE",
     price: "$7.80",
     description: "Vanilla custard with caramelized sugar",
-    image: "🍮",
+    image: "/dessert.svg",
     category: "DESSERT"
   },
   {
@@ -196,7 +197,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "CREAMY PERFECTION",
     price: "$8.20",
     description: "Rich cheesecake with berry compote",
-    image: "🍰",
+    image: "/dessert.svg",
     category: "DESSERT"
   }
 ]
@@ -254,7 +255,14 @@ const AnimatedBestMenuSection = () => {
             >
               <div className="h-56 bg-gradient-to-br from-gray-50 via-amber-50 to-orange-50 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-white/40"></div>
-                <span className="text-7xl relative z-10">{item.image}</span>
+                <div className="relative z-10 w-32 h-32">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">

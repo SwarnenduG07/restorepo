@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cake Plate -->
+  <ellipse cx="100" cy="160" rx="70" ry="15" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="2"/>
+  
+  <!-- Cake Base -->
+  <path d="M50 140 L150 140 Q160 140 160 150 L160 160 L40 160 L40 150 Q40 140 50 140" fill="#DEB887"/>
+  
+  <!-- Cake Layer 1 -->
+  <path d="M55 120 L145 120 Q150 120 150 125 L150 140 L50 140 L50 125 Q50 120 55 120" fill="#F4A460"/>
+  
+  <!-- Cake Layer 2 -->
+  <path d="M60 100 L140 100 Q145 100 145 105 L145 120 L55 120 L55 105 Q55 100 60 100" fill="#CD853F"/>
+  
+  <!-- Frosting -->
+  <path d="M60 95 Q70 85 80 95 Q90 85 100 95 Q110 85 120 95 Q130 85 140 95 L140 100 L60 100 Z" fill="#FFFAF0"/>
+  
+  <!-- Cherry -->
+  <circle cx="100" cy="90" r="6" fill="#DC143C"/>
+  <path d="M100 84 Q102 80 105 82" stroke="#228B22" stroke-width="2" fill="none"/>
+  
+  <!-- Decorative Dots -->
+  <circle cx="80" cy="115" r="2" fill="#FF69B4"/>
+  <circle cx="120" cy="115" r="2" fill="#FF69B4"/>
+  <circle cx="90" cy="135" r="2" fill="#FF1493"/>
+  <circle cx="110" cy="135" r="2" fill="#FF1493"/>
+</svg>

@@ -14,24 +14,38 @@ interface SlideImage {
 const slideImages: SlideImage[] = [
   {
     id: 1,
-    src: "/cafe-interior-1.svg",
+    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2047&q=80",
     alt: "Modern Cafe Interior",
     title: "Premium Coffee Experience",
-    description: "Elegant seating area with modern design"
+    description: "Elegant seating area with modern design and natural lighting"
   },
   {
     id: 2,
-    src: "/cafe-counter.svg", 
+    src: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", 
     alt: "Coffee Counter Bar",
     title: "Artisanal Coffee Bar",
-    description: "Professional barista station with premium equipment"
+    description: "Professional barista station with premium equipment and craftsmanship"
   },
   {
     id: 3,
-    src: "/cafe-atmosphere.svg",
+    src: "https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
     alt: "Cozy Cafe Atmosphere", 
     title: "Relaxing Atmosphere",
-    description: "Warm and inviting space for coffee lovers"
+    description: "Warm and inviting space perfect for coffee lovers and conversations"
+  },
+  {
+    id: 4,
+    src: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+    alt: "Bustling Coffee Shop",
+    title: "Community Hub",
+    description: "A vibrant gathering place where coffee culture comes alive"
+  },
+  {
+    id: 5,
+    src: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    alt: "Outdoor Cafe Terrace",
+    title: "Outdoor Seating",
+    description: "Fresh air dining with the perfect coffee companion"
   }
 ]
 
