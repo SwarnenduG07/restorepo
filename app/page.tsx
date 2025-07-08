@@ -3,6 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import FloatingActionButton from "@/components/FloatingActionButton";
 import ScrollNavigation from "@/components/ScrollNavigation";
+import AnimatedMenuSection from "@/components/AnimatedMenuSection";
+import AnimatedInteriorSection from "@/components/AnimatedInteriorSection";
+import CafeSlideshowSection from "@/components/CafeSlideshowSection";
+import AnimatedBestMenuSection from "@/components/AnimatedBestMenuSection";
 
 export default function Home() {
   return (
@@ -33,160 +37,171 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
-      {/* Interior Design Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
-              MODERN TRENDY INTERIOR
-            </h2>
-            <p className="text-lg text-gray-600">
-              Sophisticated and trendy designs<br />
-              with two distinctive interior concepts
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-0">
-                <div className="h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
-                  <Image 
-                    src="/modern-interior.svg" 
-                    alt="Modern Interior Design" 
-                    width={400} 
-                    height={300}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-medium text-gray-800 mb-2">Modern Concept</h3>
-                  <p className="text-gray-600">Clean and minimalist design with modern aesthetics</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-0">
-                <div className="h-64 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center relative overflow-hidden">
-                  <Image 
-                    src="/trendy-interior.svg" 
-                    alt="Trendy Interior Design" 
-                    width={400} 
-                    height={300}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-medium text-gray-800 mb-2">Trendy Concept</h3>
-                  <p className="text-gray-600">Vibrant and energetic atmosphere with contemporary style</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* Animated Interior Design Section */}
+      <AnimatedInteriorSection />
 
-      {/* Coffee & Dessert Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
-              NICE COFFEE, SWEET DESSERT
-            </h2>
-            <p className="text-lg text-gray-600">
-              GrayPipple's exclusive package<br />
-              makes coffee and desserts special!
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <Image 
-              src="/coffee-logo.svg" 
-              alt="Coffee Logo" 
-              width={300} 
-              height={200}
-              className="opacity-60"
-            />
-          </div>
-        </div>
-      </section>
+      {/* Cafe Slideshow Section */}
+      <CafeSlideshowSection />
 
-      {/* Best Menu Section */}
-      <section id="menu" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
-              GrayPipple Popular Menu
-            </h2>
-            <h3 className="text-2xl font-medium text-gray-600 mb-8">BEST MENU</h3>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
-              <button className="text-gray-800 font-medium border-b-2 border-gray-800 pb-2 px-2">SIGNATURE</button>
-              <button className="text-gray-500 hover:text-gray-800 transition-colors pb-2 px-2">COFFEE</button>
-              <button className="text-gray-500 hover:text-gray-800 transition-colors pb-2 px-2">NON-COFFEE</button>
-              <button className="text-gray-500 hover:text-gray-800 transition-colors pb-2 px-2">BEVERAGE</button>
-              <button className="text-gray-500 hover:text-gray-800 transition-colors pb-2 px-2">DESSERT</button>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              "Pistachio Latte\nPISTACHIO LATTE",
-              "Butter Cream Latte\nBUTTER CREAM LATTE", 
-              "Special Milk Latte\nSPECIAL MILK LATTE",
-              "Gray Latte\nGRAY LATTE"
-            ].map((item, index) => (
-              <Card key={index} className="overflow-hidden border-0 shadow-md hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-0">
-                  <div className="h-48 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
-                    <span className="text-amber-700 text-sm text-center px-2 whitespace-pre-line font-medium">{item}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    
+
+      {/* Animated Best Menu Section */}
+      <AnimatedBestMenuSection />
 
       {/* Brand Story Section */}
-      <section id="brand" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-6">
-                OUR BRAND
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                For modern people who need a change of mood from their busy daily life,<br />
+      <section id="brand" className="relative h-screen overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+          {/* Left Side - Image/Visual */}
+          <div className="relative bg-gradient-to-br from-amber-100 via-orange-100 to-amber-50 flex items-center justify-center">
+            {/* Coffee Cup Image Placeholder */}
+            <div className="relative">
+              <div className="w-80 h-96 bg-gradient-to-b from-amber-600 via-orange-500 to-amber-700 rounded-t-full rounded-b-lg shadow-2xl transform rotate-12">
+                {/* Coffee foam effect */}
+                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-64 h-16 bg-gradient-to-r from-white via-gray-50 to-white rounded-full opacity-90"></div>
+                {/* Latte art effect */}
+                <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-gradient-to-r from-amber-800 to-amber-900 rounded-full opacity-70"></div>
+              </div>
+              {/* Hand holding coffee */}
+              <div className="absolute -bottom-8 -left-12 w-32 h-20 bg-gradient-to-br from-orange-200 to-orange-300 rounded-3xl transform -rotate-12 shadow-lg"></div>
+            </div>
+            {/* Background decorative elements */}
+            <div className="absolute top-20 left-20 w-4 h-4 bg-amber-400 rounded-full opacity-60"></div>
+            <div className="absolute bottom-32 right-24 w-6 h-6 bg-orange-400 rounded-full opacity-40"></div>
+            <div className="absolute top-1/2 right-16 w-3 h-3 bg-amber-500 rounded-full opacity-50"></div>
+          </div>
+
+          {/* Right Side - Dark Content */}
+          <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16">
+            <div className="max-w-lg">
+              <div className="mb-6">
+                <p className="text-green-400 text-sm font-medium tracking-widest uppercase mb-4">
+                  BRAND STORY
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+                  WHO<br />
+                  WE ARE
+                </h1>
+              </div>
+              
+              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                For modern people who need a change of mood from their busy daily life, 
                 we deliver freedom and unique joy contained in a cup of coffee.
               </p>
-              <Button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3">
+              
+              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 transition-all duration-300">
                 VIEW MORE
               </Button>
             </div>
-            <div className="h-80 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500 text-lg">Brand Story Image</span>
-            </div>
           </div>
+        </div>
+
+        {/* Floating Action Buttons - positioned absolutely */}
+        <div className="absolute top-8 right-8 flex flex-col space-y-4">
+          <button className="w-16 h-16 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors shadow-lg">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+            </svg>
+            <span className="sr-only">Top</span>
+          </button>
+          <button className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors shadow-lg">
+            <span className="text-sm font-bold">문의</span>
+          </button>
         </div>
       </section>
 
       {/* Franchise Section */}
-      <section id="franchise" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="h-80 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg flex items-center justify-center">
-              <span className="text-blue-600 text-lg">Franchise Opportunity</span>
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
-                Franchise Information
-              </h2>
-              <h3 className="text-2xl font-medium text-gray-600 mb-6">OUR FRANCHISE</h3>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                GrayPipple ensures your success through differentiated branding<br />
+      <section id="franchise" className="relative h-screen overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+          {/* Left Side - Dark Content */}
+          <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16">
+            <div className="max-w-lg">
+              <div className="mb-6">
+                <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-4">
+                  FRANCHISE OPPORTUNITY
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+                  JOIN<br />
+                  OUR FAMILY
+                </h1>
+              </div>
+              
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                GrayPipple ensures your success through differentiated branding 
                 and consistent, continuous menu development.
               </p>
-              <Button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3">
+              
+              <p className="text-gray-400 text-base leading-relaxed mb-8">
+                Start your own coffee business with our proven franchise model 
+                and comprehensive support system.
+              </p>
+              
+              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 transition-all duration-300">
                 VIEW MORE
               </Button>
             </div>
+          </div>
+
+          {/* Right Side - Image/Visual */}
+          <div className="relative bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-50 flex items-center justify-center">
+            {/* Franchise Store Illustration */}
+            <div className="relative">
+              {/* Store Front */}
+              <div className="w-96 h-80 bg-gradient-to-b from-gray-100 to-gray-200 rounded-lg shadow-2xl">
+                {/* Store Window */}
+                <div className="absolute top-8 left-8 right-8 h-32 bg-gradient-to-br from-blue-200 to-blue-300 rounded-lg border-4 border-gray-300">
+                  {/* Window Frame */}
+                  <div className="absolute inset-4 border-2 border-gray-400 rounded">
+                    {/* Store Interior View */}
+                    <div className="h-full bg-gradient-to-r from-amber-100 to-orange-100 rounded flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-gray-700 rounded-full mx-auto mb-2"></div>
+                        <div className="w-8 h-2 bg-gray-600 rounded mx-auto mb-1"></div>
+                        <div className="w-6 h-2 bg-gray-500 rounded mx-auto"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Store Sign */}
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-gray-800 rounded flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">GRAYPIPPLE</span>
+                </div>
+                
+                {/* Door */}
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-32 bg-gradient-to-b from-amber-800 to-amber-900 rounded-t-lg">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full absolute top-16 right-2"></div>
+                </div>
+              </div>
+              
+              {/* Success Elements */}
+              <div className="absolute -top-8 -right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white text-2xl">✓</span>
+              </div>
+              
+              <div className="absolute -bottom-4 -left-8 w-20 h-12 bg-blue-500 rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-white text-xs font-bold">SUCCESS</span>
+              </div>
+            </div>
+            
+            {/* Background decorative elements */}
+            <div className="absolute top-16 left-16 w-6 h-6 bg-blue-400 rounded-full opacity-60"></div>
+            <div className="absolute bottom-24 right-20 w-4 h-4 bg-indigo-400 rounded-full opacity-50"></div>
+            <div className="absolute top-1/3 right-12 w-8 h-8 bg-blue-300 rounded-full opacity-40"></div>
+            
+            {/* Floating money/profit icons */}
+            <div className="absolute top-20 right-32 text-2xl">💰</div>
+            <div className="absolute bottom-32 left-20 text-2xl">📈</div>
+            <div className="absolute top-1/2 left-16 text-2xl">🏪</div>
+          </div>
+        </div>
+
+        {/* Floating Action Elements */}
+        <div className="absolute bottom-8 left-8 flex space-x-4">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
+            <span className="text-gray-800 text-sm font-medium">Investment: $50K+</span>
+          </div>
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
+            <span className="text-gray-800 text-sm font-medium">ROI: 6-12 months</span>
           </div>
         </div>
       </section>
@@ -207,12 +222,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-0">
-                <div className="h-48 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-2xl">▶</span>
+                <div className="h-64 relative overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                    alt="Coffee shop owner"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="text-green-600 text-xs font-medium">SUCCESS STORY</span>
                     </div>
-                    <span className="text-green-600 text-sm">Interview Video</span>
                   </div>
                 </div>
                 <div className="p-6">
@@ -225,12 +246,18 @@ export default function Home() {
             </Card>
             <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-0">
-                <div className="h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-purple-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-2xl">▶</span>
+                <div className="h-64 relative overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                    alt="Young entrepreneur cafe owner"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="text-purple-600 text-xs font-medium">SUCCESS STORY</span>
                     </div>
-                    <span className="text-purple-600 text-sm">Interview Video</span>
                   </div>
                 </div>
                 <div className="p-6">
