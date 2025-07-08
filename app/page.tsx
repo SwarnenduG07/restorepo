@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import FloatingActionButton from "@/components/FloatingActionButton";
 import ScrollNavigation from "@/components/ScrollNavigation";
-import AnimatedMenuSection from "@/components/AnimatedMenuSection";
 import AnimatedInteriorSection from "@/components/AnimatedInteriorSection";
 import CafeSlideshowSection from "@/components/CafeSlideshowSection";
 import AnimatedBestMenuSection from "@/components/AnimatedBestMenuSection";
