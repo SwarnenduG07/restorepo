@@ -390,7 +390,7 @@ export default function Home() {
             <div>
               <div className="flex justify-between items-center mb-8">
                 <h3 className="text-2xl font-medium text-white">NOTICE</h3>
-                <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-white">
+                <Button variant="outline" className="bg-blue-500 text-white border-white/30 hover:bg-white/10 hover:text-white">
                   VIEW MORE
                 </Button>
               </div>
@@ -435,7 +435,7 @@ export default function Home() {
             <div>
               <div className="flex justify-between items-center mb-8">
                 <h3 className="text-2xl font-medium text-white">NEWS</h3>
-                <Button variant="outline" className="text-white border-white/30 hover:bg-white/10 hover:text-white">
+                <Button variant="outline" className="bg-blue-500 text-white border-white/30 hover:bg-white/10 hover:text-white">
                   VIEW MORE
                 </Button>
               </div>
