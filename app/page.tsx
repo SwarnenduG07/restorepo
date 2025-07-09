@@ -12,18 +12,20 @@ import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen hero-container" style={{ background: 'transparent' }}>
       {/* Scroll Navigation */}
       <ScrollNavigation />
 
       {/* Hero Section */}
       <Hero />
 
-      {/* Animated Interior Design Section */}
-      <AnimatedInteriorSection />
+      {/* Content sections with background */}
+      <div className="bg-black">
+        {/* Animated Interior Design Section */}
+        <AnimatedInteriorSection />
 
-      {/* Cafe Slideshow Section */}
-      <CafeSlideshowSection />
+        {/* Cafe Slideshow Section */}
+        <CafeSlideshowSection />
 
     
 
@@ -351,6 +353,7 @@ export default function Home() {
 
       {/* Floating Action Button - Top */}
       <FloatingActionButton />
+      </div> {/* End of bg-black content sections */}
     </div>
   );
 }

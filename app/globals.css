@@ -196,6 +196,26 @@ body {
   }
 }
 
+/* Override for transparent hero */
+.hero-container {
+  background: transparent !important;
+}
+
+.hero-container body {
+  background: transparent !important;
+}
+
+/* Ensure no background shows through */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.hero-no-bg {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 /* Fade-in animation for menu cards */
 @keyframes fadeIn {
   from {

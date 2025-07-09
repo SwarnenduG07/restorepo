@@ -25,8 +25,8 @@ const Hero = () => {
   const videoHeight = 100 - (videoProgress * 18.519); // From 100vh to 81.481vh
   const videoBorderRadius = videoProgress * 12; // Subtle border radius
   
-  // Green background opacity - appears as video shrinks
-  const greenBgOpacity = videoProgress * 0.95;
+  // Green background opacity - only appears when video starts shrinking significantly
+  const greenBgOpacity = videoProgress > 0.3 ? (videoProgress - 0.3) * 1.36 : 0;
   
   // Video positioning - keep centered throughout transformation
   const videoLeft = 50; // Always centered horizontally
@@ -64,17 +64,22 @@ const Hero = () => {
 
   return (
     <div 
-      className="relative overflow-hidden bg-black"
+      className="relative overflow-hidden hero-no-bg"
       style={{ 
         transform: heroTransform,
         height: '150vh', // Extended height to accommodate scroll phases
-        paddingBottom: '2rem' // Ensures smooth transition to next section
+        paddingBottom: '2rem', // Ensures smooth transition to next section
+        backgroundColor: 'transparent',
+        background: 'transparent'
       }}
     >
-      {/* Green Background - appears as video shrinks */}
+      {/* Green Background - only appears when video shrinks significantly */}
       <div 
         className="absolute inset-0 bg-gradient-to-br from-green-800 to-green-900 transition-opacity duration-1000"
-        style={{ opacity: greenBgOpacity }}
+        style={{ 
+          opacity: greenBgOpacity,
+          display: greenBgOpacity > 0 ? 'block' : 'none'
+        }}
       />
 
       {/* Main Video Container - transforms from full screen to vertical rectangle */}
@@ -88,7 +93,8 @@ const Hero = () => {
           transform: 'translate(-50%, -50%)',
           borderRadius: `${videoBorderRadius}px`,
           overflow: 'hidden',
-          boxShadow: videoProgress > 0.1 ? '0 25px 50px rgba(0,0,0,0.5)' : 'none'
+          boxShadow: videoProgress > 0.1 ? '0 25px 50px rgba(0,0,0,0.5)' : 'none',
+          zIndex: videoProgress === 0 ? 1 : 10 // Ensure full screen video is behind text initially
         }}
       >
         <iframe
@@ -99,7 +105,10 @@ const Hero = () => {
           style={{ 
             width: '100%',
             height: '100%',
-            objectFit: 'cover'
+            objectFit: 'cover',
+            position: 'absolute',
+            top: 0,
+            left: 0
           }}
         />
         

@@ -14,7 +14,7 @@ const interiorContents: InteriorContent[] = [
   {
     id: 1,
     title: "MODERN TRENDY INTERIOR",
-    subtitle: "Contemporary Excellence",
+    subtitle: "Two Interior Concepts that Combine Trendiness and Modernity",
     description: "Sophisticated and trendy designs with two distinctive interior concepts"
   },
   {
@@ -127,7 +127,7 @@ const AnimatedInteriorSection = () => {
             >
               <motion.h2 
                 variants={itemVariants}
-                className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-6 tracking-wide"
+                className="text-4xl md:text-2xl lg:text-6xl font-light text-green-800 mb-6 tracking-wide"
               >
                 {currentContent.title}
               </motion.h2>
@@ -137,12 +137,7 @@ const AnimatedInteriorSection = () => {
               >
                 {currentContent.subtitle}
               </motion.h3>
-              <motion.p 
-                variants={itemVariants}
-                className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto"
-              >
-                {currentContent.description}
-              </motion.p>
+             
 
               {/* Decorative elements */}
               <motion.div
