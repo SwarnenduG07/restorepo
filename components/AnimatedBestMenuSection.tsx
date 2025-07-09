@@ -22,7 +22,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "SIGNATURE BLEND",
     price: "$6.50",
     description: "Our premium house blend with silky steamed milk",
-    image: "/signature-latte.svg",
+    image: "/cake4.png",
     category: "SIGNATURE"
   },
   {
@@ -31,7 +31,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "NUTTY PREMIUM",
     price: "$7.20",
     description: "Creamy pistachio with cloud-like foam art",
-    image: "/signature-latte.svg",
+    image: "/cake3.png",
     category: "SIGNATURE"
   },
   {
@@ -40,7 +40,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "RICH & SMOOTH",
     price: "$6.80",
     description: "Luxurious butter cream with espresso perfection",
-    image: "/signature-latte.svg",
+    image: "/cake2.png",
     category: "SIGNATURE"
   },
   {
@@ -49,7 +49,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "HOUSE SPECIAL",
     price: "$7.50",
     description: "Exclusive signature blend with premium beans",
-    image: "/signature-latte.svg",
+    image: "/cake1.png",
     category: "SIGNATURE"
   },
   // COFFEE Category
@@ -59,7 +59,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "ICED PERFECTION",
     price: "$5.50",
     description: "18-hour cold brew with nitrogen infusion",
-    image: "/coffee.png",
+    image: "/d4.png",
     category: "COFFEE"
   },
   {
@@ -68,7 +68,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "ITALIAN STYLE",
     price: "$4.80",
     description: "Traditional espresso with lemon twist",
-    image: "/coffee2.pmg",
+    image: "/d3.png",
     category: "COFFEE"
   },
   {
@@ -77,7 +77,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "BOLD & RICH",
     price: "$5.20",
     description: "Full-bodied coffee with deep flavor notes",
-    image: "/coffee3.png",
+    image: "/d2.png",
     category: "COFFEE"
   },
   {
@@ -86,7 +86,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "FOAM ART",
     price: "$5.80",
     description: "Perfect cappuccino with artistic foam design",
-    image: "/coffee.svg",
+    image: "/d1.png",
     category: "COFFEE"
   },
   // NON-COFFEE Category
@@ -96,7 +96,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "GREEN HARMONY",
     price: "$6.00",
     description: "Premium Japanese matcha with steamed milk",
-    image: "/non-coffee.svg",
+    image: "/d5.png",
     category: "NON-COFFEE"
   },
   {
@@ -105,7 +105,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "AROMATIC BLEND",
     price: "$5.70",
     description: "Traditional chai spices with creamy milk",
-    image: "/non-coffee.svg",
+    image: "/ncc3.png",
     category: "NON-COFFEE"
   },
   {
@@ -114,7 +114,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "WELLNESS DRINK",
     price: "$6.20",
     description: "Healthy turmeric blend with coconut milk",
-    image: "/non-coffee.svg",
+    image: "/ncc2.png",
     category: "NON-COFFEE"
   },
   {
@@ -123,7 +123,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "RICH INDULGENCE",
     price: "$5.50",
     description: "Premium cocoa with whipped cream",
-    image: "/non-coffee.svg",
+    image: "/ncc1.png",
     category: "NON-COFFEE"
   },
   // BEVERAGE Category
@@ -133,7 +133,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "FRUIT BLEND",
     price: "$5.80",
     description: "Fresh tropical fruits with sparkling water",
-    image: "/beverage.svg",
+    image: "/cc4.png",
     category: "BEVERAGE"
   },
   {
@@ -142,7 +142,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "ANTIOXIDANT RICH",
     price: "$7.20",
     description: "Mixed berries with granola and honey",
-    image: "/beverage.svg",
+    image: "/cc3.png",
     category: "BEVERAGE"
   },
   {
@@ -151,7 +151,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "HEALTHY CHOICE",
     price: "$6.50",
     description: "Spinach, apple, and cucumber blend",
-    image: "/beverage.svg",
+    image: "/cc2.png",
     category: "BEVERAGE"
   },
   {
@@ -160,7 +160,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "CLASSIC REFRESH",
     price: "$4.80",
     description: "Fresh squeezed lemons with mint",
-    image: "/beverage.svg",
+    image: "/cc1.png",
     category: "BEVERAGE"
   },
   // DESSERT Category
@@ -170,7 +170,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "ITALIAN CLASSIC",
     price: "$8.50",
     description: "Authentic tiramisu with coffee-soaked layers",
-    image: "/dessert.svg",
+    image: "/d1.png",
     category: "DESSERT"
   },
   {
@@ -179,7 +179,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "WARM INDULGENCE",
     price: "$9.20",
     description: "Decadent chocolate soufflé served warm",
-    image: "/dessert.svg",
+    image: "/d3.png",
     category: "DESSERT"
   },
   {
@@ -188,7 +188,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "FRENCH ELEGANCE",
     price: "$7.80",
     description: "Vanilla custard with caramelized sugar",
-    image: "/dessert.svg",
+    image: "/d2.png",
     category: "DESSERT"
   },
   {
@@ -197,7 +197,7 @@ const bestMenuItems: BestMenuCard[] = [
     subtitle: "CREAMY PERFECTION",
     price: "$8.20",
     description: "Rich cheesecake with berry compote",
-    image: "/dessert.svg",
+    image: "/d1.png",
     category: "DESSERT"
   }
 ]
@@ -255,12 +255,12 @@ const AnimatedBestMenuSection = () => {
             >
               <div className="h-56 bg-gradient-to-br from-gray-50 via-amber-50 to-orange-50 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-white/40"></div>
-                <div className="relative z-10 w-32 h-32">
+                <div className="relative z-10 w-48 h-48">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-contain"
+                    className="object-contain scale-110 hover:scale-125 transition-transform duration-500"
                   />
                 </div>
               </div>
