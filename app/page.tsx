@@ -6,6 +6,8 @@ import ScrollNavigation from "@/components/ScrollNavigation";
 import AnimatedInteriorSection from "@/components/AnimatedInteriorSection";
 import CafeSlideshowSection from "@/components/CafeSlideshowSection";
 import AnimatedBestMenuSection from "@/components/AnimatedBestMenuSection";
+import StoreSwiper from "@/components/StoreSwiper";
+import PromotionSwiper from "@/components/PromotionSwiper";
 import Hero from "@/components/Hero";
 
 export default function Home() {
@@ -32,7 +34,7 @@ export default function Home() {
       <section id="brand" className="relative h-screen overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           {/* Left Side - Image */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden animate-slideInLeft">
             <Image
               src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGNhZmV8ZW58MHx8MHx8fDA%3D"
               alt="Coffee Cup"
@@ -44,24 +46,24 @@ export default function Home() {
           
 
           {/* Right Side - Dark Content */}
-          <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16">
+          <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16 animate-slideInRight">
             <div className="max-w-lg">
               <div className="mb-6">
-                <p className="text-green-400 text-sm font-medium tracking-widest uppercase mb-4">
+                <p className="text-green-400 text-sm font-medium tracking-widest uppercase mb-4 animate-float">
                   BRAND STORY
                 </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 animate-floatSlow">
                   WHO<br />
                   WE ARE
                 </h1>
               </div>
               
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              <p className="text-gray-300 text-lg leading-relaxed mb-8 animate-floatDelay">
                 For modern people who need a change of mood from their busy daily life, 
                 we deliver freedom and unique joy contained in a cup of coffee.
               </p>
               
-              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 transition-all duration-300">
+              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 transition-all duration-300 animate-floatButton hover:animate-bounce">
                 VIEW MORE
               </Button>
             </div>
@@ -69,53 +71,43 @@ export default function Home() {
         </div>
 
         {/* Floating Action Buttons - positioned absolutely */}
-        <div className="absolute top-8 right-8 flex flex-col space-y-4">
-          <button className="w-16 h-16 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors shadow-lg">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-            </svg>
-            <span className="sr-only">Top</span>
-          </button>
-          <button className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors shadow-lg">
-            <span className="text-sm font-bold">문의</span>
-          </button>
-        </div>
+       
       </section>
 
       {/* Franchise Section */}
       <section id="franchise" className="relative h-screen overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           {/* Left Side - Dark Content */}
-          <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16">
+          <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16 animate-slideInLeft">
             <div className="max-w-lg">
               <div className="mb-6">
-                <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-4">
+                <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-4 animate-float">
                   FRANCHISE OPPORTUNITY
                 </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 animate-floatSlow">
                   JOIN<br />
                   OUR FAMILY
                 </h1>
               </div>
               
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6 animate-floatDelay">
                 GrayPipple ensures your success through differentiated branding 
                 and consistent, continuous menu development.
               </p>
               
-              <p className="text-gray-400 text-base leading-relaxed mb-8">
+              <p className="text-gray-400 text-base leading-relaxed mb-8 animate-floatDelayMore">
                 Start your own coffee business with our proven franchise model 
                 and comprehensive support system.
               </p>
               
-              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 transition-all duration-300">
+              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 transition-all duration-300 animate-floatButton hover:animate-bounce">
                 VIEW MORE
               </Button>
             </div>
           </div>
 
           {/* Right Side - Image */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden animate-slideInRight">
             <Image
               src="https://images.unsplash.com/photo-1655968692023-21cf3f021054?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJyZWFkJTIwaW4lMjBjYWZlfGVufDB8fDB8fHww"
               alt="Cafe Bread and Pastries"
@@ -127,11 +119,11 @@ export default function Home() {
         </div>
 
         {/* Floating Action Elements */}
-        <div className="absolute bottom-8 left-8 flex space-x-4">
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
+        <div className="absolute bottom-8 left-8 flex space-x-4 animate-slideInUp">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg animate-float">
             <span className="text-gray-800 text-sm font-medium">Investment: $50K+</span>
           </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg animate-floatDelay">
             <span className="text-gray-800 text-sm font-medium">ROI: 6-12 months</span>
           </div>
         </div>
@@ -140,18 +132,18 @@ export default function Home() {
       {/* Success Story Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
+          <div className="text-center mb-16 animate-slideInUp">
+            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4 animate-float">
               Success Stories
             </h2>
-            <h3 className="text-2xl font-medium text-gray-600 mb-6">INTERVIEW</h3>
-            <p className="text-lg text-gray-600">
+            <h3 className="text-2xl font-medium text-gray-600 mb-6 animate-floatDelay">INTERVIEW</h3>
+            <p className="text-lg text-gray-600 animate-floatDelayMore">
               Meet our special franchise owners and their success stories.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slideInLeft">
               <CardContent className="p-0">
                 <div className="h-64 relative overflow-hidden">
                   <Image
@@ -162,20 +154,20 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute bottom-4 left-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 animate-float">
                       <span className="text-green-600 text-xs font-medium">SUCCESS STORY</span>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-medium text-gray-800 mb-2">
+                  <h4 className="text-lg font-medium text-gray-800 mb-2 animate-floatSlow">
                     Owner who decided to open a second store in just 6 months
                   </h4>
-                  <p className="text-gray-600">GrayPipple Changwon Store</p>
+                  <p className="text-gray-600 animate-floatDelay">GrayPipple Changwon Store</p>
                 </div>
               </CardContent>
             </Card>
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slideInRight">
               <CardContent className="p-0">
                 <div className="h-64 relative overflow-hidden">
                   <Image
@@ -186,16 +178,16 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute bottom-4 left-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 animate-float">
                       <span className="text-purple-600 text-xs font-medium">SUCCESS STORY</span>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-medium text-gray-800 mb-2">
+                  <h4 className="text-lg font-medium text-gray-800 mb-2 animate-floatSlow">
                     29-year-old entrepreneur earning $80,000 monthly
                   </h4>
-                  <p className="text-gray-600">GrayPipple Seomyeon Store</p>
+                  <p className="text-gray-600 animate-floatDelay">GrayPipple Seomyeon Store</p>
                 </div>
               </CardContent>
             </Card>
@@ -204,155 +196,10 @@ export default function Home() {
       </section>
 
       {/* Store Locations */}
-      <section id="store" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
-              GrayPipple Stores
-            </h2>
-            <h3 className="text-2xl font-medium text-gray-600 mb-6">OUR STORES</h3>
-            <p className="text-lg text-gray-600">
-              Find the nearest GrayPipple store near you!
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <Card key={index} className="overflow-hidden border-0 shadow-md hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-0">
-                  <div className="h-32 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-8 h-8 bg-gray-400 rounded-full mx-auto mb-1"></div>
-                      <span className="text-gray-500 text-xs">Store {index + 1}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StoreSwiper />
 
       {/* Promotion Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
-              New Beverages & Desserts
-            </h2>
-            <h3 className="text-2xl font-medium text-gray-600 mb-6">PROMOTION</h3>
-            <p className="text-lg text-gray-600">
-              Introducing the new menu items launched by GrayPipple.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {/* Cookie Choux Card */}
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-black">
-              <CardContent className="p-0 relative h-96">
-                <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
-                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <p className="text-orange-300 text-sm font-medium uppercase tracking-wider mb-2">CRISPY AND CREAMY</p>
-                    <h3 className="text-4xl font-bold text-orange-200 mb-2">COOKIE</h3>
-                    <h3 className="text-4xl font-bold text-orange-200 mb-4">CHOUX</h3>
-                    <p className="text-orange-300 italic text-lg">Sweet Delight</p>
-                  </div>
-                  
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <p className="text-white text-xs mb-1">바닐라 쿠키슈</p>
-                      <p className="text-gray-300 text-xs">Vanilla Cookie Choux</p>
-                      <p className="text-white text-xs mt-2">초코 쿠키슈</p>
-                      <p className="text-gray-300 text-xs">Chocolate Cookie Choux</p>
-                    </div>
-                    <div className="w-32 h-32 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-                      <div className="w-24 h-24 bg-orange-300 rounded-full flex items-center justify-center">
-                        <span className="text-xs text-gray-800 font-bold">CHOUX</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Winter Delights Card */}
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <CardContent className="p-0 relative h-96">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-800 via-teal-700 to-green-800"></div>
-                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <p className="text-pink-300 text-sm font-medium uppercase tracking-wider mb-2">HOLIDAY SPECIALS</p>
-                    <h3 className="text-4xl font-bold text-pink-200 mb-2">COZY WINTER</h3>
-                    <h3 className="text-4xl font-bold text-pink-200 mb-4">DELIGHTS</h3>
-                  </div>
-                  
-                  <div className="flex justify-between items-end">
-                    <div className="space-y-3">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2">
-                        <p className="text-white text-xs font-medium">Red Velvet</p>
-                        <p className="text-pink-200 text-xs">Cheesecake Latte</p>
-                        <p className="text-gray-200 text-xs">레드벨벳치즈케이크라떼</p>
-                      </div>
-                      <div className="flex space-x-2">
-                        <div className="w-8 h-8 bg-green-400 rounded-full"></div>
-                        <div className="w-8 h-8 bg-pink-400 rounded-full"></div>
-                        <div className="w-8 h-8 bg-red-400 rounded-full"></div>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="w-16 h-16 bg-gradient-to-b from-green-300 to-green-500 rounded-full"></div>
-                      <div className="w-16 h-16 bg-gradient-to-b from-pink-300 to-pink-500 rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Signature Latte Card */}
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <CardContent className="p-0 relative h-96">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-900 via-teal-800 to-gray-900"></div>
-                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <p className="text-blue-300 text-sm font-medium uppercase tracking-wider mb-2">TASTE THE EXCLUSIVE FLAVORS</p>
-                    <h3 className="text-4xl font-bold text-white mb-2">SIGNATURE</h3>
-                    <h3 className="text-4xl font-bold text-white mb-4">LATTE</h3>
-                  </div>
-                  
-                  <div className="flex justify-between items-end">
-                    <div className="space-y-3">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
-                        <p className="text-blue-200 text-xs">ICED / HOT</p>
-                        <p className="text-white text-xs font-medium">스트로베리크림라떼</p>
-                        <p className="text-gray-300 text-xs">Strawberry Cream Latte</p>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
-                        <p className="text-blue-200 text-xs">ICED</p>
-                        <p className="text-white text-xs font-medium">캐러멜리조또</p>
-                        <p className="text-gray-300 text-xs">Caramel Risotto</p>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="w-20 h-20 bg-gradient-to-b from-amber-200 to-amber-400 rounded-lg transform rotate-12"></div>
-                      <div className="w-16 h-16 bg-gradient-to-b from-blue-200 to-blue-400 rounded-lg transform -rotate-6"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Hand illustration */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-orange-200 rounded-full opacity-70"></div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className="text-center">
-            <Button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full">
-              VIEW MORE
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PromotionSwiper />
 
       {/* News & Notice Section */}
       <section id="news" className="py-20 bg-gradient-to-br from-green-800 via-green-700 to-green-900">
