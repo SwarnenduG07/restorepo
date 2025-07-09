@@ -219,10 +219,10 @@ const AnimatedBestMenuSection = () => {
           {/* Title and Categories Row */}
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-12">
             <div className="text-left mb-8 lg:mb-0">
-              <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-2">
+              <h2 className="text-7xl md:text-7xl font-bold text-gray-800 mb-2">
                 BEST MENU
               </h2>
-              <h3 className="text-2xl font-medium text-gray-600">PREMIUM SELECTIONS</h3>
+             
             </div>
             
             {/* Category Buttons */}
@@ -233,10 +233,10 @@ const AnimatedBestMenuSection = () => {
                   onClick={() => {
                     setSelectedCategory(category)
                   }}
-                  className={`font-medium border-b-2 pb-2 px-3 transition-all duration-300 text-sm md:text-base ${
+                  className={`font-medium pb-2 px-4 py-2 transition-all duration-300 text-sm md:text-base rounded-full ${
                     selectedCategory === category
-                      ? 'text-gray-800 border-gray-800'
-                      : 'text-gray-500 border-transparent hover:text-gray-800 hover:border-gray-300'
+                      ? 'bg-black text-white shadow-lg'
+                      : 'text-gray-500 hover:text-gray-800 hover:bg-gray-100'
                   }`}
                 >
                   {category}
