@@ -1,0 +1,23 @@
+<svg width="300" height="120" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- GRAYPIPPLE text -->
+  <text x="150" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" letter-spacing="3px">
+    GRAYPIPPLE
+  </text>
+  
+  <!-- COFFEE text -->
+  <text x="150" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="white" letter-spacing="4px">
+    COFFEE
+  </text>
+  
+  <!-- Coffee bean decoration -->
+  <ellipse cx="50" cy="30" rx="8" ry="12" fill="white" opacity="0.8"/>
+  <ellipse cx="50" cy="30" rx="3" ry="8" fill="none" stroke="white" stroke-width="1" opacity="0.6"/>
+  
+  <ellipse cx="250" cy="30" rx="8" ry="12" fill="white" opacity="0.8"/>
+  <ellipse cx="250" cy="30" rx="3" ry="8" fill="none" stroke="white" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Premium Coffee Experience -->
+  <text x="150" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="light" fill="white" letter-spacing="2px" opacity="0.8">
+    Premium Coffee Experience
+  </text>
+</svg>
