@@ -17,17 +17,17 @@ const promotionItems = [
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1515823064285-0b55bcdf0c90?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
-    alt: "Jeju Matcha",
+    src: "https://images.unsplash.com/photo-1564890273409-09c25ba9eb3b?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    alt: "Jeju Matcha Latte",
     title: "JEJU MATCHA",
     subtitle: "LAYERS OF FLAVOR",
-    description: "제주의 청정한 말차로 완성된 완성된 감미의 절정 온리 원의 진수 흐름",
+    description: "제주의 청정한 말차로 완성된 완성된 감미의 절정",
     bgColor: "from-green-800 via-green-700 to-green-900",
     textColor: "text-white"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
     alt: "Cookie Choux",
     title: "COOKIE CHOUX",
     subtitle: "CRISPY AND CREAMY",
@@ -38,12 +38,32 @@ const promotionItems = [
   {
     id: 4,
     src: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
-    alt: "Cold Brew Coffee",
-    title: "COLD BREW",
-    subtitle: "SMOOTH COFFEE EXPERIENCE",
-    description: "콜드브루 커피 매끄러운 커피 경험",
-    bgColor: "from-purple-900 via-purple-800 to-indigo-900",
-    textColor: "text-pink-200"
+    alt: "Iced Coffee",
+    title: "ICED COFFEE",
+    subtitle: "REFRESHING COLD BREW",
+    description: "시원한 아이스 커피로 더운 여름을 시원하게",
+    bgColor: "from-blue-900 via-blue-800 to-indigo-900",
+    textColor: "text-blue-200"
+  },
+  {
+    id: 5,
+    src: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    alt: "Caramel Frappuccino",
+    title: "CARAMEL FRAPPÉ",
+    subtitle: "SWEET INDULGENCE",
+    description: "달콤한 카라멜과 부드러운 크림의 조화",
+    bgColor: "from-amber-800 via-yellow-700 to-orange-800",
+    textColor: "text-yellow-100"
+  },
+  {
+    id: 6,
+    src: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    alt: "Cappuccino",
+    title: "CAPPUCCINO",
+    subtitle: "CLASSIC ITALIAN",
+    description: "정통 이탈리안 스타일의 크리미한 카푸치노",
+    bgColor: "from-brown-800 via-amber-700 to-orange-700",
+    textColor: "text-amber-100"
   }
 ]
 
@@ -57,14 +77,14 @@ const PromotionSwiper = () => {
   // Calculate how many slides to show based on screen width
   const getSlidesPerView = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1024) return 3.2 // Desktop: 3.2 slides
-      if (window.innerWidth >= 768) return 2.2   // Tablet: 2.2 slides
-      return 1.1 // Mobile: 1.1 slides
+      if (window.innerWidth >= 1024) return 4.5 // Desktop: 4.5 slides
+      if (window.innerWidth >= 768) return 3   // Tablet: 3 slides
+      return 1.5 // Mobile: 1.5 slides
     }
-    return 3.2
+    return 4.5
   }
 
-  const [slidesPerView, setSlidesPerView] = useState(3.2)
+  const [slidesPerView, setSlidesPerView] = useState(4.5)
 
   useEffect(() => {
     const handleResize = () => {
@@ -139,7 +159,7 @@ const PromotionSwiper = () => {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white promotion-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex justify-between items-start mb-16">
@@ -147,7 +167,7 @@ const PromotionSwiper = () => {
             <h2 className="text-5xl md:text-6xl font-bold text-black mb-4 animate-floatSlow">
               PROMOTION
             </h2>
-            <p className="text-lg text-gray-600 animate-floatDelay">
+            <p className="text-lg text-gray-700 animate-floatDelay">
               그레이피플에서 새롭게 출시한 신메뉴들을 소개합니다.
             </p>
           </div>
@@ -180,51 +200,57 @@ const PromotionSwiper = () => {
                 <div 
                   key={item.id} 
                   className={`swiper-slide flex-shrink-0 px-3 ${
-                    slidesPerView === 1.1 ? 'w-full' :
-                    slidesPerView === 2.2 ? 'w-1/2' : 'w-1/3'
+                    slidesPerView === 1.5 ? 'w-2/3' :
+                    slidesPerView === 3 ? 'w-1/3' : 'w-1/4'
                   }`}
                 >
                   <a href="/menu/" className="block group">
-                    <div className={`relative h-96 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 bg-gradient-to-br ${item.bgColor}`}>
+                    <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white">
                       
-                      {/* Background Image */}
-                      <div className="absolute inset-0">
+                      {/* Product Image Section - Top 2/3 */}
+                      <div className="h-2/3 relative overflow-hidden">
                         <Image
                           src={item.src}
                           alt={item.alt}
                           fill
-                          className="object-cover opacity-30 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700"
-                          priority={index < 3}
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
+                          priority={index < 4}
                         />
-                      </div>
-
-                      {/* Content Overlay */}
-                      <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                        <div>
-                          <p className={`text-sm font-medium tracking-widest uppercase mb-4 ${item.textColor} opacity-90`}>
-                            {item.subtitle}
-                          </p>
-                          <h3 className={`text-4xl md:text-5xl font-black leading-tight mb-6 ${item.textColor}`}>
-                            {item.title.split(' ').map((word, i) => (
-                              <div key={i}>{word}</div>
-                            ))}
-                          </h3>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent group-hover:from-black/50 transition-all duration-500"></div>
+                        
+                        {/* Product Badge */}
+                        <div className="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-2 rounded-full shadow-lg">
+                          NEW
                         </div>
 
-                        <div className="mt-auto">
-                          <p className={`text-sm leading-relaxed ${item.textColor} opacity-80`}>
-                            {item.description}
-                          </p>
+                        {/* Price Badge */}
+                        <div className="absolute top-4 right-4 bg-black text-white text-xs font-bold px-3 py-2 rounded-full shadow-lg">
+                          $5.99
                         </div>
                       </div>
+                      
+                      {/* Content Section - Bottom 1/3 */}
+                      <div className="h-1/3 p-5 flex flex-col justify-center bg-white relative">
+                        <p className="text-xs text-gray-600 font-medium tracking-wider uppercase mb-2">
+                          {item.subtitle}
+                        </p>
+                        <h3 className="text-lg font-bold text-black mb-2 group-hover:text-green-600 transition-colors leading-tight">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs text-gray-700 leading-relaxed">
+                          {item.description}
+                        </p>
 
-                      {/* Decorative Elements */}
-                      <div className="absolute top-6 right-6 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                        <div className="w-8 h-8 rounded-full bg-white/20"></div>
+                        {/* Action Button - Appears on Hover */}
+                        <div className="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <button className="bg-green-600 hover:bg-green-700 text-white text-xs px-4 py-2 rounded-full transition-colors duration-300">
+                            ORDER NOW
+                          </button>
+                        </div>
                       </div>
 
                       {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 rounded-3xl"></div>
+                      <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-green-200 transition-all duration-300 rounded-2xl"></div>
                     </div>
                   </a>
                 </div>

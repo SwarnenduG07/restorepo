@@ -130,14 +130,14 @@ export default function Home() {
       </section>
 
       {/* Success Story Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 success-story-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slideInUp">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4 animate-float">
+            <h2 className="text-3xl md:text-4xl font-light text-black mb-4 animate-float">
               Success Stories
             </h2>
-            <h3 className="text-2xl font-medium text-gray-600 mb-6 animate-floatDelay">INTERVIEW</h3>
-            <p className="text-lg text-gray-600 animate-floatDelayMore">
+            <h3 className="text-2xl font-medium text-gray-700 mb-6 animate-floatDelay">INTERVIEW</h3>
+            <p className="text-lg text-gray-700 animate-floatDelayMore">
               Meet our special franchise owners and their success stories.
             </p>
           </div>

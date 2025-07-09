@@ -156,17 +156,17 @@ const StoreSwiper = () => {
   const maxDots = Math.max(1, storeImages.length - slidesPerView + 1)
 
   return (
-    <section id="store" className="py-20 bg-white overflow-hidden">
+    <section id="store" className="py-20 bg-white overflow-hidden store-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title Section */}
         <div className="text-center mb-16">
-          <p className="text-gray-500 text-sm font-medium tracking-wider uppercase mb-4 animate-slideInUp animate-float">
+          <p className="text-gray-600 text-sm font-medium tracking-wider uppercase mb-4 animate-slideInUp animate-float">
             Gray Pipple franchise
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-slideInUp animate-floatSlow">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 animate-slideInUp animate-floatSlow">
             OUR STORE
           </h2>
-          <p className="text-lg text-gray-600 animate-slideInUp animate-floatDelay">
+          <p className="text-lg text-gray-700 animate-slideInUp animate-floatDelay">
             Find a Gray Pipple store near you!
           </p>
         </div>
@@ -301,20 +301,18 @@ const StoreSwiper = () => {
               ></div>
             </div>
           </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <p className="text-gray-600 mb-6">Visit any of our locations for the complete Gray Pipple experience</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
-              FIND NEAREST STORE
-            </button>
-            <button className="border border-gray-300 hover:border-gray-500 text-gray-700 hover:text-gray-900 px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
-              STORE LOCATOR
-            </button>
+        </div>          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <p className="text-gray-700 mb-6">Visit any of our locations for the complete Gray Pipple experience</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
+                FIND NEAREST STORE
+              </button>
+              <button className="border-2 border-black hover:border-green-600 text-black hover:text-green-600 px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
+                STORE LOCATOR
+              </button>
+            </div>
           </div>
-        </div>
       </div>
     </section>
   )
