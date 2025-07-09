@@ -42,7 +42,7 @@ const slideImages: SlideImage[] = [
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    src: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvZmZlZSUyMHNob3B8ZW58MHx8MHx8fDA%3D",
     alt: "Outdoor Cafe Terrace",
     title: "Outdoor Seating",
     description: "Fresh air dining with the perfect coffee companion"
@@ -61,7 +61,7 @@ const CafeSlideshowSection = () => {
   }, [])
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-gray-900">
+    <section className="relative h-screen w-full overflow-hidden bg-transparent">
       {/* Background Images */}
       <div className="relative h-full w-full">
         {slideImages.map((image, index) => (
@@ -87,7 +87,7 @@ const CafeSlideshowSection = () => {
             </div>
             
             {/* Dark overlay for better text readability */}
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div className="absolute inset-0 bg-transparent bg-opacity-40"></div>
           </div>
         ))}
       </div>

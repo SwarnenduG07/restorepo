@@ -235,8 +235,8 @@ const AnimatedBestMenuSection = () => {
                   }}
                   className={`font-medium pb-2 px-4 py-2 transition-all duration-300 text-sm md:text-base rounded-full ${
                     selectedCategory === category
-                      ? 'bg-black text-white shadow-lg'
-                      : 'text-gray-500 hover:text-gray-800 hover:bg-gray-100'
+                      ? 'bg-black text-white '
+                      : 'text-gray-900 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
                   {category}
