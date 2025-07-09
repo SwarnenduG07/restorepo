@@ -28,10 +28,7 @@ const Hero = () => {
   // Green background opacity - appears as video shrinks
   const greenBgOpacity = videoProgress * 0.95;
   
-  // Video positioning - keep centered throughout transformation
-  const videoLeft = 50; // Always centered horizontally
-  const videoTop = 50; // Always centered vertically
-  
+  // Video positioning - keep centered throughout transformatio  
   // Text animations with better timing
   const cafeNameOpacity = scrollY > 250 ? Math.min(1, (scrollY - 250) / 200) : 0;
   const cafeNameMoveStart = 700;

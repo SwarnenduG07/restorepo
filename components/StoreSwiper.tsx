@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 const storeImages = [
   {
@@ -63,8 +62,6 @@ const storeImages = [
 const StoreSwiper = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   // Calculate how many slides to show based on screen width
@@ -99,24 +96,6 @@ const StoreSwiper = () => {
     return () => clearInterval(interval)
   }, [isAutoPlaying, isTransitioning, currentIndex, slidesPerView])
 
-  const goToSlide = (index: number) => {
-    if (isTransitioning) return
-    setCurrentIndex(index)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 8000)
-  }
-
-  const goToPrev = () => {
-    if (isTransitioning) return
-    setIsTransitioning(true)
-    const maxIndex = Math.max(0, storeImages.length - slidesPerView)
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
-    setIsAutoPlaying(false)
-    setTimeout(() => {
-      setIsTransitioning(false)
-      setIsAutoPlaying(true)
-    }, 500)
-  }
 
   const goToNext = () => {
     if (isTransitioning) return
@@ -129,31 +108,6 @@ const StoreSwiper = () => {
       setIsAutoPlaying(true)
     }, 500)
   }
-
-  // Touch handlers for mobile swipe
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > 50
-    const isRightSwipe = distance < -50
-
-    if (isLeftSwipe) {
-      goToNext()
-    }
-    if (isRightSwipe) {
-      goToPrev()
-    }
-  }
-
-  const maxDots = Math.max(1, storeImages.length - slidesPerView + 1)
 
   return (
    <></>
