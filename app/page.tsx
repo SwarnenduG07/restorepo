@@ -6,6 +6,7 @@ import ScrollNavigation from "@/components/ScrollNavigation";
 import AnimatedInteriorSection from "@/components/AnimatedInteriorSection";
 import CafeSlideshowSection from "@/components/CafeSlideshowSection";
 import AnimatedBestMenuSection from "@/components/AnimatedBestMenuSection";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
@@ -14,27 +15,7 @@ export default function Home() {
       <ScrollNavigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100"></div>
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="mb-8">
-            <h2 className="text-lg md:text-xl text-gray-600 mb-4 font-light tracking-wide">
-              A CHANGE OF MOOD IN A BUSY DAILY LIFE
-            </h2>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-800 leading-tight mb-6">
-              Premium Coffee<br />
-              <span className="text-gray-600">For Your</span><br />
-              <span className="font-medium">Daily Moments</span>
-            </h1>
-          </div>
-          <div className="flex justify-center mb-12">
-            <Button variant="outline" className="rounded-full px-8 py-3 text-gray-600 border-gray-300 hover:bg-gray-50">
-              SCROLL ↓
-            </Button>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
-      </section>
+      <Hero />
 
       {/* Animated Interior Design Section */}
       <AnimatedInteriorSection />
