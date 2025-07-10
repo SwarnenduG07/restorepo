@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 interface DropdownItem {
   label: string;
   description?: string;
+  link?: string; // Optional link for navigation
 }
 
 interface NavItem {
@@ -17,10 +18,8 @@ const navigationItems: NavItem[] = [
   {
     label: "Brand",
     items: [
-      { label: "Our Story", description: "Learn about our journey" },
-      { label: "Mission & Vision", description: "Our goals and values" },
-      { label: "Team", description: "Meet our coffee experts" },
-      { label: "Sustainability", description: "Our environmental commitment" }
+      { label: "Brand Story", description: "" , link: "/brand" },
+      { label: "Directions", description: "" , link: "/directions" },
     ]
   },
   {
