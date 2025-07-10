@@ -121,30 +121,36 @@ export default function MenuPage() {
 
   return (
     <>
-      <Header />
+      
       <main className="pt-16 min-h-screen bg-white">
+        <Header />
         {/* Hero Banner */}
-        <div className="relative h-64 md:h-80 lg:h-96 bg-gray-900 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="overflow-hidden"
-            >
-              <motion.h1 
-                initial={{ y: "100%" }}
-                animate={{ y: "0%" }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl md:text-7xl font-bold tracking-wider"
-              >
-                MENU
-              </motion.h1>
-            </motion.div>
-          </div>
-          <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: "url('/hero-menu.jpg')" }}></div>
-        </div>
+     <div className="relative w-screen h-screen bg-gray-900 overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
+  
+  <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-20">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="overflow-hidden"
+    >
+      <motion.h1 
+        initial={{ y: "100%" }}
+        animate={{ y: "0%" }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-5xl md:text-7xl font-bold tracking-wider text-white"
+      >
+        MENU
+      </motion.h1>
+    </motion.div>
+  </div>
+  
+  <div 
+    className="absolute inset-0 bg-center bg-cover z-0"
+    style={{ backgroundImage: "url('https://wallpapercave.com/wp/wp9277799.jpg')" }}
+  ></div>
+</div>
 
         {/* Menu Content */}
         <div className="py-12 md:py-16 px-4">
