@@ -25,7 +25,7 @@ const navigationItems: NavItem[] = [
   {
     label: "Menu",
     items: [
-      { label: "Signature Coffee", description: "Our premium coffee blends" },
+      { label: "Signature Coffee", description: "Our premium coffee blends", link : "/menu" },
       { label: "Classic Coffee", description: "Traditional favorites" },
       { label: "Non-Coffee", description: "Tea and other beverages" },
       { label: "Desserts", description: "Sweet treats and pastries" },
@@ -35,16 +35,13 @@ const navigationItems: NavItem[] = [
   {
     label: "Stores",
     items: [
-      { label: "Find a Store", description: "Locate stores near you" },
-      { label: "Store Features", description: "What makes our stores special" },
-      { label: "Opening Hours", description: "When we're open" },
-      { label: "Store Events", description: "Upcoming events and activities" }
+      { label: "Find a Store", link:'/store' },
     ]
   },
   {
     label: "News",
     items: [
-      { label: "News", description: "Recent updates and announcements" },
+      { label: "News", description: "Recent updates and announcements", link: "/news"  },
       { label: "Events", description: "Recent Events" },
     ]
   },
@@ -79,6 +76,18 @@ export default function ScrollNavigation() {
 
   const handleMouseLeave = () => {
     setTimeout(() => setActiveDropdown(null), 150);
+  };
+
+  const handleNavigation = (link?: string) => {
+    if (link) {
+      // Close dropdown first
+      setActiveDropdown(null);
+      
+      // Navigate to the link
+      if (typeof window !== 'undefined') {
+        window.location.href = link;
+      }
+    }
   };
 
   return (
@@ -133,7 +142,7 @@ export default function ScrollNavigation() {
                           <button
                             key={index}
                             className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors duration-150"
-                            onClick={() => setActiveDropdown(null)}
+                            onClick={() => handleNavigation(dropdownItem.link)}
                           >
                             <div className="font-medium text-gray-900 text-sm">
                               {dropdownItem.label}
