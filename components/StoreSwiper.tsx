@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 const storeImages = [
   {
@@ -99,12 +98,6 @@ const StoreSwiper = () => {
     return () => clearInterval(interval)
   }, [isAutoPlaying, isTransitioning, currentIndex, slidesPerView])
 
-  const goToSlide = (index: number) => {
-    if (isTransitioning) return
-    setCurrentIndex(index)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 8000)
-  }
 
   const goToPrev = () => {
     if (isTransitioning) return
