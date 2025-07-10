@@ -1,12 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 
 interface DropdownItem {
   label: string;
   description?: string;
-  link?: string; // Optional link for navigation
+  link?: string;
 }
 
 interface NavItem {
@@ -18,14 +17,14 @@ const navigationItems: NavItem[] = [
   {
     label: "Brand",
     items: [
-      { label: "Brand Story", description: "" , link: "/brand" },
-      { label: "Directions", description: "" , link: "/directions" },
+      { label: "Brand Story", description: "", link: "/brand" },
+      { label: "Directions", description: "", link: "/directions" },
     ]
   },
   {
     label: "Menu",
     items: [
-      { label: "Signature Coffee", description: "Our premium coffee blends", link : "/menu" },
+      { label: "Signature Coffee", description: "Our premium coffee blends", link: "/menu" },
       { label: "Classic Coffee", description: "Traditional favorites" },
       { label: "Non-Coffee", description: "Tea and other beverages" },
       { label: "Desserts", description: "Sweet treats and pastries" },
@@ -35,13 +34,13 @@ const navigationItems: NavItem[] = [
   {
     label: "Stores",
     items: [
-      { label: "Find a Store", link:'/store' },
+      { label: "Find a Store", link: '/store' },
     ]
   },
   {
     label: "News",
     items: [
-      { label: "News", description: "Recent updates and announcements", link: "/news"  },
+      { label: "News", description: "Recent updates and announcements", link: "/news" },
       { label: "Events", description: "Recent Events" },
     ]
   },
@@ -74,16 +73,17 @@ export default function ScrollNavigation() {
     setActiveDropdown(activeDropdown === label ? null : label);
   };
 
+  const handleMouseEnter = (label: string) => {
+    setActiveDropdown(label);
+  };
+
   const handleMouseLeave = () => {
-    setTimeout(() => setActiveDropdown(null), 150);
+    setActiveDropdown(null);
   };
 
   const handleNavigation = (link?: string) => {
     if (link) {
-      // Close dropdown first
       setActiveDropdown(null);
-      
-      // Navigate to the link
       if (typeof window !== 'undefined') {
         window.location.href = link;
       }
@@ -92,6 +92,7 @@ export default function ScrollNavigation() {
 
   return (
     <>
+
       {/* Scroll-triggered header */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         isScrolled 
@@ -112,6 +113,7 @@ export default function ScrollNavigation() {
                   <div
                     key={item.label}
                     className="relative"
+                    onMouseEnter={() => handleMouseEnter(item.label)}
                     onMouseLeave={handleMouseLeave}
                   >
                     <button
@@ -120,7 +122,6 @@ export default function ScrollNavigation() {
                           ? 'text-gray-900 bg-gray-50'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                       }`}
-                      onMouseEnter={() => setActiveDropdown(item.label)}
                       onClick={() => handleDropdownToggle(item.label)}
                     >
                       <span>{item.label}</span>
@@ -132,10 +133,10 @@ export default function ScrollNavigation() {
                     </button>
 
                     {/* Dropdown Menu */}
-                    <div className={`absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-100 transition-all duration-200 ${
+                    <div className={`absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-100 transition-all duration-200 z-10 ${
                       activeDropdown === item.label 
                         ? 'opacity-100 visible translate-y-0' 
-                        : 'opacity-0 invisible -translate-y-2'
+                        : 'opacity-0 invisible -translate-y-2 pointer-events-none'
                     }`}>
                       <div className="py-2">
                         {item.items.map((dropdownItem, index) => (
@@ -161,9 +162,9 @@ export default function ScrollNavigation() {
               </div>
 
               {/* CTA Button */}
-              <Button className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 text-sm">
+              <button className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 text-sm rounded-lg transition-colors duration-200">
                 Franchise Inquiry
-              </Button>
+              </button>
 
               {/* Mobile menu button */}
               <button className="lg:hidden p-2 text-gray-600 hover:text-gray-900">
