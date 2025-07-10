@@ -100,8 +100,8 @@ const Header = () => {
                 style={{ minWidth: '200px' }}
               >
                 <ul className="py-2">
-                  <li><Link href="/brand/" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">브랜드 스토리</Link></li>
-                  <li><Link href="/brand/contact" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">오시는 길</Link></li>
+                  <li><Link href="/brand/" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Brand</Link></li>
+                  <li><Link href="/brand/contact" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Contact</Link></li>
                 </ul>
               </div>
             </li>
@@ -148,7 +148,7 @@ const Header = () => {
                 style={{ minWidth: '200px' }}
               >
                 <ul className="py-2">
-                  <li><Link href="/store/" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">매장찾기</Link></li>
+                  <li><Link href="/store/" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Store</Link></li>
                 </ul>
               </div>
             </li>
@@ -169,8 +169,8 @@ const Header = () => {
                 style={{ minWidth: '200px' }}
               >
                 <ul className="py-2">
-                  <li><Link href="/news/" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">새소식</Link></li>
-                  <li><Link href="/news/event" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">이벤트</Link></li>
+                  <li><Link href="/news/" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">News</Link></li>
+                  <li><Link href="/news/event" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Event</Link></li>
                 </ul>
               </div>
             </li>
@@ -242,7 +242,7 @@ const Header = () => {
                     className="text-xl font-medium text-gray-900 mb-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    브랜드
+                    Brand
                   </Link>
                   <ul className="ml-4 space-y-2">
                     <li>
@@ -251,7 +251,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        브랜드 스토리
+                        Brand Story
                       </Link>
                     </li>
                     <li>
@@ -260,7 +260,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        오시는 길
+                        Direction
                       </Link>
                     </li>
                   </ul>
@@ -275,7 +275,7 @@ const Header = () => {
                     className="text-xl font-medium text-gray-900 mb-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    메뉴
+                    Menu
                   </Link>
                   <ul className="ml-4 space-y-2">
                     <li>
@@ -344,7 +344,7 @@ const Header = () => {
                     className="text-xl font-medium text-gray-900 mb-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    매장
+                   Store
                   </Link>
                   <ul className="ml-4 space-y-2">
                     <li>
@@ -353,7 +353,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        매장찾기
+                        Store 
                       </Link>
                     </li>
                   </ul>
@@ -368,7 +368,7 @@ const Header = () => {
                     className="text-xl font-medium text-gray-900 mb-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    뉴스
+                   News
                   </Link>
                   <ul className="ml-4 space-y-2">
                     <li>
@@ -377,7 +377,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        새소식
+                        News
                       </Link>
                     </li>
                     <li>
@@ -386,7 +386,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        이벤트
+                        Event
                       </Link>
                     </li>
                   </ul>
@@ -401,7 +401,7 @@ const Header = () => {
                     className="text-xl font-medium text-gray-900 mb-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    창업
+                    Franchise
                   </Link>
                   <ul className="ml-4 space-y-2">
                     <li>
@@ -410,7 +410,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        창업경쟁력
+                        Startup competitiveness
                       </Link>
                     </li>
                     <li>
@@ -419,7 +419,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        창업안내
+                        Startup Guide
                       </Link>
                     </li>
                     <li>
@@ -428,7 +428,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        창업혜택
+                        startup Benefits
                       </Link>
                     </li>
                     <li>
@@ -437,7 +437,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        창업비용
+                       Startup Costs
                       </Link>
                     </li>
                     <li>
@@ -446,7 +446,7 @@ const Header = () => {
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        창업문의
+                        Startup Inquiry
                       </Link>
                     </li>
                   </ul>
