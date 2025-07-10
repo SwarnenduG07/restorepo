@@ -40,7 +40,7 @@ const franchiseData = [
 		description:
 			'Learn about the extensive training and ongoing support we provide to every franchise owner in the GrayPipple network.',
 		image:
-			'https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?auto=format&fit=crop&w=800&q=80', // training/support
+			'https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?auto=format&fit=crop&w=800&q=80', 
 		stats: [
 			{ value: '3 Weeks', label: 'Initial Training' },
 			{ value: '24/7', label: 'Operational Support' },

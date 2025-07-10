@@ -12,7 +12,7 @@ const newsData = [
     title: "Gray Peeple Coffee launches '3 peach drinks' and signature dessert 'New York cheesecake' for the summer season",
     date: "2025.06.19",
     excerpt: "Our summer menu features three refreshing peach beverages and our signature New York Cheesecake. These seasonal offerings have been crafted to provide the perfect balance of flavor and refreshment during the warmer months.",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=400&auto=format&fit=crop&q=60"
   },
   {
     id: 25,
@@ -71,7 +71,7 @@ const eventsData = [
     date: "2025.07.20",
     location: "All Stores",
     description: "Experience our new summer menu including the signature peach drinks and New York cheesecake. Limited time tasting event across all locations.",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&auto=format&fit=crop&q=60"
+    image: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=400&auto=format&fit=crop&q=60"
   },
   {
     id: 3,

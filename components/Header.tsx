@@ -170,7 +170,6 @@ const Header = () => {
               >
                 <ul className="py-2">
                   <li><Link href="/news/" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">News</Link></li>
-                  <li><Link href="/news/event" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Event</Link></li>
                 </ul>
               </div>
             </li>

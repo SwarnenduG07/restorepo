@@ -27,7 +27,7 @@ const franchiseData = [
       
       <p>Our franchise owners benefit from a business model refined through years of experience in the competitive coffee industry, allowing you to hit the ground running with confidence.</p>
     `,
-    image: '/franchise-why.jpg',
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3',
     stats: [
       { value: '250+', label: 'Locations Worldwide' },
       { value: '94%', label: 'Franchisee Satisfaction' },
@@ -63,7 +63,7 @@ const franchiseData = [
       
       <p>Qualified candidates should have a net worth of at least $350,000 with liquid assets of $120,000 or more.</p>
     `,
-    image: '/franchise-investment.jpg',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3',
     stats: [
       { value: '$250K-385K', label: 'Initial Investment' },
       { value: '15-20%', label: 'Average ROI' },
@@ -99,7 +99,7 @@ const franchiseData = [
       
       <p>Our support team includes experts in operations, training, marketing, supply chain, and real estate to help you overcome challenges and maximize opportunities.</p>
     `,
-    image: '/franchise-support.jpg',
+    image: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3',
     stats: [
       { value: '3 Weeks', label: 'Initial Training' },
       { value: '24/7', label: 'Operational Support' },
@@ -131,7 +131,7 @@ const franchiseData = [
       
       <p>Ready to take the next step? Complete our <a href="#">Franchise Application Form</a> to begin your journey.</p>
     `,
-    image: '/franchise-process.jpg',
+    image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3',
     stats: [
       { value: '6-9', label: 'Months to Opening' },
       { value: '100%', label: 'Site Selection Support' },
@@ -166,7 +166,7 @@ const franchiseData = [
         <p>"We researched many franchise opportunities before choosing GrayPipple. The return on investment and level of corporate support stood out from the competition. Four years later, we've never looked back. Our GrayPipple franchise has provided our family with financial security and work-life balance we never had in our previous careers."</p>
       </div>
     `,
-    image: '/franchise-stories.jpg',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=80&ixlib=rb-4.0.3',
     stats: [
       { value: '85%', label: 'Multi-Unit Owners' },
       { value: '92%', label: 'Would Invest Again' },
@@ -200,9 +200,9 @@ export default function FranchiseDetailPage() {
         <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-12">
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10"></div>
           <div className="absolute inset-0 flex flex-col justify-end p-8 z-20">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">{franchiseItem.title}</h1>
-            <p className="text-xl text-white/90 mb-4">{franchiseItem.subtitle}</p>
-            <p className="text-lg text-white/80 max-w-2xl">{franchiseItem.description}</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 ">{franchiseItem.title}</h1>
+            <p className="text-xl text-white mb-4">{franchiseItem.subtitle}</p>
+            <p className="text-lg text-white max-w-2xl">{franchiseItem.description}</p>
           </div>
           <div className="absolute inset-0 z-0">
             <Image 
