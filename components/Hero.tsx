@@ -95,7 +95,7 @@ const Hero = () => {
         }}
       >
         <iframe
-          src="https://player.vimeo.com/video/1009066827?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&muted=1"
+          src="https://player.vimeo.com/video/1009066827?badge=&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&muted=1"
           className="w-full h-full"
           frameBorder="0"
           allow="autoplay; fullscreen"

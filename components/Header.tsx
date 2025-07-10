@@ -181,21 +181,21 @@ const Header = () => {
               onMouseEnter={() => handleMenuHover(4)}
               onMouseLeave={handleMenuLeave}
             >
-              <Link href="/franchise/" className="block py-2 hover:text-green-600 transition-colors duration-300">
+              <Link href="/franchise" className="block py-2 hover:text-green-600 transition-colors duration-300">
                 FRANCHISE
               </Link>
               <div 
                 className={`absolute top-full left-0 bg-white shadow-lg rounded-b-lg overflow-hidden transition-all duration-300 ${
                   activeMenu === 4 ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
-                style={{ minWidth: '200px' }}
+                style={{ minWidth: '250px' }}
               >
                 <ul className="py-2">
-                  <li><Link href="/franchise/?idx=1" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">창업경쟁력</Link></li>
-                  <li><Link href="/franchise/?idx=2" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">창업안내</Link></li>
-                  <li><Link href="/franchise/?idx=3" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">창업혜택</Link></li>
-                  <li><Link href="/franchise/?idx=4" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">창업비용</Link></li>
-                  <li><Link href="/franchise/?idx=5" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">창업문의</Link></li>
+                  <li><Link href="/franchise/1" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Why GrayPipple</Link></li>
+                  <li><Link href="/franchise/2" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Investment Details</Link></li>
+                  <li><Link href="/franchise/3" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Support & Training</Link></li>
+                  <li><Link href="/franchise/4" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Application Process</Link></li>
+                  <li><Link href="/franchise/5" className="block px-5 py-2 text-gray-800 hover:bg-gray-100 hover:text-green-600 transition-colors">Success Stories</Link></li>
                 </ul>
               </div>
             </li>
@@ -397,7 +397,7 @@ const Header = () => {
               <li>
                 <div className="flex flex-col">
                   <Link 
-                    href="/franchise/" 
+                    href="/franchise" 
                     className="text-xl font-medium text-gray-900 mb-2"
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -406,7 +406,7 @@ const Header = () => {
                   <ul className="ml-4 space-y-2">
                     <li>
                       <Link 
-                        href="/franchise/?idx=1" 
+                        href="/franchise/1" 
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -415,7 +415,7 @@ const Header = () => {
                     </li>
                     <li>
                       <Link 
-                        href="/franchise/?idx=2" 
+                        href="/franchise/2" 
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -424,7 +424,7 @@ const Header = () => {
                     </li>
                     <li>
                       <Link 
-                        href="/franchise/?idx=3" 
+                        href="/franchise/3" 
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -433,7 +433,7 @@ const Header = () => {
                     </li>
                     <li>
                       <Link 
-                        href="/franchise/?idx=4" 
+                        href="/franchise/4" 
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -442,7 +442,7 @@ const Header = () => {
                     </li>
                     <li>
                       <Link 
-                        href="/franchise/?idx=5" 
+                        href="/franchise/5" 
                         className="text-gray-600 hover:text-green-600"
                         onClick={() => setIsMenuOpen(false)}
                       >

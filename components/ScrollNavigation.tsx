@@ -48,11 +48,11 @@ const navigationItems: NavItem[] = [
   {
     label: "Franchise",
     items: [
-      { label: "Why GrayPipple", description: "Benefits of joining us" },
-      { label: "Investment Details", description: "Financial requirements" },
-      { label: "Support & Training", description: "What we provide" },
-      { label: "Application Process", description: "How to get started" },
-      { label: "Success Stories", description: "Franchise owner testimonials" }
+      { label: "Why GrayPipple", description: "Benefits of joining us", link: "/franchise/1" },
+      { label: "Investment Details", description: "Financial requirements", link: "/franchise/2" },
+      { label: "Support & Training", description: "What we provide", link: "/franchise/3" },
+      { label: "Application Process", description: "How to get started", link: "/franchise/4" },
+      { label: "Success Stories", description: "Franchise owner testimonials", link: "/franchise/5" }
     ]
   }
 ];
