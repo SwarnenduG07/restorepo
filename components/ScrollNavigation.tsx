@@ -44,10 +44,8 @@ const navigationItems: NavItem[] = [
   {
     label: "News",
     items: [
-      { label: "Latest News", description: "Recent updates and announcements" },
-      { label: "Press Releases", description: "Official company news" },
-      { label: "Company Updates", description: "Business developments" },
-      { label: "Awards & Recognition", description: "Our achievements" }
+      { label: "News", description: "Recent updates and announcements" },
+      { label: "Events", description: "Recent Events" },
     ]
   },
   {
