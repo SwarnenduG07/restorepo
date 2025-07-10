@@ -1,5 +1,6 @@
 "use client"
 
+import ScrollNavigation from '@/components/ScrollNavigation';
 import React, { useState, useEffect } from 'react';
 
 const GrayPippleCoffeeWebsite = () => {
@@ -26,6 +27,7 @@ const GrayPippleCoffeeWebsite = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <ScrollNavigation />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image Placeholder - Replace with your image */}
