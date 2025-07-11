@@ -21,14 +21,19 @@ const Hero = () => {
   const videoProgress = Math.min(1, Math.max(0, (scrollY - videoTransitionStart) / (videoTransitionEnd - videoTransitionStart)));
   
   // Video dimensions matching the reference - vertical rectangle positioned
-  const videoWidth = 100 - (videoProgress * 64.435); // From 100vw to 35.565vw
-  const videoHeight = 100 - (videoProgress * 18.519); // From 100vh to 81.481vh
-  const videoBorderRadius = videoProgress * 12; // Subtle border radius
+  // Mobile responsive video dimensions
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const baseVideoWidth = isMobile ? 85 : 100; // Smaller on mobile
+  const baseVideoHeight = isMobile ? 90 : 100; // Adjust height for mobile
+  
+  const videoWidth = baseVideoWidth - (videoProgress * (isMobile ? 50 : 64.435)); // Responsive reduction
+  const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 20 : 18.519)); // Responsive reduction
+  const videoBorderRadius = videoProgress * (isMobile ? 8 : 12); // Smaller radius on mobile
   
   // Green background opacity - only appears when video starts shrinking significantly
   const greenBgOpacity = videoProgress > 0.3 ? (videoProgress - 0.3) * 1.36 : 0;
   
-  // Video positioning - keep centered throughout transformatio  
+  // Video positioning - keep centered throughout transformation  
   // Text animations with better timing
   const cafeNameOpacity = scrollY > 250 ? Math.min(1, (scrollY - 250) / 200) : 0;
   const cafeNameMoveStart = 700;
@@ -111,13 +116,13 @@ const Hero = () => {
         
         {/* Text overlay on video - appears when video transforms */}
         <div 
-          className="absolute bottom-6 left-6 text-white z-10"
+          className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 text-white z-10"
           style={{
             opacity: secondaryTextOpacity,
             transform: secondaryTextTransform,
           }}
         >
-          <p className="text-sm md:text-base font-light tracking-wider leading-relaxed opacity-80">
+          <p className="text-xs sm:text-sm md:text-base font-light tracking-wider leading-relaxed opacity-80">
             A CHANGE OF MOOD<br className="block sm:hidden" />
             <span className="hidden sm:inline">  </span>IN A BUSY DAILY LIFE
           </p>
@@ -126,42 +131,42 @@ const Hero = () => {
 
       {/* Side Content - appears alongside transformed video */}
       <div 
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20"
+        className="absolute right-4 sm:right-6 md:right-8 top-1/2 transform -translate-y-1/2 z-20"
         style={{
           opacity: sideContentOpacity,
           transform: `translateY(-50%) ${sideContentTransform}`,
         }}
       >
         {/* Logo */}
-        <div className="mb-12 flex justify-center">
+        <div className="mb-6 sm:mb-8 md:mb-12 flex justify-center">
           <img 
             src="/asset/img/common/logo.svg" 
             alt="GrayPipple Logo" 
-            className="w-16 h-16 md:w-20 md:h-20 opacity-90"
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 opacity-90"
           />
         </div>
 
         {/* Side Text Content */}
         <div className="text-white text-right max-w-xs">
-          <div className="mb-8">
-            <h3 className="text-lg md:text-xl font-light tracking-wide leading-relaxed mb-2">
+          <div className="mb-6 sm:mb-8">
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed mb-1 sm:mb-2">
               In busy daily life
             </h3>
-            <h3 className="text-lg md:text-xl font-light tracking-wide leading-relaxed">
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed">
               A cup of coffee to refresh your mood
             </h3>
           </div>
           
           {/* Scroll Indicator - shows different states */}
-          <div className="flex flex-col items-center mt-8">
+          <div className="flex flex-col items-center mt-6 sm:mt-8">
             <div 
-              className="w-8 h-8 border border-white rounded-full flex items-center justify-center mb-2 transition-opacity duration-300"
+              className="w-6 h-6 sm:w-8 sm:h-8 border border-white rounded-full flex items-center justify-center mb-2 transition-opacity duration-300"
               style={{ opacity: rectangleIsVisible ? 1 : 0.6 }}
             >
               <img 
                 src="/asset/img/main/scroll_arrow.png" 
                 alt="Scroll" 
-                className="w-3 h-3"
+                className="w-2 h-2 sm:w-3 sm:h-3"
               />
             </div>
             <p className="text-xs tracking-wider">
@@ -180,10 +185,10 @@ const Hero = () => {
         }}
       >
         <div className="text-center text-white px-4">
-          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-wider mb-4 drop-shadow-2xl">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold tracking-wider mb-2 sm:mb-4 drop-shadow-2xl">
             BEST CAFE
           </h1>
-          <p className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-light tracking-widest drop-shadow-lg">
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-light tracking-widest drop-shadow-lg">
             IN THE WORLD
           </p>
         </div>
@@ -198,42 +203,14 @@ const Hero = () => {
         }}
       >
         <div className="text-center text-white px-4">
-          <h2 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-bold tracking-widest drop-shadow-2xl leading-none">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wider drop-shadow-2xl animate-pulse">
             GRAYPIPPLE
           </h2>
-          <h3 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-widest drop-shadow-2xl mt-2 sm:mt-4">
-            COFFEE
-          </h3>
+          <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-widest mt-2 sm:mt-4 drop-shadow-lg opacity-80">
+            PREMIUM COFFEE EXPERIENCE
+          </p>
         </div>
       </div>
-
-      {/* Scroll Indicator - only visible initially */}
-      <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 text-white"
-        style={{ 
-          opacity: textOpacity,
-          animation: textOpacity > 0 ? 'bounce 2s infinite' : 'none'
-        }}
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-xs sm:text-sm tracking-wider">SCROLL</span>
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white rounded-full flex justify-center mt-2">
-            <div className="w-1 h-2 sm:h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Rectangle Phase Complete Indicator */}
-      {rectangleIsVisible && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 text-white animate-pulse">
-          <div className="flex flex-col items-center">
-            <span className="text-xs sm:text-sm tracking-wider">CONTINUE SCROLLING</span>
-            <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white rounded-full flex justify-center mt-2">
-              <div className="w-1 h-2 sm:h-3 bg-white rounded-full mt-2 animate-bounce"></div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

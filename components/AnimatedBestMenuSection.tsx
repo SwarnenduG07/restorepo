@@ -202,99 +202,147 @@ const bestMenuItems: BestMenuCard[] = [
   }
 ]
 
-const categories = ["SIGNATURE", "COFFEE", "NON-COFFEE", "BEVERAGE", "DESSERT"]
+const categories = ["ALL", "SIGNATURE", "COFFEE", "NON-COFFEE", "BEVERAGE", "DESSERT"]
 
 const AnimatedBestMenuSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState("SIGNATURE")
+  const [selectedCategory, setSelectedCategory] = useState<string>("ALL")
 
   const getVisibleItems = () => {
-    const categoryItems = bestMenuItems.filter(item => item.category === selectedCategory)
-    return categoryItems.slice(0, 4) // Show only first 4 items of selected category
+    const filtered = selectedCategory === "ALL" 
+      ? bestMenuItems 
+      : bestMenuItems.filter(item => item.category === selectedCategory)
+    
+    // Return different amounts based on screen size
+    return filtered.slice(0, 8) // Show 8 items maximum
   }
 
+  const filteredItems = getVisibleItems()
+
   return (
-    <section id="best-menu" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          {/* Title and Categories Row */}
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-12">
-            <div className="text-left mb-8 lg:mb-0">
-              <h2 className="text-7xl md:text-7xl font-bold text-gray-800 mb-2">
-                BEST MENU
-              </h2>
-             
-            </div>
-            
-            {/* Category Buttons */}
-            <div className="flex flex-wrap justify-center lg:justify-end gap-4 md:gap-6">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => {
-                    setSelectedCategory(category)
-                  }}
-                  className={`font-medium pb-2 px-4 py-2 transition-all duration-300 text-sm md:text-base rounded-full ${
-                    selectedCategory === category
-                      ? 'bg-black text-white '
-                      : 'text-gray-900 hover:text-gray-900 hover:bg-gray-100'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+    <section className="py-12 sm:py-16 lg:py-20 bg-black">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <div className="inline-block mb-3 sm:mb-4">
+            <span className="bg-green-600 text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium tracking-wider">
+              BEST MENU
+            </span>
           </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+            POPULAR<br />
+            <span className="text-green-400">SELECTIONS</span>
+          </h2>
+          <p className="text-gray-300 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed px-4">
+            Discover our customers' favorite beverages and treats, 
+            carefully crafted with premium ingredients
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {getVisibleItems().map((item, displayIndex) => (
-            <div
-              key={`${item.id}-${selectedCategory}`}
-              className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-xl animate-fadeIn"
-              style={{ animationDelay: `${displayIndex * 100}ms` }}
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 touch-manipulation ${
+                selectedCategory === category
+                  ? 'bg-green-600 text-white shadow-lg transform scale-105'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white border border-gray-700'
+              }`}
             >
-              <div className="h-56 bg-gradient-to-br from-gray-50 via-amber-50 to-orange-50 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-white/40"></div>
-                <div className="relative z-10 w-48 h-48">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-contain scale-110 hover:scale-125 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-1 leading-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-amber-600 font-medium uppercase tracking-wide">
-                      {item.subtitle}
-                    </p>
-                  </div>
-                  <span className="text-2xl font-bold text-gray-800 ml-2">
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Menu Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
+          {filteredItems.map((item, index) => (
+            <div
+              key={item.id}
+              className="group bg-gray-900 rounded-xl sm:rounded-2xl overflow-hidden hover:bg-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20 transform hover:-translate-y-1"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                animation: 'fadeInUp 0.6s ease-out forwards'
+              }}
+            >
+              {/* Image Container */}
+              <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
+                
+                {/* Price Badge */}
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+                  <span className="bg-green-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold shadow-lg">
                     {item.price}
                   </span>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-                <div className="mt-4 pt-3 border-t border-gray-100">
-                  <span className="text-xs text-gray-500 uppercase tracking-widest">
+
+                {/* Category Badge */}
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                  <span className="bg-black/60 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
                     {item.category}
                   </span>
                 </div>
               </div>
+
+              {/* Content */}
+              <div className="p-4 sm:p-5 md:p-6">
+                <div className="mb-2 sm:mb-3">
+                  <p className="text-green-400 text-xs sm:text-sm font-medium tracking-wider uppercase">
+                    {item.subtitle}
+                  </p>
+                </div>
+                
+                <h3 className="text-white text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 leading-tight group-hover:text-green-400 transition-colors">
+                  {item.title}
+                </h3>
+                
+                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">
+                  {item.description}
+                </p>
+
+                {/* Action Button */}
+                <button className="w-full bg-gray-800 hover:bg-green-600 text-white py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 border border-gray-700 hover:border-green-600 group-hover:shadow-lg touch-manipulation">
+                  Add to Cart
+                </button>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-green-500/50 transition-all duration-300 rounded-xl sm:rounded-2xl pointer-events-none"></div>
             </div>
           ))}
         </div>
 
+        {/* Load More / View All Button */}
         <div className="text-center">
-          <Button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full">
+          <Button className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 text-sm sm:text-base font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 touch-manipulation">
             VIEW FULL MENU
           </Button>
+        </div>
+
+        {/* Featured Statistics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16 lg:mt-20">
+          {[
+            { number: "50+", label: "Menu Items", color: "text-green-400" },
+            { number: "98%", label: "Customer Satisfaction", color: "text-blue-400" },
+            { number: "24/7", label: "Fresh Preparation", color: "text-yellow-400" },
+            { number: "100%", label: "Premium Quality", color: "text-purple-400" }
+          ].map((stat, index) => (
+            <div key={index} className="text-center p-4 sm:p-6 bg-gray-900 rounded-xl hover:bg-gray-800 transition-colors duration-300">
+              <h4 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 ${stat.color}`}>
+                {stat.number}
+              </h4>
+              <p className="text-gray-400 text-xs sm:text-sm font-medium">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
