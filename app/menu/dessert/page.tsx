@@ -12,7 +12,7 @@ const menuItems = [
   {
     id: 1,
     name: "Tiramisu Cake",
-    image: "/menuItems/Omijo Tea.png",
+    image: "/menuItems/Omija Tea.png",
     category: "DESSERT",
     price: "$6.80",
     description: "Classic Italian dessert with espresso and mascarpone"
@@ -36,7 +36,7 @@ const menuItems = [
   {
     id: 4,
     name: "Lemon Tart",
-    image: "/menuItems/Red BeanBingsu.png",
+    image: "/menuItems/Red Bean Bingsu.png",
     category: "DESSERT",
     price: "$5.90",
     description: "Tangy lemon curd with buttery pastry"

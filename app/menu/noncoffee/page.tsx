@@ -36,7 +36,7 @@ const menuItems = [
   {
     id: 4,
     name: "Hot Chocolate Supreme",
-    image: "/menuItems/hot-chocolate.jpg",
+    image: "/menuItems/Citron Tea.png",
     category: "NON-COFFEE",
     price: "$5.40",
     description: "Rich Belgian chocolate with whipped cream"
