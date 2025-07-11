@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import ScrollNavigation from '@/components/ScrollNavigation'
+import Link from 'next/link'
 
 const newsData = [
   {
@@ -83,7 +84,7 @@ const eventsData = [
   }
 ]
 
-const page = () => {
+const NewsPage = () => {
   const [activeTab, setActiveTab] = useState('news')
 
   useEffect(() => {
@@ -278,11 +279,11 @@ const page = () => {
             <div>
               <h4 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 text-black">Site Map</h4>
               <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
-                <li><a href="/#brand" className="hover:text-black transition-colors">Brand</a></li>
-                <li><a href="/#menu" className="hover:text-black transition-colors">Menu</a></li>
-                <li><a href="/#store" className="hover:text-black transition-colors">Stores</a></li>
-                <li><a href="/#news" className="hover:text-black transition-colors">News</a></li>
-                <li><a href="/#franchise" className="hover:text-black transition-colors">Franchise</a></li>
+                <li><Link href="/brand" className="hover:text-black transition-colors">Brand</Link></li>
+                <li><Link href="/menu" className="hover:text-black transition-colors">Menu</Link></li>
+                <li><Link href="/store" className="hover:text-black transition-colors">Stores</Link></li>
+                <li><Link href="/news" className="hover:text-black transition-colors">News</Link></li>
+                <li><Link href="/franchise" className="hover:text-black transition-colors">Franchise</Link></li>
               </ul>
             </div>
             <div>
@@ -307,4 +308,4 @@ const page = () => {
   )
 }
 
-export default page
+export default NewsPage
