@@ -2,6 +2,7 @@
 
 import ScrollNavigation from '@/components/ScrollNavigation';
 import React, { useState, useEffect } from 'react';
+import Header from '@/components/Header';
 
 const GrayPippleCoffeeWebsite = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +28,7 @@ const GrayPippleCoffeeWebsite = () => {
 
   return (
     <div className="min-h-screen bg-white">
-        <ScrollNavigation />
+        <Header />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image Placeholder - Replace with your image */}
@@ -60,7 +61,7 @@ const GrayPippleCoffeeWebsite = () => {
             <div className={`transform transition-all duration-1000 ${
               isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
             }`}>
-              <h3 className="text-4xl font-bold mb-8 text-center">ADDRESS</h3>
+              <h3 className="text-4xl font-bold mb-8 text-center text-black">ADDRESS</h3>
               <p className="text-lg text-gray-600 text-center leading-relaxed">
                 Busan Nam-gu Jinnam-ro 29beon-gil 28 Grey Pipple
               </p>
@@ -70,7 +71,7 @@ const GrayPippleCoffeeWebsite = () => {
             <div className={`transform transition-all duration-1000 delay-200 ${
               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}>
-              <h3 className="text-4xl font-bold mb-8 text-center">LOCATION</h3>
+              <h3 className="text-4xl font-bold mb-8 text-center text-black">LOCATION</h3>
               <p className="text-lg text-gray-600 text-center leading-relaxed">
                 5-minute walk from Daeyeon Station, Daeyeon Church bus stop location
               </p>
@@ -80,7 +81,7 @@ const GrayPippleCoffeeWebsite = () => {
             <div className={`transform transition-all duration-1000 delay-400 ${
               isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
             }`}>
-              <h3 className="text-4xl font-bold mb-8 text-center">E-MAIL</h3>
+              <h3 className="text-4xl font-bold mb-8 text-center text-black">E-MAIL</h3>
               <p className="text-lg text-gray-600 text-center leading-relaxed">
                 graypipple_official@naver.com
               </p>
@@ -90,7 +91,7 @@ const GrayPippleCoffeeWebsite = () => {
             <div className={`transform transition-all duration-1000 delay-600 ${
               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}>
-              <h3 className="text-4xl font-bold mb-8 text-center">TEL</h3>
+              <h3 className="text-4xl font-bold mb-8 text-center text-black">TEL</h3>
               <p className="text-lg text-gray-600 text-center leading-relaxed">
                 1811-9301 (AM 10:00 - PM 19:00)
               </p>
@@ -131,22 +132,22 @@ const GrayPippleCoffeeWebsite = () => {
           </div>
 
           {/* Company Information */}
-          <div className="text-center space-y-3 text-gray-600">
-            <p>
+          <div className="text-center space-y-3 text-black">
+            <p className='text-black'>
               <strong>GREYPIPPLE</strong> | CEO: Kang Tae-sung, Lee Sang-hwa | 
               Business Registration Number: 772-86-02577
             </p>
-            <p>
+            <p className='text-black'>
               Busan Nam-gu Jinnam-ro 29beon-gil 28 Grey Pipple | 
               Email: graypipple_official@naver.com
             </p>
-            <p>
+            <p className='text-black'>
               Franchise Inquires & Customer Support: 1811-9301
             </p>
           </div>
 
           {/* Copyright */}
-          <div className="mt-12 pt-8 border-t border-gray-200 text-center">
+          <div className="mt-12 pt-8 border-t border-gray-200 text-center text-black">
             <p className="text-gray-500 font-medium">
               COPYRIGHT © GRAYPIPPLE COFFEE ALL RIGHTS RESERVED.
             </p>
