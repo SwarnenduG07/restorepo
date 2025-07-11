@@ -196,10 +196,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div 
-          className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out lg:hidden ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
+  className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
+    isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+  }`}
+  style={{ backgroundColor: '#ffffff', opacity: 1 }}
+>
           <div className="flex justify-between items-center p-4 sm:p-6 border-b">
             <div className="menuLogo">
               <Link href="/" onClick={() => setIsMenuOpen(false)}>
