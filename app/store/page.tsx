@@ -1,5 +1,6 @@
 "use client"
 
+import Header from '@/components/Header';
 import ScrollNavigation from '@/components/ScrollNavigation';
 import React, { useState, useEffect } from 'react';
 
@@ -27,7 +28,7 @@ const GrayPippleCoffeeWebsite = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <ScrollNavigation />
+      <Header></Header>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image Placeholder - Replace with your image */}
@@ -35,7 +36,7 @@ const GrayPippleCoffeeWebsite = () => {
           {/* Coffee beans pattern overlay */}
            <div className="absolute inset-0 opacity-80" style={{
             backgroundImage: `url('https://images2.alphacoders.com/488/488908.jpg')`,
-            backgroundSize: '1000px'
+            backgroundSize: '1100px'
           }} />
           
 
@@ -55,7 +56,7 @@ const GrayPippleCoffeeWebsite = () => {
           <div className={`transform transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <h3 className="text-4xl font-bold mb-12 text-center">FIND US</h3>
+            <h3 className="text-4xl font-bold mb-12 text-center text-black">FIND US</h3>
             
             {/* Map Container */}
             <div className="w-full h-96 bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
@@ -99,15 +100,15 @@ const GrayPippleCoffeeWebsite = () => {
 
           {/* Company Information */}
           <div className="text-center space-y-3 text-gray-600">
-            <p>
+            <p className='text-black'>
               <strong>GREYPIPPLE</strong> | CEO: Kang Tae-sung, Lee Sang-hwa | 
               Business Registration Number: 772-86-02577
             </p>
-            <p>
+            <p className='text-black'>
               Busan Nam-gu Jinnam-ro 29beon-gil 28 Grey Pipple | 
               Email: graypipple_official@naver.com
             </p>
-            <p>
+            <p className='text-black'>
               Franchise Inquires & Customer Support: 1811-9301
             </p>
           </div>

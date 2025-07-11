@@ -32,7 +32,7 @@ export default function BrandPage() {
   return (
     <>
       <Header />
-      <main className="pt-16 min-h-screen bg-white">
+      <main className="min-h-screen bg-white">
         {/* Hero Banner */}
         <div className="relative h-screen bg-gray-900 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
