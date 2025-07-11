@@ -7,12 +7,12 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Header from '@/components/Header'
 
-// Dummy menu items data (replace with your actual data)
+// Updated menu items data with proper images from public/menuItems
 const menuItems = [
   {
     id: 1,
     name: "Signature Latte",
-    image: "/d4.png",
+    image: "/menuItems/Strawberry Ice Cream Latte.png",
     category: "NEW",
     price: "$5.50",
     description: "Our signature blend with steamed milk"
@@ -20,7 +20,7 @@ const menuItems = [
   {
     id: 2,
     name: "Iced Americano",
-    image: "/d3.png",
+    image: "/menuItems/Ice Americano.png",
     category: "NEW",
     price: "$4.50",
     description: "Strong and refreshing iced coffee"
@@ -28,7 +28,7 @@ const menuItems = [
   {
     id: 3,
     name: "Matcha Green Tea",
-    image: "/d2.png",
+    image: "/menuItems/Matcha Latte.png",
     category: "NEW",
     price: "$5.00",
     description: "Premium Japanese matcha with steamed milk"
@@ -36,7 +36,7 @@ const menuItems = [
   {
     id: 4,
     name: "Vanilla Cold Brew",
-    image: "/d1.png",
+    image: "/menuItems/Chocolate Latte.png",
     category: "NEW",
     price: "$5.75",
     description: "Smooth cold brew with vanilla flavor"
@@ -44,7 +44,7 @@ const menuItems = [
   {
     id: 5,
     name: "Caramel Macchiato",
-    image: "/cake4.png",
+    image: "/menuItems/Chocolate Gelato.png",
     category: "NEW",
     price: "$5.25",
     description: "Espresso with caramel and steamed milk"
@@ -52,7 +52,7 @@ const menuItems = [
   {
     id: 6,
     name: "Hazelnut Mocha",
-    image: "/cake3.png",
+    image: "/menuItems/Hot Citron Tea.png",
     category: "NEW",
     price: "$5.50",
     description: "Chocolate and hazelnut with espresso"
@@ -60,7 +60,7 @@ const menuItems = [
   {
     id: 7,
     name: "Strawberry Smoothie",
-    image: "/cake2.png", 
+    image: "/menuItems/Café Mocha.png", 
     category: "NEW",
     price: "$6.00",
     description: "Fresh strawberries blended with yogurt"
@@ -68,7 +68,7 @@ const menuItems = [
   {
     id: 8,
     name: "Blueberry Muffin",
-    image: "/cake1.png",
+    image: "/menuItems/Hot Chocolate Latte.png",
     category: "NEW",
     price: "$3.50",
     description: "Freshly baked muffin with blueberries"
@@ -76,7 +76,7 @@ const menuItems = [
   {
     id: 9,
     name: "Chocolate Croissant",
-    image: "/cc4.png",
+    image: "/menuItems/Hot Chamomile Tea.png",
     category: "NEW",
     price: "$3.75",
     description: "Buttery croissant with chocolate filling"
