@@ -122,7 +122,7 @@ export default function MenuPage() {
   return (
     <>
       
-      <main className="pt-16 min-h-screen bg-white">
+      <main className="min-h-screen bg-white">
         <Header />
         {/* Hero Banner */}
      <div className="relative w-screen h-screen bg-gray-900 overflow-hidden">
