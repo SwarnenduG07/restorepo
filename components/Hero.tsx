@@ -22,9 +22,8 @@ const Hero = () => {
   const baseVideoWidth = isMobile ? 85 : 100;
   const baseVideoHeight = isMobile ? 90 : 100;
 
-const videoWidth = baseVideoWidth - (videoProgress * (isMobile ? 20 : 30));
-const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 8 : 10));
-
+  const videoWidth = baseVideoWidth - (videoProgress * (isMobile ? 50 : 64.435));
+  const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 20 : 18.519));
   const videoBorderRadius = videoProgress * (isMobile ? 8 : 12);
 
   const greenBgOpacity = videoProgress > 0.3 ? (videoProgress - 0.3) * 1.36 : 0;
@@ -58,13 +57,12 @@ const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 8 : 10));
     <div 
       className="relative overflow-hidden hero-no-bg"
       style={{ 
-  transform: heroTransform,
-  height: '220vh', // or even 250vh if you want breathing room
-  paddingBottom: '4rem',
-  backgroundColor: 'transparent',
-  background: 'transparent'
-}}
-
+        transform: heroTransform,
+        height: '150vh',
+        paddingBottom: '2rem',
+        backgroundColor: 'transparent',
+        background: 'transparent'
+      }}
     >
 {/* Green Background - starts from green */}
 <div 
@@ -139,6 +137,15 @@ const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 8 : 10));
         </div>
 
         <div className="text-white text-right max-w-xs">
+          <div className="mb-6 sm:mb-8">
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed mb-1 sm:mb-2">
+              In busy daily life
+            </h3>
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed">
+              A cup of coffee to refresh your mood
+            </h3>
+          </div>
+
           <div className="flex flex-col items-center mt-6 sm:mt-8">
             <div 
               className="w-6 h-6 sm:w-8 sm:h-8 border border-white rounded-full flex items-center justify-center mb-2 transition-opacity duration-300"
@@ -177,13 +184,12 @@ const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 8 : 10));
 
       {/* Cafe Name Popup */}
       <div 
-  className="absolute left-1/2 top-1/2 z-30 pointer-events-none transform -translate-x-1/2 -translate-y-1/2"
-  style={{
-    opacity: cafeNameOpacity,
-    translate: `0 ${scrollY > cafeNameMoveStart ? `${(scrollY - cafeNameMoveStart) * 0.25}px` : '0'}`,
-  }}
->
-
+        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
+        style={{
+          opacity: cafeNameOpacity,
+          transform: `translate(-50%, -50%) ${cafeNameTransform}`,
+        }}
+      >
         <div className="text-center text-white px-4">
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wider drop-shadow-2xl animate-pulse">
             GRAYPIPPLE
