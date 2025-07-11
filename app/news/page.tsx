@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import ScrollNavigation from '@/components/ScrollNavigation'
 import Link from 'next/link'
+import Header from '@/components/Header'
 
 const newsData = [
   {
@@ -103,7 +104,7 @@ const NewsPage = () => {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <ScrollNavigation />
+     <Header></Header>
       
       {/* Hero Section with News Image */}
       <section className="relative h-screen overflow-hidden">
@@ -166,7 +167,7 @@ const NewsPage = () => {
                     className="w-full px-4 sm:px-6 py-3 sm:py-4 pr-10 sm:pr-12 text-base sm:text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                   <button className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </button>
@@ -175,11 +176,11 @@ const NewsPage = () => {
 
               {/* News Table - Desktop and Tablet */}
               <div className="hidden md:block bg-white rounded-lg shadow-sm overflow-hidden">
-                <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 bg-gray-100 border-b font-medium text-gray-700">
-                  <div className="col-span-1 text-center">NO</div>
-                  <div className="col-span-2">Category</div>
-                  <div className="col-span-7">Title</div>
-                  <div className="col-span-2 text-center">Creation date</div>
+                <div className="grid grid-cols-12 gap-4 p-4 lg:p-6 bg-gray-100 border-b font-medium text-black">
+                  <div className="col-span-1 text-center text-black">NO</div>
+                  <div className="col-span-2 text-black">Category</div>
+                  <div className="col-span-7 text-black">Title</div>
+                  <div className="col-span-2 text-center text-black">Creation date</div>
                 </div>
 
                 {/* News Items */}
@@ -279,11 +280,11 @@ const NewsPage = () => {
             <div>
               <h4 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 text-black">Site Map</h4>
               <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
-                <li><Link href="/brand" className="hover:text-black transition-colors">Brand</Link></li>
-                <li><Link href="/menu" className="hover:text-black transition-colors">Menu</Link></li>
-                <li><Link href="/store" className="hover:text-black transition-colors">Stores</Link></li>
-                <li><Link href="/news" className="hover:text-black transition-colors">News</Link></li>
-                <li><Link href="/franchise" className="hover:text-black transition-colors">Franchise</Link></li>
+                <li><Link href="/brand" className="hover:text-green-500 text-black transition-colors">Brand</Link></li>
+                <li><Link href="/menu" className="hover:text-green-500 text-black transition-colors">Menu</Link></li>
+                <li><Link href="/store" className="hover:text-green-500 text-black transition-colors">Stores</Link></li>
+                <li><Link href="/news" className="hover:text-green-500 text-black transition-colors">News</Link></li>
+                <li><Link href="/franchise" className="hover:text-green-500 text-black transition-colors">Franchise</Link></li>
               </ul>
             </div>
             <div>

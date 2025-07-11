@@ -185,14 +185,14 @@ export default function FranchiseDetailPage() {
     <div className="min-h-screen bg-white text-black flex flex-col">
       <Header />
       
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 mt-8 py-12">
         {/* Back button */}
         <div className="mb-8">
           <Link href="/franchise" className="inline-flex items-center text-green-700 hover:text-green-900">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            <span>All Franchise Information</span>
+            <span className='text-black font-medium'>All Franchise Information</span>
           </Link>
         </div>
         
@@ -227,19 +227,19 @@ export default function FranchiseDetailPage() {
         
         {/* Main content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <div className="lg:col-span-2 prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: franchiseItem.mainContent }}></div>
+          <div className="lg:col-span-2 prose prose-lg max-w-none text-black font-bold text-xl" dangerouslySetInnerHTML={{ __html: franchiseItem.mainContent }}></div>
           
           <div className="space-y-6">
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-bold mb-4">Ready to Join GrayPipple?</h3>
-              <p className="mb-4">Take the first step toward owning your own GrayPipple franchise today.</p>
+              <h3 className="text-xl font-bold mb-4 text-black">Ready to Join GrayPipple?</h3>
+              <p className="mb-4 text-black">Take the first step toward owning your own GrayPipple franchise today.</p>
               <button className="w-full bg-green-700 hover:bg-green-800 text-white font-medium py-3 px-4 rounded-lg transition-colors">
                 Request Information
               </button>
             </div>
             
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-bold mb-4">Franchise Resources</h3>
+              <h3 className="text-xl font-bold mb-4 text-black">Franchise Resources</h3>
               <ul className="space-y-3">
                 <li><Link href="#" className="text-green-700 hover:text-green-900 hover:underline">Franchise Brochure (PDF)</Link></li>
                 <li><Link href="#" className="text-green-700 hover:text-green-900 hover:underline">Frequently Asked Questions</Link></li>
@@ -249,9 +249,9 @@ export default function FranchiseDetailPage() {
             </div>
             
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-              <p className="mb-2">Have questions about franchising with GrayPipple?</p>
-              <p className="mb-4">Our franchise development team is here to help.</p>
+              <h3 className="text-xl font-bold mb-4 text-black">Contact Us</h3>
+              <p className="mb-2 text-black">Have questions about franchising with GrayPipple?</p>
+              <p className="mb-4 text-black">Our franchise development team is here to help.</p>
               <Link href="#" className="inline-block text-green-700 hover:text-green-900 hover:underline">franchise@graypipple.com</Link><br />
               <Link href="#" className="inline-block text-green-700 hover:text-green-900 hover:underline">(555) 123-4567</Link>
             </div>
@@ -272,7 +272,7 @@ export default function FranchiseDetailPage() {
                     : 'bg-white border border-gray-200 hover:border-green-700 text-black'
                 }`}
               >
-                <h3 className="font-medium text-lg">{item.title}</h3>
+                <h3 className="font-medium text-lg text-black">{item.title}</h3>
               </Link>
             ))}
           </div>

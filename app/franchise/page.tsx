@@ -40,7 +40,7 @@ const franchiseData = [
 		description:
 			'Learn about the extensive training and ongoing support we provide to every franchise owner in the GrayPipple network.',
 		image:
-			'https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?auto=format&fit=crop&w=800&q=80', 
+			'https://th.bing.com/th/id/R.7487d6f5aff96c5db819805a0284ddd3?rik=I3EGazCrTENj0g&riu=http%3a%2f%2fs1.picswalls.com%2fwallpapers%2f2016%2f06%2f10%2f4k-images_065230592_309.jpg&ehk=olW4WsRwOU5nnU8qvIRSz1kAQJcai0KDlRLiiMFmr14%3d&risl=1&pid=ImgRaw&r=0', 
 		stats: [
 			{ value: '3 Weeks', label: 'Initial Training' },
 			{ value: '24/7', label: 'Operational Support' },
@@ -132,7 +132,7 @@ export default function FranchisePage() {
 					<div className="lg:col-span-3">
 						{/* Why Franchise Section */}
 						<div className="mb-16 text-center">
-							<h2 className="text-3xl md:text-4xl font-bold mb-4">
+							<h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
 								Why Franchise with GrayPipple?
 							</h2>
 							<p className="text-gray-600 max-w-2xl mx-auto mb-10">
@@ -158,7 +158,7 @@ export default function FranchisePage() {
 											/>
 										</svg>
 									</div>
-									<h3 className="text-xl font-bold mb-2">Strong ROI</h3>
+									<h3 className="text-xl font-bold mb-2 text-black">Strong ROI</h3>
 									<p className="text-gray-600">
 										Competitive investment with excellent return potential and
 										multiple revenue streams.
@@ -181,7 +181,7 @@ export default function FranchisePage() {
 											/>
 										</svg>
 									</div>
-									<h3 className="text-xl font-bold mb-2">Proven System</h3>
+									<h3 className="text-xl font-bold mb-2 text-black">Proven System</h3>
 									<p className="text-gray-600">
 										A tested business model with operational excellence and
 										streamlined processes.
@@ -204,7 +204,7 @@ export default function FranchisePage() {
 											/>
 										</svg>
 									</div>
-									<h3 className="text-xl font-bold mb-2">Ongoing Support</h3>
+									<h3 className="text-xl font-bold mb-2 text-black">Ongoing Support</h3>
 									<p className="text-gray-600">
 										Comprehensive training, marketing assistance, and dedicated
 										franchise support team.
@@ -215,7 +215,7 @@ export default function FranchisePage() {
 
 						{/* Franchise Options */}
 						<div className="mt-16">
-							<h2 className="text-3xl font-bold mb-8 text-center">
+							<h2 className="text-3xl font-bold mb-8 text-center text-black">
 								Franchise Information
 							</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -294,7 +294,7 @@ export default function FranchisePage() {
 								</div>
 								<div className="relative h-64 lg:h-auto">
 									<Image
-										src="/franchise-process.jpg"
+										src="https://th.bing.com/th/id/R.7487d6f5aff96c5db819805a0284ddd3?rik=I3EGazCrTENj0g&riu=http%3a%2f%2fs1.picswalls.com%2fwallpapers%2f2016%2f06%2f10%2f4k-images_065230592_309.jpg&ehk=olW4WsRwOU5nnU8qvIRSz1kAQJcai0KDlRLiiMFmr14%3d&risl=1&pid=ImgRaw&r=0"
 										alt="GrayPipple franchise process"
 										fill
 										className="object-cover"
@@ -305,7 +305,7 @@ export default function FranchisePage() {
 
 						{/* Testimonial Section */}
 						<div className="container mx-auto px-0 py-16 bg-gray-50 mt-16">
-							<h2 className="text-3xl font-bold mb-12 text-center">
+							<h2 className="text-3xl font-bold mb-12 text-center text-black">
 								What Our Franchise Owners Say
 							</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -315,7 +315,7 @@ export default function FranchisePage() {
 											<span className="text-green-700 font-bold">MT</span>
 										</div>
 										<div>
-											<h3 className="font-bold">Mark Thompson</h3>
+											<h3 className="font-bold text-black">Mark Thompson</h3>
 											<p className="text-sm text-gray-500">
 												Seattle, WA • Owner since 2019
 											</p>
@@ -334,7 +334,7 @@ export default function FranchisePage() {
 											<span className="text-green-700 font-bold">JW</span>
 										</div>
 										<div>
-											<h3 className="font-bold">Jennifer Williams</h3>
+											<h3 className="font-bold text-black">Jennifer Williams</h3>
 											<p className="text-sm text-gray-500">
 												Chicago, IL • Owner since 2018
 											</p>
@@ -354,8 +354,8 @@ export default function FranchisePage() {
 					{/* Sidebar/Resources */}
 					<div className="space-y-6">
 						<div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-							<h3 className="text-xl font-bold mb-4">Ready to Join GrayPipple?</h3>
-							<p className="mb-4">
+							<h3 className="text-xl font-bold mb-4 text-black">Ready to Join GrayPipple?</h3>
+							<p className="mb-4 text-black">
 								Take the first step toward owning your own GrayPipple franchise
 								today.
 							</p>
@@ -364,7 +364,7 @@ export default function FranchisePage() {
 							</button>
 						</div>
 						<div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-							<h3 className="text-xl font-bold mb-4">Franchise Resources</h3>
+							<h3 className="text-xl font-bold mb-4 text-black">Franchise Resources</h3>
 							<ul className="space-y-3">
 								<li>
 									<Link
@@ -401,23 +401,23 @@ export default function FranchisePage() {
 							</ul>
 						</div>
 						<div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-							<h3 className="text-xl font-bold mb-4">Contact Us</h3>
-							<p className="mb-2">
+							<h3 className="text-xl font-bold mb-4 text-black">Contact Us</h3>
+							<p className="mb-2 text-black">
 								Having questions about franchising with GrayPipple?
 							</p>
-							<p className="mb-4">
+							<p className="mb-4 text-black">
 								Our franchise development team is here to help.
 							</p>
 							<Link
 								href="#"
-								className="inline-block text-green-700 hover:text-green-900 hover:underline"
+								className="inline-block text-black hover:text-green-900 hover:underline mr-1.5"
 							>
 								franchise@graypipple.com
 							</Link>
 							<br />
 							<Link
 								href="#"
-								className="inline-block text-green-700 hover:text-green-900 hover:underline"
+								className="inline-block text-black hover:text-green-900 hover:underline"
 							>
 								(555) 123-4567
 							</Link>
