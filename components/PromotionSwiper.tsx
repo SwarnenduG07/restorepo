@@ -17,7 +17,7 @@ const promotionItems = [
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1564890273409-09c25ba9eb3b?w=600&auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    src: "/menuItems/Iced Tea.png",
     alt: "Jeju Matcha Latte",
     title: "JEJU MATCHA",
     subtitle: "LAYERS OF FLAVOR",

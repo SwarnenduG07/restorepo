@@ -15,37 +15,19 @@ const interiorContents: InteriorContent[] = [
     id: 1,
     title: "MODERN TRENDY INTERIOR",
     subtitle: "Two Interior Concepts that Combine Trendiness and Modernity",
-    description: "Sophisticated and trendy designs with two distinctive interior concepts"
+    description: "Taking advantage of trendy and modernity. Interior with two concepts."
   },
   {
     id: 2,
-    title: "PREMIUM COFFEE ATMOSPHERE",
+    title: "NICE COFFEE SWEET DESSERT",
     subtitle: "Luxurious Experience", 
-    description: "Carefully crafted spaces that enhance your coffee experience and comfort"
-  },
-  {
-    id: 3,
-    title: "INNOVATIVE SPACE DESIGN",
-    subtitle: "Future-Forward Concepts",
-    description: "Cutting-edge interior solutions that blend functionality with aesthetic appeal"
-  },
-  {
-    id: 4,
-    title: "COZY URBAN SANCTUARY",
-    subtitle: "Metropolitan Comfort",
-    description: "Warm and inviting spaces designed for the modern urban lifestyle"
-  },
-  {
-    id: 5,
-    title: "ARTISANAL COFFEE LOUNGE",
-    subtitle: "Handcrafted Elegance",
-    description: "Thoughtfully designed interiors that celebrate the art of coffee making"
+    description: "Gray Pipples unique package.Make coffee and desserts special."
   }
 ]
 
 const AnimatedInteriorSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState(0) // Track animation direction
+  const [direction, setDirection] = useState(0) 
 
   useEffect(() => {
     const interval = setInterval(() => {
