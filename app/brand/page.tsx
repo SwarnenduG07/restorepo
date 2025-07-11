@@ -133,8 +133,8 @@ export default function BrandPage() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <p className="text-2xl font-bold text-gray-900 mb-4">GOOD PLACE, GOOD COFFEE, GOOD PEOPLE!</p>
-                  <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  <p className="text-2xl font-bold text-gray-100 mb-4">GOOD PLACE, GOOD COFFEE, GOOD PEOPLE!</p>
+                  <p className="text-lg text-gray-100 max-w-3xl mx-auto">
                     Value beyond the coffee pursued by Gray Pipple! Gray Peeple, with great spaces, 
                     delicious coffee, and great people, creates a culture that is more than just a cafe.
                   </p>
@@ -183,8 +183,8 @@ export default function BrandPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                       <div className="absolute bottom-6 left-6 text-white">
                         <div className="text-sm font-bold mb-2">DIFFERENCE {item.number}</div>
-                        <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                        <p className="text-lg">{item.subtitle}</p>
+                        <h3 className="text-2xl font-bold mb-2 text-white">{item.title}</h3>
+                        <p className="text-lg text-white">{item.subtitle}</p>
                       </div>
                     </div>
                     <p className="text-gray-600 leading-relaxed">{item.description}</p>

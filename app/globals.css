@@ -504,12 +504,14 @@ html, body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  color: white; /* Default white color */
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #d1d5db;
 }
 
 .swiper-button-prev:active,
@@ -531,7 +533,7 @@ html, body {
   height: 12px;
   display: inline-block;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.4); /* White bullets with transparency */
   opacity: 0.5;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -546,7 +548,7 @@ html, body {
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #1f2937;
+  background: white; /* Active bullet is solid white */
   transform: scale(1.1);
   width: 32px;
   border-radius: 16px;
@@ -659,260 +661,40 @@ html, body {
   }
 }
 
-/* Text color rules for white backgrounds */
-.bg-white,
-.bg-white * {
-  color: #1f2937 !important; /* Default to dark gray/black */
+/* Utility classes for consistent theming */
+.text-default {
+  color: white;
 }
 
-.bg-white h1,
-.bg-white h2,
-.bg-white h3,
-.bg-white h4,
-.bg-white h5,
-.bg-white h6 {
-  color: #111827 !important; /* Headings in black */
+.text-muted {
+  color: #d1d5db;
 }
 
-.bg-white .text-gray-500,
-.bg-white .text-gray-600,
-.bg-white .text-gray-700 {
-  color: #374151 !important; /* Ensure gray text is readable */
+.text-accent {
+  color: #10b981; /* Green accent color */
 }
 
-.bg-white .text-green-500,
-.bg-white .text-green-600,
-.bg-white .text-emerald-500,
-.bg-white .text-emerald-600 {
-  color: #059669 !important; /* Keep green accents */
+/* Keep existing animations and effects */
+.animate-float,
+.animate-floatDelay,
+.animate-floatDelayMore,
+.animate-floatButton {
+  color: inherit;
 }
 
-/* Button text colors on white backgrounds */
-.bg-white button {
-  color: #111827 !important;
-}
-
-.bg-white .bg-green-500,
-.bg-white .bg-green-600 {
-  color: white !important; /* Keep white text on green buttons */
-}
-
-/* Specific overrides for common elements */
-.bg-white .subtitle,
-.bg-white .description {
-  color: #4b5563 !important;
-}
-
-.bg-white .title,
-.bg-white .heading {
-  color: #111827 !important;
-}
-
-/* Ensure links are visible */
-.bg-white a {
-  color: #059669 !important;
-}
-
-.bg-white a:hover {
-  color: #047857 !important;
-}
-
-/* Badge and tag colors */
-.bg-white .badge,
-.bg-white .tag {
-  background-color: #059669 !important;
+/* Specific utility class for image overlays that need white text */
+.image-overlay-text {
   color: white !important;
 }
 
-/* Card content on white backgrounds */
-.bg-white .card-title {
-  color: #111827 !important;
-}
-
-.bg-white .card-subtitle {
-  color: #6b7280 !important;
-}
-
-.bg-white .card-description {
-  color: #4b5563 !important;
-}
-
-/* Enhanced rules for specific sections */
-.bg-white section,
-.bg-white .section {
-  color: #1f2937 !important;
-}
-
-/* Menu section specific rules */
-.bg-white .menu-item-title {
-  color: #111827 !important;
-}
-
-.bg-white .menu-item-description {
-  color: #4b5563 !important;
-}
-
-.bg-white .menu-item-price {
-  color: #059669 !important;
-}
-
-/* Store section specific rules */
-.bg-white .store-location {
-  color: #111827 !important;
-}
-
-.bg-white .store-address {
-  color: #4b5563 !important;
-}
-
-.bg-white .store-status {
-  color: #059669 !important;
-}
-
-/* Promotion section specific rules */
-.bg-white .promotion-title {
-  color: #111827 !important;
-}
-
-.bg-white .promotion-subtitle {
-  color: #6b7280 !important;
-}
-
-.bg-white .promotion-description {
-  color: #4b5563 !important;
-}
-
-/* Interior section specific rules */
-.bg-white .interior-title {
-  color: #111827 !important;
-}
-
-.bg-white .interior-description {
-  color: #4b5563 !important;
-}
-
-/* Best menu section specific rules */
-.bg-white .best-menu-title {
-  color: #111827 !important;
-}
-
-.bg-white .best-menu-description {
-  color: #4b5563 !important;
-}
-
-/* Success story section specific rules */
-.bg-white .success-story-title {
-  color: #111827 !important;
-}
-
-.bg-white .success-story-description {
-  color: #4b5563 !important;
-}
-
-/* Footer specific rules */
-.bg-white footer {
-  color: #1f2937 !important;
-}
-
-.bg-white footer h3 {
-  color: #111827 !important;
-}
-
-.bg-white footer p {
-  color: #4b5563 !important;
-}
-
-/* Navigation elements on white backgrounds */
-.bg-white nav {
-  color: #1f2937 !important;
-}
-
-.bg-white nav a {
-  color: #1f2937 !important;
-}
-
-.bg-white nav a:hover {
-  color: #059669 !important;
-}
-
-/* Form elements on white backgrounds */
-.bg-white input,
-.bg-white textarea,
-.bg-white select {
-  color: #1f2937 !important;
-  border-color: #d1d5db !important;
-}
-
-.bg-white label {
-  color: #374151 !important;
-}
-
-/* Utility classes for white backgrounds */
-.bg-white .text-black-force {
-  color: #111827 !important;
-}
-
-.bg-white .text-gray-force {
-  color: #4b5563 !important;
-}
-
-.bg-white .text-green-force {
-  color: #059669 !important;
-}
-
-/* Swiper specific rules on white backgrounds */
-.bg-white .swiper-pagination-bullet {
-  background: rgba(31, 41, 55, 0.3) !important;
-}
-
-.bg-white .swiper-pagination-bullet-active {
-  background: #1f2937 !important;
-}
-
-.bg-white .swiper-button-prev,
-.bg-white .swiper-button-next {
-  color: #1f2937 !important;
-}
-
-/* Hero section text overlays on white backgrounds */
-.bg-white .hero-title {
-  color: #111827 !important;
-}
-
-.bg-white .hero-subtitle {
-  color: #4b5563 !important;
-}
-
-/* Prevent any white text on white backgrounds */
-.bg-white .text-white {
-  color: #111827 !important;
-}
-
-.bg-white .text-white:hover {
-  color: #059669 !important;
-}
-
-/* Special case for buttons that should keep white text */
-.bg-white .bg-green-500 .text-white,
-.bg-white .bg-green-600 .text-white,
-.bg-white .bg-black .text-white,
-.bg-white .bg-gray-900 .text-white {
+.image-overlay-text h1,
+.image-overlay-text h2,
+.image-overlay-text h3,
+.image-overlay-text h4,
+.image-overlay-text h5,
+.image-overlay-text h6,
+.image-overlay-text p,
+.image-overlay-text span,
+.image-overlay-text div {
   color: white !important;
-}
-
-/* Ensure proper contrast for all text elements */
-.bg-white * {
-  text-shadow: none !important;
-}
-
-.bg-white .text-shadow-none {
-  text-shadow: none !important;
-}
-
-/* Animation and transition elements */
-.bg-white .animate-float,
-.bg-white .animate-floatDelay,
-.bg-white .animate-floatDelayMore,
-.bg-white .animate-floatButton {
-  color: inherit !important;
 }
