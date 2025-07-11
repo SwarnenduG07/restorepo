@@ -22,9 +22,8 @@ const Hero = () => {
   const baseVideoWidth = isMobile ? 85 : 100;
   const baseVideoHeight = isMobile ? 90 : 100;
 
-const videoWidth = baseVideoWidth - (videoProgress * (isMobile ? 20 : 30));
-const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 8 : 10));
-
+  const videoWidth = baseVideoWidth - (videoProgress * (isMobile ? 50 : 64.435));
+  const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 20 : 18.519));
   const videoBorderRadius = videoProgress * (isMobile ? 8 : 12);
 
   const greenBgOpacity = videoProgress > 0.3 ? (videoProgress - 0.3) * 1.36 : 0;
@@ -58,13 +57,12 @@ const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 8 : 10));
     <div 
       className="relative overflow-hidden hero-no-bg"
       style={{ 
-  transform: heroTransform,
-  height: '220vh', // or even 250vh if you want breathing room
-  paddingBottom: '4rem',
-  backgroundColor: 'transparent',
-  background: 'transparent'
-}}
-
+        transform: heroTransform,
+        height: '150vh',
+        paddingBottom: '2rem',
+        backgroundColor: 'transparent',
+        background: 'transparent'
+      }}
     >
 {/* Green Background - starts from green */}
 <div 
@@ -104,20 +102,6 @@ const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 8 : 10));
         zIndex: 1,
       }}
     />
-
-    {/* Overlay Text */}
-    <div 
-      className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6 text-white z-10"
-      style={{
-        opacity: secondaryTextOpacity,
-        transform: secondaryTextTransform,
-      }}
-    >
-      <p className="text-xs sm:text-sm md:text-base font-light tracking-wider leading-relaxed opacity-80">
-        A CHANGE OF MOOD<br className="block sm:hidden" />
-        <span className="hidden sm:inline">  </span>IN A BUSY DAILY LIFE
-      </p>
-    </div>
   </div>
 </div>
 
@@ -177,13 +161,12 @@ const videoHeight = baseVideoHeight - (videoProgress * (isMobile ? 8 : 10));
 
       {/* Cafe Name Popup */}
       <div 
-  className="absolute left-1/2 top-1/2 z-30 pointer-events-none transform -translate-x-1/2 -translate-y-1/2"
-  style={{
-    opacity: cafeNameOpacity,
-    translate: `0 ${scrollY > cafeNameMoveStart ? `${(scrollY - cafeNameMoveStart) * 0.25}px` : '0'}`,
-  }}
->
-
+        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
+        style={{
+          opacity: cafeNameOpacity,
+          transform: `translate(-50%, -50%) ${cafeNameTransform}`,
+        }}
+      >
         <div className="text-center text-white px-4">
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wider drop-shadow-2xl animate-pulse">
             GRAYPIPPLE
