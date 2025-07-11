@@ -1,10 +1,9 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import Header from '@/components/Header';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import HeaderFran from '@/components/franHeader';
 
 const franchiseData = [
   {
@@ -183,9 +182,9 @@ export default function FranchiseDetailPage() {
   
   return (
     <div className="min-h-screen bg-white text-black flex flex-col">
-      <Header />
+      <HeaderFran />
       
-      <div className="container mx-auto px-4 mt-8 py-12">
+      <div className="container mx-auto px-4 mt-16 py-12">
         {/* Back button */}
         <div className="mb-8">
           <Link href="/franchise" className="inline-flex items-center text-green-700 hover:text-green-900">
