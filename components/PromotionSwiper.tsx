@@ -218,8 +218,8 @@ const PromotionSwiper = () => {
 
                     {/* Content Overlay */}
                     <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end">
-                      <div className={`${item.textColor} animate-float`}>
-                        <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-wider mb-1 sm:mb-2 leading-tight">
+                      <div className={`text-white animate-float`}>
+                        <h3 className="text-base text-white sm:text-lg md:text-xl font-bold tracking-wider mb-1 sm:mb-2 leading-tight">
                           {item.title}
                         </h3>
                         <p className="text-xs sm:text-sm opacity-90 mb-2 sm:mb-3 tracking-wide">

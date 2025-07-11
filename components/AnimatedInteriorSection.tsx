@@ -127,7 +127,7 @@ const AnimatedInteriorSection = () => {
             >
               <motion.h2 
                 variants={itemVariants}
-                className="text-4xl md:text-2xl lg:text-6xl font-light text-green-800 mb-6 tracking-wide"
+                className="text-4xl  md:text-2xl lg:text-6xl font-bold text-green-800 mb-6 tracking-wide"
               >
                 {currentContent.title}
               </motion.h2>

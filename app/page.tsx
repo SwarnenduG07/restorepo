@@ -9,18 +9,19 @@ import AnimatedBestMenuSection from "@/components/AnimatedBestMenuSection";
 import StoreSwiper from "@/components/StoreSwiper";
 import PromotionSwiper from "@/components/PromotionSwiper";
 import Hero from "@/components/Hero";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div className="min-h-screen hero-container" style={{ background: 'transparent' }}>
       {/* Scroll Navigation */}
-      <ScrollNavigation />
+      <Header></Header>
 
       {/* Hero Section */}
       <Hero />
 
       {/* Content sections with background */}
-      <div className="bg-black">
+      <div className="">
         {/* Animated Interior Design Section */}
         <AnimatedInteriorSection />
 
@@ -51,7 +52,7 @@ export default function Home() {
           <div className="bg-gray-900 flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 animate-slideInRight order-1 lg:order-2 py-8 sm:py-12 lg:py-0">
             <div className="max-w-lg w-full">
               <div className="mb-4 sm:mb-6">
-                <p className="text-green-400 text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4 animate-float">
+                <p className="text-green-400 mt-5 text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4 animate-float">
                   BRAND STORY
                 </p>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 sm:mb-8 animate-floatSlow">
@@ -65,7 +66,7 @@ export default function Home() {
                 we deliver freedom and unique joy contained in a cup of coffee.
               </p>
               
-              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base transition-all duration-300 animate-floatButton hover:animate-bounce">
+              <Button className="bg-transparent mb-7 border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base">
                 VIEW MORE
               </Button>
             </div>
@@ -83,7 +84,7 @@ export default function Home() {
           <div className="bg-gray-900 flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 animate-slideInLeft py-8 sm:py-12 lg:py-0">
             <div className="max-w-lg w-full">
               <div className="mb-4 sm:mb-6">
-                <p className="text-blue-400 text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4 animate-float">
+                <p className="text-blue-400 mt-5 text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4 animate-float">
                   FRANCHISE OPPORTUNITY
                 </p>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 sm:mb-8 animate-floatSlow">
@@ -102,7 +103,7 @@ export default function Home() {
                 and comprehensive support system.
               </p>
               
-              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base transition-all duration-300 animate-floatButton hover:animate-bounce">
+              <Button className="bg-transparent mb-7 border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base">
                 VIEW MORE
               </Button>
             </div>
@@ -120,26 +121,17 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Floating Action Elements */}
-        <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 animate-slideInUp">
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 shadow-lg animate-float">
-            <span className="text-gray-800 text-xs sm:text-sm font-medium">Investment: $50K+</span>
-          </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 shadow-lg animate-floatDelay">
-            <span className="text-gray-800 text-xs sm:text-sm font-medium">ROI: 6-12 months</span>
-          </div>
-        </div>
       </section>
 
       {/* Success Story Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 success-story-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slideInUp">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black mb-4 animate-float">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 animate-float">
               Success Stories
             </h2>
-            <h3 className="text-xl sm:text-2xl font-medium text-gray-700 mb-4 sm:mb-6 animate-floatDelay">INTERVIEW</h3>
-            <p className="text-base sm:text-lg text-gray-700 animate-floatDelayMore px-4">
+            <h3 className="text-3xl sm:text-2xl font-medium text-gray-700 mb-4 sm:mb-6 animate-floatDelay">INTERVIEW</h3>
+            <p className="text-base sm:text-lg text-black font-medium animate-floatDelayMore px-4">
               Meet our special franchise owners and their success stories.
             </p>
           </div>
@@ -162,10 +154,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-4 sm:p-6">
-                  <h4 className="text-base sm:text-lg font-medium text-gray-800 mb-2 animate-floatSlow leading-snug">
+                  <h4 className="text-base sm:text-lg font-medium text-white mb-2 animate-floatSlow leading-snug">
                     Owner who decided to open a second store in just 6 months
                   </h4>
-                  <p className="text-sm sm:text-base text-gray-600 animate-floatDelay">GrayPipple Changwon Store</p>
+                  <p className="text-sm sm:text-base text-white animate-floatDelay">GrayPipple Changwon Store</p>
                 </div>
               </CardContent>
             </Card>
@@ -186,10 +178,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-4 sm:p-6">
-                  <h4 className="text-base sm:text-lg font-medium text-gray-800 mb-2 animate-floatSlow leading-snug">
+                  <h4 className="text-base sm:text-lg font-medium text-white mb-2 animate-floatSlow leading-snug">
                     29-year-old entrepreneur earning $80,000 monthly
                   </h4>
-                  <p className="text-sm sm:text-base text-gray-600 animate-floatDelay">GrayPipple Seomyeon Store</p>
+                  <p className="text-sm sm:text-base text-white animate-floatDelay">GrayPipple Seomyeon Store</p>
                 </div>
               </CardContent>
             </Card>
@@ -354,6 +346,7 @@ export default function Home() {
       {/* Floating Action Button - Top */}
       <FloatingActionButton />
       </div> {/* End of bg-black content sections */}
+      
     </div>
   );
 }
