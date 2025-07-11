@@ -96,10 +96,10 @@ const CafeSlideshowSection = () => {
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="text-center text-white px-4 max-w-4xl mx-auto">
           <div key={currentIndex} className="animate-fadeIn">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-6 drop-shadow-lg">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
               {slideImages[currentIndex].title}
             </h2>
-            <p className="text-xl md:text-2xl font-light drop-shadow-md leading-relaxed">
+            <p className="text-xl md:text-2xl font-semibold drop-shadow-md leading-relaxed">
               {slideImages[currentIndex].description}
             </p>
           </div>
