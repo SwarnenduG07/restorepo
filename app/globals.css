@@ -30,6 +30,82 @@ body {
   backdrop-filter: blur(8px);
 }
 
+/* Touch-friendly interactions */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile-optimized scroll behavior */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 4rem;
+  }
+}
+
+/* Enhanced responsive text utilities */
+.text-responsive-xs {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.text-responsive-sm {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+.text-responsive-base {
+  font-size: clamp(1rem, 3vw, 1.125rem);
+}
+
+.text-responsive-lg {
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
+}
+
+.text-responsive-xl {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.text-responsive-2xl {
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.text-responsive-3xl {
+  font-size: clamp(3rem, 8vw, 5rem);
+}
+
+/* Mobile-first spacing utilities */
+.mobile-px {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .mobile-px {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-px {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Improved mobile animations */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-mobile-safe {
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-mobile-safe {
+    animation: none;
+  }
+}
+
 /* Custom gradient animations */
 @keyframes fadeInUp {
   from {
@@ -44,6 +120,22 @@ body {
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Mobile-optimized fade in animation */
+@keyframes mobileSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-mobile-slide-up {
+  animation: mobileSlideUp 0.4s ease-out;
 }
 
 /* Scrolling text animation */
@@ -65,16 +157,73 @@ body {
   animation-play-state: paused;
 }
 
-/* Section padding consistency */
+/* Section padding consistency with mobile-first approach */
 .section-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 @media (min-width: 768px) {
   .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+}
+
+/* Mobile-optimized container */
+.mobile-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .mobile-container {
+    max-width: 640px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-container {
+    max-width: 1024px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mobile-container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .mobile-container {
+    max-width: 1536px;
   }
 }
 
@@ -194,53 +343,92 @@ body {
   body {
     @apply bg-background text-foreground;
     color: white; /* Default white text */
+    /* Mobile-first font sizing */
+    font-size: 14px;
+    line-height: 1.5;
   }
   
-  /* Default text colors */
+  @media (min-width: 640px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  /* Default text colors with mobile considerations */
   h1, h2, h3, h4, h5, h6 {
     color: white;
+    line-height: 1.2;
+  }
+  
+  /* Mobile-optimized heading sizes */
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+  }
+  
+  h4 {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
   }
   
   p, span, div {
     color: white;
+    line-height: 1.6;
   }
   
-  /* Links default to white with hover effects */
   a {
     color: white;
+    text-decoration: none;
     transition: color 0.2s ease;
   }
   
   a:hover {
-    color: #d1d5db; /* Light gray on hover */
+    color: #22c55e; /* Green hover color */
   }
 }
 
-/* Override for transparent hero */
 .hero-container {
-  background: transparent !important;
+  min-height: 100vh;
+  background: transparent;
 }
 
 .hero-container body {
   background: transparent !important;
 }
 
-/* Ensure no background shows through */
 html, body {
+  background-color: transparent;
   margin: 0;
   padding: 0;
 }
 
 .hero-no-bg {
   background: transparent !important;
-  background-color: transparent !important;
 }
 
-/* Fade-in animation for menu cards */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -248,65 +436,50 @@ html, body {
   }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease-out forwards;
+.animate-slideUpFade {
+  animation: slideUpFade 0.6s ease-out;
 }
 
-/* Staggered animations for menu items */
-@keyframes slideUpFade {
+@keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.animate-slideUpFade {
-  animation: slideUpFade 0.6s ease-out forwards;
-}
-
-/* Slideshow animations */
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
     transform: translateX(0);
   }
 }
 
 @keyframes slideOutLeft {
   from {
+    opacity: 1;
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-30px);
   }
 }
 
 .slide-enter {
-  animation: slideInRight 1s ease-in-out forwards;
+  animation: slideInRight 0.6s ease-out;
 }
 
 .slide-exit {
-  animation: slideOutLeft 1s ease-in-out forwards;
+  animation: slideOutLeft 0.6s ease-in;
 }
 
-/* Smooth transitions for duration classes */
 .duration-4000 {
   transition-duration: 4000ms;
 }
 
-/* Micro floating animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 }
 
@@ -315,7 +488,7 @@ html, body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-15px);
   }
 }
 
@@ -324,7 +497,7 @@ html, body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
   }
 }
 
@@ -333,61 +506,67 @@ html, body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-12px);
   }
 }
 
 @keyframes floatButton {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) scale(1);
   }
   50% {
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.02);
   }
 }
 
-/* Store slideshow animations */
 @keyframes slideLeft {
-  0% {
-    transform: translateX(0);
+  from {
+    transform: translateX(100%);
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(0);
   }
 }
 
 @keyframes slideRight {
-  0% {
+  from {
     transform: translateX(-100%);
   }
-  100% {
+  to {
     transform: translateX(0);
   }
 }
 
 .animate-slideLeft {
-  animation: slideLeft 60s linear infinite;
-  white-space: nowrap;
-  width: calc(200% + 24px); /* Ensure seamless loop */
+  animation: slideLeft 1s ease-out;
+}
+
+/* Mobile-optimized animations */
+@media (max-width: 768px) {
+  .animate-slideLeft {
+    animation: slideLeft 0.6s ease-out;
+  }
 }
 
 .animate-slideRight {
-  animation: slideRight 60s linear infinite;
-  white-space: nowrap;
-  width: calc(200% + 24px); /* Ensure seamless loop */
+  animation: slideRight 1s ease-out;
 }
 
-/* Pause animation on hover */
+@media (max-width: 768px) {
+  .animate-slideRight {
+    animation: slideRight 0.6s ease-out;
+  }
+}
+
 .animate-slideLeft:hover,
 .animate-slideRight:hover {
   animation-play-state: paused;
 }
 
-/* Scroll-triggered slide animations */
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-50px);
   }
   to {
     opacity: 1;
@@ -398,7 +577,7 @@ html, body {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(50px);
   }
   to {
     opacity: 1;
@@ -409,7 +588,7 @@ html, body {
 @keyframes slideInUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -418,20 +597,26 @@ html, body {
 }
 
 .animate-slideInLeft {
-  animation: slideInLeft 1s ease-out;
+  animation: slideInLeft 0.8s ease-out;
 }
 
 .animate-slideInRight {
-  animation: slideInRight 1s ease-out;
+  animation: slideInRight 0.8s ease-out;
 }
 
 .animate-slideInUp {
-  animation: slideInUp 1s ease-out;
-  animation-delay: 0.3s;
-  animation-fill-mode: both;
+  animation: slideInUp 0.6s ease-out;
 }
 
-/* Fade in animation */
+/* Mobile-optimized slide animations */
+@media (max-width: 768px) {
+  .animate-slideInLeft,
+  .animate-slideInRight,
+  .animate-slideInUp {
+    animation-duration: 0.4s;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -439,24 +624,30 @@ html, body {
 
 .animate-fadeIn { animation: fadeIn 0.8s ease-out; }
 
-/* Swiper-specific animations */
+/* Swipe animations for mobile */
 @keyframes swipeIn {
   from {
     opacity: 0;
-    transform: scale(0.9) translateY(20px);
+    transform: translateX(100%);
   }
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-swipe-in {
+    animation: swipeIn 0.3s ease-out;
   }
 }
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.3);
   }
   50% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
   }
 }
 
@@ -469,20 +660,25 @@ html, body {
   }
 }
 
-/* Swiper container improvements */
+/* Enhanced Swiper Styles with Mobile Optimization */
 .swiper-container {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .swiper-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
   display: flex;
   transition-property: transform;
-  box-sizing: content-box;
+  transition-timing-function: ease-out;
+  /* Faster transitions on mobile */
+  transition-duration: 0.3s;
+}
+
+@media (min-width: 768px) {
+  .swiper-wrapper {
+    transition-duration: 0.5s;
+  }
 }
 
 .swiper-slide {
@@ -490,26 +686,31 @@ html, body {
   width: 100%;
   height: 100%;
   position: relative;
-  transition-property: transform;
+  /* Smooth transitions for mobile */
+  transition: transform 0.3s ease-out;
 }
 
-/* Enhanced navigation arrows */
+/* Navigation arrows - hidden on mobile for better touch experience */
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+  }
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .swiper-button-prev:active,
@@ -517,116 +718,134 @@ html, body {
   transform: translateY(-50%) scale(0.95);
 }
 
-/* Enhanced pagination */
+/* Enhanced Pagination with Mobile Optimization */
 .swiper-pagination {
-  position: relative;
+  position: absolute;
   text-align: center;
-  transition: 300ms opacity;
+  transition: 0.3s opacity;
   transform: translate3d(0, 0, 0);
   z-index: 10;
 }
 
 .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   display: inline-block;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 0.5;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  margin: 0 4px;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  /* Better touch target for mobile */
+  min-width: 24px;
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .swiper-pagination-bullet {
+    min-width: auto;
+    min-height: auto;
+    width: 12px;
+    height: 12px;
+  }
 }
 
 .swiper-pagination-bullet:hover {
-  opacity: 0.8;
-  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .swiper-pagination-bullet-active {
-  opacity: 1;
-  background: #1f2937;
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.9);
   width: 32px;
-  border-radius: 16px;
+  border-radius: 8px;
+}
+
+@media (min-width: 640px) {
+  .swiper-pagination-bullet-active {
+    width: 24px;
+  }
 }
 
 .swiper-pagination-bullet-active::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
   border-radius: inherit;
+  background: linear-gradient(45deg, #22c55e, #16a34a);
+  z-index: -1;
 }
 
-/* Slide content animations */
+/* Enhanced mobile slide effects */
 .swiper-slide-active .animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
 .swiper-slide-active .animate-floatDelay {
-  animation: float 3s ease-in-out infinite;
-  animation-delay: 0.2s;
+  animation: floatDelay 3.5s ease-in-out infinite 0.5s;
 }
 
 .swiper-slide-active .animate-floatDelayMore {
-  animation: float 3s ease-in-out infinite;
-  animation-delay: 0.4s;
+  animation: floatDelayMore 4s ease-in-out infinite 1s;
 }
 
 .swiper-slide-active .animate-floatButton {
-  animation: float 3s ease-in-out infinite;
-  animation-delay: 0.6s;
+  animation: floatButton 2.5s ease-in-out infinite 1.5s;
 }
 
-/* Touch feedback */
+/* Mobile touch optimization */
 .swiper-container.swiper-container-touch {
-  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .swiper-container.swiper-container-touch:active {
   cursor: grabbing;
 }
 
-/* Responsive enhancements */
+/* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .swiper-button-prev,
   .swiper-button-next {
-    width: 40px;
-    height: 40px;
+    display: none !important;
   }
-  
+
   .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
+    margin: 0 3px;
   }
-  
+
   .swiper-pagination-bullet-active {
-    width: 24px;
+    width: 20px;
   }
 }
 
-/* Store card specific animations */
 .store-card-enter {
-  animation: swipeIn 0.6s ease-out;
+  animation: slideInUp 0.6s ease-out;
 }
 
 .store-card-hover {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
 }
 
 .store-card-hover:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Progress bar animation */
 .progress-bar {
-  transition: width 0.5s ease-out;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -636,12 +855,12 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  animation: shimmer 2s infinite;
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  animation: progressFill 4s ease-in-out infinite;
 }
 
+/* Mobile-optimized shimmer effect */
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -651,18 +870,17 @@ html, body {
   }
 }
 
-/* Backdrop blur enhancement for modern browsers */
-@supports (backdrop-filter: blur(10px)) {
+@media (max-width: 768px) {
   .backdrop-blur-enhanced {
-    backdrop-filter: blur(10px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }
 
-/* Text color rules for white backgrounds */
+/* Enhanced white section styles for better contrast */
 .bg-white,
 .bg-white * {
-  color: #1f2937 !important; /* Default to dark gray/black */
+  color: #000 !important;
 }
 
 .bg-white h1,
@@ -671,62 +889,57 @@ html, body {
 .bg-white h4,
 .bg-white h5,
 .bg-white h6 {
-  color: #111827 !important; /* Headings in black */
+  color: #000 !important;
 }
 
 .bg-white .text-gray-500,
 .bg-white .text-gray-600,
 .bg-white .text-gray-700 {
-  color: #374151 !important; /* Ensure gray text is readable */
+  color: #6b7280 !important;
 }
 
 .bg-white .text-green-500,
 .bg-white .text-green-600,
-.bg-white .text-emerald-500,
-.bg-white .text-emerald-600 {
-  color: #059669 !important; /* Keep green accents */
+.bg-white .text-green-400 {
+  color: #22c55e !important;
 }
 
-/* Button text colors on white backgrounds */
 .bg-white button {
-  color: #111827 !important;
+  color: inherit;
 }
 
 .bg-white .bg-green-500,
 .bg-white .bg-green-600 {
-  color: white !important; /* Keep white text on green buttons */
+  background-color: #22c55e !important;
+  color: white !important;
 }
 
-/* Specific overrides for common elements */
 .bg-white .subtitle,
 .bg-white .description {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
 .bg-white .title,
 .bg-white .heading {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
-/* Ensure links are visible */
 .bg-white a {
-  color: #059669 !important;
+  color: #000 !important;
 }
 
 .bg-white a:hover {
-  color: #047857 !important;
+  color: #22c55e !important;
 }
 
-/* Badge and tag colors */
 .bg-white .badge,
 .bg-white .tag {
-  background-color: #059669 !important;
-  color: white !important;
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
 }
 
-/* Card content on white backgrounds */
 .bg-white .card-title {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .card-subtitle {
@@ -734,44 +947,40 @@ html, body {
 }
 
 .bg-white .card-description {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
-/* Enhanced rules for specific sections */
 .bg-white section,
 .bg-white .section {
-  color: #1f2937 !important;
+  background-color: white !important;
 }
 
-/* Menu section specific rules */
 .bg-white .menu-item-title {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .menu-item-description {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
 .bg-white .menu-item-price {
-  color: #059669 !important;
+  color: #000 !important;
 }
 
-/* Store section specific rules */
 .bg-white .store-location {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .store-address {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
 .bg-white .store-status {
-  color: #059669 !important;
+  color: #22c55e !important;
 }
 
-/* Promotion section specific rules */
 .bg-white .promotion-title {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .promotion-subtitle {
@@ -779,140 +988,129 @@ html, body {
 }
 
 .bg-white .promotion-description {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
-/* Interior section specific rules */
 .bg-white .interior-title {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .interior-description {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
-/* Best menu section specific rules */
 .bg-white .best-menu-title {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .best-menu-description {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
-/* Success story section specific rules */
 .bg-white .success-story-title {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .success-story-description {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
-/* Footer specific rules */
 .bg-white footer {
-  color: #1f2937 !important;
+  background-color: white !important;
 }
 
 .bg-white footer h3 {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white footer p {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
-/* Navigation elements on white backgrounds */
 .bg-white nav {
-  color: #1f2937 !important;
+  background-color: white !important;
 }
 
 .bg-white nav a {
-  color: #1f2937 !important;
+  color: #000 !important;
 }
 
 .bg-white nav a:hover {
-  color: #059669 !important;
+  color: #22c55e !important;
 }
 
-/* Form elements on white backgrounds */
 .bg-white input,
 .bg-white textarea,
 .bg-white select {
-  color: #1f2937 !important;
+  background-color: white !important;
+  color: #000 !important;
   border-color: #d1d5db !important;
 }
 
 .bg-white label {
-  color: #374151 !important;
+  color: #000 !important;
 }
 
-/* Utility classes for white backgrounds */
 .bg-white .text-black-force {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .text-gray-force {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
 .bg-white .text-green-force {
-  color: #059669 !important;
+  color: #22c55e !important;
 }
 
-/* Swiper specific rules on white backgrounds */
 .bg-white .swiper-pagination-bullet {
-  background: rgba(31, 41, 55, 0.3) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
 }
 
 .bg-white .swiper-pagination-bullet-active {
-  background: #1f2937 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .bg-white .swiper-button-prev,
 .bg-white .swiper-button-next {
-  color: #1f2937 !important;
+  color: #000 !important;
 }
 
-/* Hero section text overlays on white backgrounds */
 .bg-white .hero-title {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .hero-subtitle {
-  color: #4b5563 !important;
+  color: #6b7280 !important;
 }
 
-/* Prevent any white text on white backgrounds */
 .bg-white .text-white {
-  color: #111827 !important;
+  color: #000 !important;
 }
 
 .bg-white .text-white:hover {
-  color: #059669 !important;
+  color: #22c55e !important;
 }
 
-/* Special case for buttons that should keep white text */
 .bg-white .bg-green-500 .text-white,
 .bg-white .bg-green-600 .text-white,
-.bg-white .bg-black .text-white,
-.bg-white .bg-gray-900 .text-white {
+.bg-white .bg-black .text-white {
   color: white !important;
 }
 
-/* Ensure proper contrast for all text elements */
 .bg-white * {
-  text-shadow: none !important;
+  transition: color 0.2s ease;
 }
 
 .bg-white .text-shadow-none {
   text-shadow: none !important;
 }
 
-/* Animation and transition elements */
 .bg-white .animate-float,
+.bg-white .animate-floatSlow,
 .bg-white .animate-floatDelay,
 .bg-white .animate-floatDelayMore,
 .bg-white .animate-floatButton {
-  color: inherit !important;
+  /* Ensure animations work properly with color overrides */
+  color: inherit;
 }

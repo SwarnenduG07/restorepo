@@ -77,9 +77,11 @@ const PromotionSwiper = () => {
   // Calculate how many slides to show based on screen width
   const getSlidesPerView = () => {
     if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1024) return 4.5 // Desktop: 4.5 slides
-      if (window.innerWidth >= 768) return 3   // Tablet: 3 slides
-      return 1.5 // Mobile: 1.5 slides
+      if (window.innerWidth >= 1280) return 4.5 // XL: 4.5 slides
+      if (window.innerWidth >= 1024) return 3.5 // Desktop: 3.5 slides
+      if (window.innerWidth >= 768) return 2.5   // Tablet: 2.5 slides
+      if (window.innerWidth >= 640) return 1.8   // Small tablet: 1.8 slides
+      return 1.2 // Mobile: 1.2 slides for better preview
     }
     return 4.5
   }
@@ -135,7 +137,7 @@ const PromotionSwiper = () => {
     }, 500)
   }
 
-  // Touch handlers for mobile swipe
+  // Touch handlers for mobile swipe with improved sensitivity
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX)
   }
@@ -147,8 +149,8 @@ const PromotionSwiper = () => {
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return
     const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > 50
-    const isRightSwipe = distance < -50
+    const isLeftSwipe = distance > 30 // Reduced threshold for easier swiping
+    const isRightSwipe = distance < -30
 
     if (isLeftSwipe) {
       goToNext()
@@ -159,22 +161,22 @@ const PromotionSwiper = () => {
   }
 
   return (
-    <section className="py-20 bg-white promotion-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white promotion-section">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex justify-between items-start mb-16">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-8 sm:mb-12 lg:mb-16 gap-4">
           <div className="animate-slideInUp">
-            <h2 className="text-5xl md:text-6xl font-bold text-black mb-4 animate-floatSlow">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-3 sm:mb-4 animate-floatSlow">
               PROMOTION
             </h2>
-            <p className="text-lg text-gray-700 animate-floatDelay">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-700 animate-floatDelay">
               그레이피플에서 새롭게 출시한 신메뉴들을 소개합니다.
             </p>
           </div>
-          <div className="animate-slideInUp hidden md:block">
+          <div className="animate-slideInUp w-full md:w-auto">
             <Button 
               variant="outline" 
-              className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white px-8 py-3 transition-all duration-300 font-medium"
+              className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white px-6 sm:px-8 py-2 sm:py-3 transition-all duration-300 font-medium text-sm sm:text-base w-full md:w-auto"
             >
               VIEW MORE
             </Button>
@@ -199,111 +201,102 @@ const PromotionSwiper = () => {
               {promotionItems.map((item, index) => (
                 <div 
                   key={item.id} 
-                  className={`swiper-slide flex-shrink-0 px-3 ${
-                    slidesPerView === 1.5 ? 'w-2/3' :
-                    slidesPerView === 3 ? 'w-1/3' : 'w-1/4'
-                  }`}
+                  className="swiper-slide flex-shrink-0 px-2 sm:px-3"
+                  style={{ width: `${100 / slidesPerView}%` }}
                 >
-                  <a href="/menu/" className="block group">
-                    <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white">
-                      
-                      {/* Product Image Section - Top 2/3 */}
-                      <div className="h-2/3 relative overflow-hidden">
-                        <Image
-                          src={item.src}
-                          alt={item.alt}
-                          fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-700"
-                          priority={index < 4}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent group-hover:from-black/50 transition-all duration-500"></div>
-                        
-                        {/* Product Badge */}
-                        <div className="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-2 rounded-full shadow-lg">
-                          NEW
-                        </div>
+                  <div className={`relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br ${item.bgColor} aspect-[3/4] group cursor-pointer`}>
+                    {/* Background Image */}
+                    <div className="absolute inset-0">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300"></div>
+                    </div>
 
-                        {/* Price Badge */}
-                        <div className="absolute top-4 right-4 bg-black text-white text-xs font-bold px-3 py-2 rounded-full shadow-lg">
-                          $5.99
-                        </div>
-                      </div>
-                      
-                      {/* Content Section - Bottom 1/3 */}
-                      <div className="h-1/3 p-5 flex flex-col justify-center bg-white relative">
-                        <p className="text-xs text-gray-600 font-medium tracking-wider uppercase mb-2">
-                          {item.subtitle}
-                        </p>
-                        <h3 className="text-lg font-bold text-black mb-2 group-hover:text-green-600 transition-colors leading-tight">
+                    {/* Content Overlay */}
+                    <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end">
+                      <div className={`${item.textColor} animate-float`}>
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-wider mb-1 sm:mb-2 leading-tight">
                           {item.title}
                         </h3>
-                        <p className="text-xs text-gray-700 leading-relaxed">
+                        <p className="text-xs sm:text-sm opacity-90 mb-2 sm:mb-3 tracking-wide">
+                          {item.subtitle}
+                        </p>
+                        <p className="text-xs sm:text-sm opacity-80 leading-relaxed">
                           {item.description}
                         </p>
-
-                        {/* Action Button - Appears on Hover */}
-                        <div className="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <button className="bg-green-600 hover:bg-green-700 text-white text-xs px-4 py-2 rounded-full transition-colors duration-300">
-                            ORDER NOW
-                          </button>
-                        </div>
                       </div>
 
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-green-200 transition-all duration-300 rounded-2xl"></div>
+                      {/* Hover Button */}
+                      <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <button className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium hover:bg-white/30 transition-colors duration-200">
+                          자세히 보기
+                        </button>
+                      </div>
                     </div>
-                  </a>
+
+                    {/* Index indicator */}
+                    <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full px-2 sm:px-3 py-1">
+                        <span className={`text-xs font-medium ${item.textColor}`}>
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Hidden on mobile for better touch experience */}
           <button 
             onClick={goToPrev}
-            disabled={isTransitioning}
-            className="swiper-arrow-prev absolute left-4 top-1/2 -translate-y-1/2 z-10 w-14 h-14 bg-white/95 backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-300 group disabled:opacity-50"
+            className="hidden sm:flex swiper-button-prev absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white hover:border-gray-300 text-gray-700 w-10 h-10 md:w-12 md:h-12 rounded-full items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            <svg className="w-6 h-6 text-gray-800 group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button 
             onClick={goToNext}
-            disabled={isTransitioning}
-            className="swiper-arrow-next absolute right-4 top-1/2 -translate-y-1/2 z-10 w-14 h-14 bg-white/95 backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-300 group disabled:opacity-50"
+            className="hidden sm:flex swiper-button-next absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white hover:border-gray-300 text-gray-700 w-10 h-10 md:w-12 md:h-12 rounded-full items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            <svg className="w-6 h-6 text-gray-800 group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
-          {/* Pagination Dots - Mobile Only */}
-          <div className="swiper-pagination flex justify-center space-x-2 mt-8 md:hidden">
+          {/* Pagination */}
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
             {promotionItems.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                disabled={isTransitioning}
-                className={`swiper-pagination-bullet h-3 rounded-full transition-all duration-300 disabled:opacity-50 ${
+                className={`swiper-pagination-bullet w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${
                   index === currentIndex 
-                    ? 'bg-black w-8 scale-110' 
-                    : 'bg-gray-300 hover:bg-gray-500 w-3'
+                    ? 'bg-gray-800 w-6 sm:w-8' 
+                    : 'bg-gray-300 hover:bg-gray-500'
                 }`}
-                aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
         </div>
 
-        {/* Mobile View More Button */}
-        <div className="text-center mt-12 md:hidden">
-          <Button 
-            variant="outline" 
-            className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white px-8 py-3 transition-all duration-300 font-medium"
-          >
-            VIEW MORE
-          </Button>
+        {/* Mobile swipe indicator */}
+        <div className="flex sm:hidden justify-center mt-4">
+          <div className="flex items-center space-x-2 text-gray-500 text-sm">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+            </svg>
+            <span>Swipe to browse</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
         </div>
       </div>
     </section>

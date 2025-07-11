@@ -33,10 +33,10 @@ export default function Home() {
       <AnimatedBestMenuSection />
 
       {/* Brand Story Section */}
-      <section id="brand" className="relative h-screen overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+      <section id="brand" className="relative min-h-screen overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           {/* Left Side - Image */}
-          <div className="relative overflow-hidden animate-slideInLeft">
+          <div className="relative overflow-hidden animate-slideInLeft order-2 lg:order-1 h-64 sm:h-80 md:h-96 lg:h-full">
             <Image
               src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGNhZmV8ZW58MHx8MHx8fDA%3D"
               alt="Coffee Cup"
@@ -48,24 +48,24 @@ export default function Home() {
           
 
           {/* Right Side - Dark Content */}
-          <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16 animate-slideInRight">
-            <div className="max-w-lg">
-              <div className="mb-6">
-                <p className="text-green-400 text-sm font-medium tracking-widest uppercase mb-4 animate-float">
+          <div className="bg-gray-900 flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 animate-slideInRight order-1 lg:order-2 py-8 sm:py-12 lg:py-0">
+            <div className="max-w-lg w-full">
+              <div className="mb-4 sm:mb-6">
+                <p className="text-green-400 text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4 animate-float">
                   BRAND STORY
                 </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 animate-floatSlow">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 sm:mb-8 animate-floatSlow">
                   WHO<br />
                   WE ARE
                 </h1>
               </div>
               
-              <p className="text-gray-300 text-lg leading-relaxed mb-8 animate-floatDelay">
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 animate-floatDelay">
                 For modern people who need a change of mood from their busy daily life, 
                 we deliver freedom and unique joy contained in a cup of coffee.
               </p>
               
-              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 transition-all duration-300 animate-floatButton hover:animate-bounce">
+              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base transition-all duration-300 animate-floatButton hover:animate-bounce">
                 VIEW MORE
               </Button>
             </div>
@@ -77,39 +77,39 @@ export default function Home() {
       </section>
 
       {/* Franchise Section */}
-      <section id="franchise" className="relative h-screen overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+      <section id="franchise" className="relative min-h-screen overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           {/* Left Side - Dark Content */}
-          <div className="bg-gray-900 flex items-center justify-center px-8 lg:px-16 animate-slideInLeft">
-            <div className="max-w-lg">
-              <div className="mb-6">
-                <p className="text-blue-400 text-sm font-medium tracking-widest uppercase mb-4 animate-float">
+          <div className="bg-gray-900 flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 animate-slideInLeft py-8 sm:py-12 lg:py-0">
+            <div className="max-w-lg w-full">
+              <div className="mb-4 sm:mb-6">
+                <p className="text-blue-400 text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4 animate-float">
                   FRANCHISE OPPORTUNITY
                 </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 animate-floatSlow">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 sm:mb-8 animate-floatSlow">
                   JOIN<br />
                   OUR FAMILY
                 </h1>
               </div>
               
-              <p className="text-gray-300 text-lg leading-relaxed mb-6 animate-floatDelay">
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 animate-floatDelay">
                 GrayPipple ensures your success through differentiated branding 
                 and consistent, continuous menu development.
               </p>
               
-              <p className="text-gray-400 text-base leading-relaxed mb-8 animate-floatDelayMore">
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 animate-floatDelayMore">
                 Start your own coffee business with our proven franchise model 
                 and comprehensive support system.
               </p>
               
-              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 transition-all duration-300 animate-floatButton hover:animate-bounce">
+              <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base transition-all duration-300 animate-floatButton hover:animate-bounce">
                 VIEW MORE
               </Button>
             </div>
           </div>
 
           {/* Right Side - Image */}
-          <div className="relative overflow-hidden animate-slideInRight">
+          <div className="relative overflow-hidden animate-slideInRight h-64 sm:h-80 md:h-96 lg:h-full">
             <Image
               src="https://images.unsplash.com/photo-1655968692023-21cf3f021054?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJyZWFkJTIwaW4lMjBjYWZlfGVufDB8fDB8fHww"
               alt="Cafe Bread and Pastries"
@@ -121,33 +121,33 @@ export default function Home() {
         </div>
 
         {/* Floating Action Elements */}
-        <div className="absolute bottom-8 left-8 flex space-x-4 animate-slideInUp">
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg animate-float">
-            <span className="text-gray-800 text-sm font-medium">Investment: $50K+</span>
+        <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 animate-slideInUp">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 shadow-lg animate-float">
+            <span className="text-gray-800 text-xs sm:text-sm font-medium">Investment: $50K+</span>
           </div>
-          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg animate-floatDelay">
-            <span className="text-gray-800 text-sm font-medium">ROI: 6-12 months</span>
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 shadow-lg animate-floatDelay">
+            <span className="text-gray-800 text-xs sm:text-sm font-medium">ROI: 6-12 months</span>
           </div>
         </div>
       </section>
 
       {/* Success Story Section */}
-      <section className="py-20 bg-gray-50 success-story-section">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 success-story-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-slideInUp">
-            <h2 className="text-3xl md:text-4xl font-light text-black mb-4 animate-float">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slideInUp">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black mb-4 animate-float">
               Success Stories
             </h2>
-            <h3 className="text-2xl font-medium text-gray-700 mb-6 animate-floatDelay">INTERVIEW</h3>
-            <p className="text-lg text-gray-700 animate-floatDelayMore">
+            <h3 className="text-xl sm:text-2xl font-medium text-gray-700 mb-4 sm:mb-6 animate-floatDelay">INTERVIEW</h3>
+            <p className="text-base sm:text-lg text-gray-700 animate-floatDelayMore px-4">
               Meet our special franchise owners and their success stories.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slideInLeft">
               <CardContent className="p-0">
-                <div className="h-64 relative overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 relative overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
                     alt="Coffee shop owner"
@@ -161,17 +161,17 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-medium text-gray-800 mb-2 animate-floatSlow">
+                <div className="p-4 sm:p-6">
+                  <h4 className="text-base sm:text-lg font-medium text-gray-800 mb-2 animate-floatSlow leading-snug">
                     Owner who decided to open a second store in just 6 months
                   </h4>
-                  <p className="text-gray-600 animate-floatDelay">GrayPipple Changwon Store</p>
+                  <p className="text-sm sm:text-base text-gray-600 animate-floatDelay">GrayPipple Changwon Store</p>
                 </div>
               </CardContent>
             </Card>
             <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slideInRight">
               <CardContent className="p-0">
-                <div className="h-64 relative overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 relative overflow-hidden">
                   <Image
                     src="https://plus.unsplash.com/premium_photo-1723773731793-79fbc649a9c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhZmUlMjB3YWl0ZXJ8ZW58MHx8MHx8fDA%3D"
                     alt="Young entrepreneur cafe owner"
@@ -185,11 +185,11 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="text-lg font-medium text-gray-800 mb-2 animate-floatSlow">
+                <div className="p-4 sm:p-6">
+                  <h4 className="text-base sm:text-lg font-medium text-gray-800 mb-2 animate-floatSlow leading-snug">
                     29-year-old entrepreneur earning $80,000 monthly
                   </h4>
-                  <p className="text-gray-600 animate-floatDelay">GrayPipple Seomyeon Store</p>
+                  <p className="text-sm sm:text-base text-gray-600 animate-floatDelay">GrayPipple Seomyeon Store</p>
                 </div>
               </CardContent>
             </Card>
@@ -204,23 +204,23 @@ export default function Home() {
       <PromotionSwiper />
 
       {/* News & Notice Section */}
-      <section id="news" className="py-20 bg-gradient-to-br from-green-800 via-green-700 to-green-900">
+      <section id="news" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-green-800 via-green-700 to-green-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light text-white mb-4">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-4">
               Latest Updates
             </h2>
-            <p className="text-green-200 text-lg">
+            <p className="text-green-200 text-base sm:text-lg px-4">
               Stay informed with our latest news and announcements
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Notice */}
             <div>
-              <div className="flex justify-between items-center mb-8">
-                <h3 className="text-2xl font-medium text-white">NOTICE</h3>
-                <Button variant="outline" className="bg-blue-500 text-white border-white/30 hover:bg-white/10 hover:text-white">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
+                <h3 className="text-xl sm:text-2xl font-medium text-white">NOTICE</h3>
+                <Button variant="outline" className="bg-blue-500 text-white border-white/30 hover:bg-white/10 hover:text-white text-sm sm:text-base px-4 sm:px-6 py-2 w-full sm:w-auto">
                   VIEW MORE
                 </Button>
               </div>
@@ -243,15 +243,15 @@ export default function Home() {
                   }
                 ].map((notice, index) => (
                   <div key={index} className="group border border-white/20 rounded-lg overflow-hidden hover:border-white/40 transition-all duration-300 cursor-pointer">
-                    <div className="p-4 hover:bg-white/10 transition-colors">
-                      <h4 className="text-white group-hover:text-green-100 transition-colors text-sm leading-relaxed font-medium">
+                    <div className="p-3 sm:p-4 hover:bg-white/10 transition-colors">
+                      <h4 className="text-white group-hover:text-green-100 transition-colors text-sm sm:text-base leading-relaxed font-medium">
                         {notice.title}
                       </h4>
                       <p className="text-xs text-green-200 mt-2">{notice.date}</p>
                     </div>
                     <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-in-out">
-                      <div className="p-4 pt-0 bg-white/5">
-                        <p className="text-green-100 text-sm leading-relaxed">
+                      <div className="p-3 sm:p-4 pt-0 bg-white/5">
+                        <p className="text-green-100 text-xs sm:text-sm leading-relaxed">
                           {notice.content}
                         </p>
                       </div>
@@ -263,9 +263,9 @@ export default function Home() {
 
             {/* News */}
             <div>
-              <div className="flex justify-between items-center mb-8">
-                <h3 className="text-2xl font-medium text-white">NEWS</h3>
-                <Button variant="outline" className="bg-blue-500 text-white border-white/30 hover:bg-white/10 hover:text-white">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
+                <h3 className="text-xl sm:text-2xl font-medium text-white">NEWS</h3>
+                <Button variant="outline" className="bg-blue-500 text-white border-white/30 hover:bg-white/10 hover:text-white text-sm sm:text-base px-4 sm:px-6 py-2 w-full sm:w-auto">
                   VIEW MORE
                 </Button>
               </div>
@@ -288,15 +288,15 @@ export default function Home() {
                   }
                 ].map((news, index) => (
                   <div key={index} className="group border border-white/20 rounded-lg overflow-hidden hover:border-white/40 transition-all duration-300 cursor-pointer">
-                    <div className="p-4 hover:bg-white/10 transition-colors">
-                      <h4 className="text-white group-hover:text-green-100 transition-colors text-sm leading-relaxed font-medium">
+                    <div className="p-3 sm:p-4 hover:bg-white/10 transition-colors">
+                      <h4 className="text-white group-hover:text-green-100 transition-colors text-sm sm:text-base leading-relaxed font-medium">
                         {news.title}
                       </h4>
                       <p className="text-xs text-green-200 mt-2">{news.date}</p>
                     </div>
                     <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-in-out">
-                      <div className="p-4 pt-0 bg-white/5">
-                        <p className="text-green-100 text-sm leading-relaxed">
+                      <div className="p-3 sm:p-4 pt-0 bg-white/5">
+                        <p className="text-green-100 text-xs sm:text-sm leading-relaxed">
                           {news.content}
                         </p>
                       </div>
@@ -310,12 +310,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white text-black py-16">
+      <footer className="bg-white text-black py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-2">
-              <h3 className="text-3xl font-bold mb-4 text-black">GRAYPIPPLE</h3>
-              <p className="text-gray-900 mb-6 text-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="col-span-1 sm:col-span-2">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-black">GRAYPIPPLE</h3>
+              <p className="text-gray-900 mb-4 sm:mb-6 text-base sm:text-lg">
                 A change of mood in a busy daily life
               </p>
               <p className="text-gray-600 text-sm">
@@ -323,8 +323,8 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-medium mb-6 text-black">Site Map</h4>
-              <ul className="space-y-3 text-gray-700">
+              <h4 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 text-black">Site Map</h4>
+              <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                 <li><a href="#brand" className="hover:text-black transition-colors">Brand</a></li>
                 <li><a href="#menu" className="hover:text-black transition-colors">Menu</a></li>
                 <li><a href="#store" className="hover:text-black transition-colors">Stores</a></li>
@@ -333,18 +333,18 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-medium mb-6 text-black">Contact Us</h4>
-              <Button className="w-full bg-black text-white hover:bg-gray-800 mb-4 py-3">
+              <h4 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 text-black">Contact Us</h4>
+              <Button className="w-full bg-black text-white hover:bg-gray-800 mb-3 sm:mb-4 py-2 sm:py-3 text-sm sm:text-base">
                 Franchise Inquiry
               </Button>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-xs sm:text-sm">
                 Monday - Friday: 9:00 - 18:00<br />
                 Saturday, Sunday: Closed
               </p>
             </div>
           </div>
-          <div className="border-t border-gray-300 mt-12 pt-8 text-center">
-            <p className="text-gray-600">
+          <div className="border-t border-gray-300 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
+            <p className="text-gray-600 text-xs sm:text-sm">
               COPYRIGHT © GRAYPIPPLE COFFEE ALL RIGHTS RESERVED.
             </p>
           </div>

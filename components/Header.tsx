@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -51,14 +50,14 @@ const Header = () => {
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 py-4"
+      className="fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4"
       style={headerStyle}
     >
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="max-w-[1600px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
         <h1 className="relative z-10">
           <Link href="/">
-            <p className={`text-4xl font-bold transition-colors duration-300 ${logoTextColor}`}>
+            <p className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold transition-colors duration-300 ${logoTextColor}`}>
               GRAYPIPPLE
             </p>
           </Link>
@@ -66,7 +65,7 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:block gnb">
-          <ul className="flex space-x-8 text-lg font-medium">
+          <ul className="flex space-x-6 xl:space-x-8 text-base lg:text-lg font-medium">
             {/* BRAND Menu */}
             <li 
               className="relative group" 
@@ -187,12 +186,12 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMenu} 
-          className="lg:hidden flex flex-col justify-center items-center w-10 h-10 z-50 relative"
+          className="lg:hidden flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 z-50 relative touch-manipulation"
           aria-label="Toggle menu"
         >
-          <div className={`w-6 h-0.5 ${menuBarColor} mb-1.5 transition-all ${isMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></div>
-          <div className={`w-6 h-0.5 ${menuBarColor} mb-1.5 transition-all ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></div>
-          <div className={`w-6 h-0.5 ${menuBarColor} transition-all ${isMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></div>
+          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} mb-1 sm:mb-1.5 transition-all ${isMenuOpen ? 'transform rotate-45 translate-y-1.5 sm:translate-y-2' : ''}`}></div>
+          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} mb-1 sm:mb-1.5 transition-all ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></div>
+          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} transition-all ${isMenuOpen ? 'transform -rotate-45 -translate-y-1.5 sm:-translate-y-2' : ''}`}></div>
         </button>
 
         {/* Mobile Menu */}
@@ -201,31 +200,31 @@ const Header = () => {
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="flex justify-between items-center p-6 border-b">
+          <div className="flex justify-between items-center p-4 sm:p-6 border-b">
             <div className="menuLogo">
               <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                <p className="text-black text-2xl font-bold">GRAYPIPPLE</p>
+                <p className="text-black text-xl sm:text-2xl font-bold">GRAYPIPPLE</p>
               </Link>
             </div>
           </div>
 
-          <nav className="p-6">
-            <ul className="space-y-6">
+          <nav className="p-4 sm:p-6 overflow-y-auto max-h-screen">
+            <ul className="space-y-4 sm:space-y-6">
               {/* BRAND Menu */}
               <li>
                 <div className="flex flex-col">
                   <Link 
                     href="/brand/" 
-                    className="text-xl font-medium text-gray-900 mb-2"
+                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Brand
                   </Link>
-                  <ul className="ml-4 space-y-2">
+                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
                     <li>
                       <Link 
                         href="/brand/" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Brand Story
@@ -234,7 +233,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/brand/contact" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Direction
@@ -249,16 +248,16 @@ const Header = () => {
                 <div className="flex flex-col">
                   <Link 
                     href="/menu/" 
-                    className="text-xl font-medium text-gray-900 mb-2"
+                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Menu
                   </Link>
-                  <ul className="ml-4 space-y-2">
+                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
                     <li>
                       <Link 
                         href="/menu/" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         NEW
@@ -267,7 +266,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/menu/signature" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         SIGNATURE
@@ -276,7 +275,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/menu/coffee" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         COFFEE
@@ -285,7 +284,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/menu/noncoffee" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         NON-COFFEE
@@ -294,7 +293,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/menu/beverage" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         BEVERAGE
@@ -303,7 +302,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/menu/dessert" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         DESSERT
@@ -318,16 +317,16 @@ const Header = () => {
                 <div className="flex flex-col">
                   <Link 
                     href="/store/" 
-                    className="text-xl font-medium text-gray-900 mb-2"
+                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
                   >
                    Store
                   </Link>
-                  <ul className="ml-4 space-y-2">
+                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
                     <li>
                       <Link 
                         href="/store/" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Store 
@@ -342,16 +341,16 @@ const Header = () => {
                 <div className="flex flex-col">
                   <Link 
                     href="/news/" 
-                    className="text-xl font-medium text-gray-900 mb-2"
+                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
                   >
                    News
                   </Link>
-                  <ul className="ml-4 space-y-2">
+                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
                     <li>
                       <Link 
                         href="/news/" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         News
@@ -359,8 +358,8 @@ const Header = () => {
                     </li>
                     <li>
                       <Link 
-                        href="/news/event" 
-                        className="text-gray-600 hover:text-green-600"
+                        href="/news#events" 
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Event
@@ -375,16 +374,16 @@ const Header = () => {
                 <div className="flex flex-col">
                   <Link 
                     href="/franchise" 
-                    className="text-xl font-medium text-gray-900 mb-2"
+                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Franchise
                   </Link>
-                  <ul className="ml-4 space-y-2">
+                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
                     <li>
                       <Link 
                         href="/franchise/1" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Startup competitiveness
@@ -393,7 +392,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/franchise/2" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Startup Guide
@@ -402,7 +401,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/franchise/3" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         startup Benefits
@@ -411,7 +410,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/franchise/4" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                        Startup Costs
@@ -420,7 +419,7 @@ const Header = () => {
                     <li>
                       <Link 
                         href="/franchise/5" 
-                        className="text-gray-600 hover:text-green-600"
+                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Startup Inquiry
