@@ -219,7 +219,7 @@ const AnimatedBestMenuSection = () => {
   const filteredItems = getVisibleItems()
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-black">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
@@ -228,11 +228,11 @@ const AnimatedBestMenuSection = () => {
               BEST MENU
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black mb-3 sm:mb-4 leading-tight">
             POPULAR<br />
-            <span className="text-green-400">SELECTIONS</span>
+            <span className="text-black">SELECTIONS</span>
           </h2>
-          <p className="text-gray-300 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed px-4">
+          <p className="text-black text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed font-semibold px-4">
             Discover our customers' favorite beverages and treats, 
             carefully crafted with premium ingredients
           </p>
