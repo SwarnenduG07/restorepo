@@ -7,12 +7,12 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Header from '@/components/Header'
 
-// Dummy non-coffee menu items data (replace with your actual data)
+// Updated non-coffee menu items data with proper images from public/menuItems
 const menuItems = [
   {
     id: 1,
     name: "Matcha Fusion Latte",
-    image: "/d5.png",
+    image: "/menuItems/GrapeFruit Tea.png",
     category: "NON-COFFEE",
     price: "$6.00",
     description: "Premium Japanese matcha with steamed milk"
@@ -20,7 +20,7 @@ const menuItems = [
   {
     id: 2,
     name: "Chai Spice Latte",
-    image: "/ncc3.png",
+    image: "/menuItems/Green Tea Gelato.png",
     category: "NON-COFFEE",
     price: "$5.70",
     description: "Traditional chai spices with creamy milk"
@@ -28,42 +28,34 @@ const menuItems = [
   {
     id: 3,
     name: "Golden Turmeric Latte",
-    image: "/ncc2.png",
+    image: "/menuItems/Hadong Green Tea.png",
     category: "NON-COFFEE",
     price: "$6.20",
-    description: "Healthy turmeric blend with coconut milk"
+    description: "Anti-inflammatory golden milk with spices"
   },
   {
     id: 4,
-    name: "Hot Chocolate Deluxe",
-    image: "/ncc1.png",
+    name: "Hot Chocolate Supreme",
+    image: "/menuItems/Citron Tea.png",
     category: "NON-COFFEE",
-    price: "$5.50",
-    description: "Premium cocoa with whipped cream"
+    price: "$5.40",
+    description: "Rich Belgian chocolate with whipped cream"
   },
   {
     id: 5,
-    name: "London Fog Tea Latte",
-    image: "/cake4.png",
+    name: "Herbal Tea Blend",
+    image: "/menuItems/Hibiscus Tea.png",
     category: "NON-COFFEE",
-    price: "$5.30",
-    description: "Earl Grey tea with vanilla and steamed milk"
+    price: "$4.80",
+    description: "Calming chamomile and lavender blend"
   },
   {
     id: 6,
-    name: "Honey Citrus Mint Tea",
-    image: "/cake3.png",
+    name: "Rooibos Vanilla",
+    image: "/menuItems/Hot Americano.png",
     category: "NON-COFFEE",
-    price: "$4.80",
-    description: "Mint tea with honey and lemon"
-  },
-  {
-    id: 7,
-    name: "Steamed Apple Cider",
-    image: "/cake2.png",
-    category: "NON-COFFEE",
-    price: "$4.50",
-    description: "Hot apple cider with cinnamon"
+    price: "$5.00",
+    description: "Caffeine-free with natural vanilla notes"
   }
 ];
 
@@ -108,9 +100,10 @@ export default function NonCoffeeMenuPage() {
       <Header />
       <main className="pt-16 min-h-screen bg-white">
         {/* Hero Banner */}
-        <div className="relative h-64 md:h-80 lg:h-96 bg-gray-900 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
+        <div className="relative w-screen h-screen bg-gray-900 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
+          
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -121,13 +114,17 @@ export default function NonCoffeeMenuPage() {
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl md:text-7xl font-bold tracking-wider"
+                className="text-5xl md:text-7xl font-bold tracking-wider text-white"
               >
                 MENU
               </motion.h1>
             </motion.div>
           </div>
-          <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: "url('/hero-menu.jpg')" }}></div>
+          
+          <div 
+            className="absolute inset-0 bg-center bg-cover z-0"
+            style={{ backgroundImage: "url('https://wallpapercave.com/wp/wp9277799.jpg')" }}
+          ></div>
         </div>
 
         {/* Menu Content */}
@@ -187,9 +184,9 @@ export default function NonCoffeeMenuPage() {
               </ul>
             </nav>
 
-            {/* Menu Grid */}
+            {/* Menu Grid - Updated to match main menu design */}
             <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -198,27 +195,35 @@ export default function NonCoffeeMenuPage() {
                 <motion.div
                   key={item.id}
                   layoutId={`noncoffee-item-${item.id}`}
-                  className={`bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer ${activeItem === index ? 'ring-2 ring-green-500' : ''}`}
+                  className={`relative bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer ${activeItem === index ? 'ring-2 ring-green-500' : ''}`}
                   whileHover={{ y: -5 }}
                   onClick={() => toggleItemDetails(index)}
+                  style={{ aspectRatio: '2/3' }}
                 >
-                  <div className="relative h-64 bg-gray-50">
+                  <div className="relative h-full">
                     <Image
                       src={item.image}
                       alt={item.name}
                       fill
-                      className="object-contain p-4"
+                      className="object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80";
+                      }}
                     />
-                    <div className="absolute top-3 right-3 bg-black text-white text-xs font-medium px-2 py-1 rounded-full">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div className="absolute top-3 right-3 bg-white text-black text-xs font-medium px-3 py-1.5 rounded-full">
                       {item.price}
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <h3 className="text-lg font-bold mb-1 drop-shadow-sm text-white">{item.name}</h3>
+                      <p className="text-sm text-gray-200 opacity-90 line-clamp-3">{item.description}</p>
                     </div>
                   </div>
                   
                   {/* Mobile Details - Only shows when toggled */}
-                  <div className={`p-4 transition-all duration-300 ${activeItem === index ? 'block sm:hidden' : 'hidden'}`}>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">{item.name}</h3>
-                    <p className="text-sm text-gray-600 mb-3">{item.description}</p>
-                    <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">
+                  <div className={`p-4 bg-gray-900 text-white transition-all duration-300 ${activeItem === index ? 'block sm:hidden' : 'hidden'}`}>
+                    <p className="text-sm text-gray-200 mb-3">{item.description}</p>
+                    <Button size="sm" className="w-full bg-white text-black hover:bg-gray-200">
                       View Details
                     </Button>
                   </div>
