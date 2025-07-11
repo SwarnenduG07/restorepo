@@ -227,8 +227,10 @@ export default function FranchiseDetailPage() {
         
         {/* Main content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <div className="lg:col-span-2 prose prose-lg max-w-none text-black font-bold text-xl" dangerouslySetInnerHTML={{ __html: franchiseItem.mainContent }}></div>
-          
+           <div 
+            className="lg:col-span-2 prose prose-lg max-w-none [&_*]:text-black [&_h3]:text-black [&_h3]:font-bold [&_h3]:text-xl [&_h3]:mb-4 [&_h3]:mt-6 [&_p]:text-black [&_p]:mb-4 [&_p]:leading-relaxed [&_li]:text-black [&_li]:mb-2 [&_ul]:mb-6 [&_ol]:mb-6 [&_strong]:text-black [&_strong]:font-bold [&_a]:text-green-700 [&_a]:underline hover:[&_a]:text-green-900" 
+            dangerouslySetInnerHTML={{ __html: franchiseItem.mainContent }}
+          ></div>          
           <div className="space-y-6">
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
               <h3 className="text-xl font-bold mb-4 text-black">Ready to Join GrayPipple?</h3>
