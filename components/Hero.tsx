@@ -123,6 +123,15 @@ const Hero = () => {
         </div>
 
         <div className="text-white text-right max-w-xs">
+          <div className="mb-6 sm:mb-8">
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed mb-1 sm:mb-2">
+              In busy daily life
+            </h3>
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-light tracking-wide leading-relaxed">
+              A cup of coffee to refresh your mood
+            </h3>
+          </div>
+
           <div className="flex flex-col items-center mt-6 sm:mt-8">
             <div 
               className="w-6 h-6 sm:w-8 sm:h-8 border border-white rounded-full flex items-center justify-center mb-2 transition-opacity duration-300"
