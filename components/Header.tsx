@@ -223,14 +223,7 @@ const Header = () => {
                 </Link>
               </div>
               {/* Close button - Only X icon here */}
-              <button 
-                onClick={toggleMenu} 
-                className="flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 z-50 relative touch-manipulation"
-                aria-label="Close menu"
-              >
-                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 transition-all transform rotate-45 absolute"></div>
-                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 transition-all transform -rotate-45 absolute"></div>
-              </button>
+              
             </div>
 
             <nav className="p-4 sm:p-6 overflow-y-auto h-full bg-white" style={{ maxHeight: 'calc(100vh - 80px)' }}>
