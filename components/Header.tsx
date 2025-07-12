@@ -183,47 +183,57 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Keep as 3 horizontal lines always */}
         <button 
           onClick={toggleMenu} 
           className="lg:hidden flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 z-50 relative touch-manipulation"
           aria-label="Toggle menu"
         >
-          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} mb-1 sm:mb-1.5 transition-all ${isMenuOpen ? 'transform rotate-45 translate-y-1.5 sm:translate-y-2' : ''}`}></div>
-          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} mb-1 sm:mb-1.5 transition-all ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></div>
-          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} transition-all ${isMenuOpen ? 'transform -rotate-45 -translate-y-1.5 sm:-translate-y-2' : ''}`}></div>
+          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} mb-1 sm:mb-1.5 transition-colors`}></div>
+          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} mb-1 sm:mb-1.5 transition-colors`}></div>
+          <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} transition-colors`}></div>
         </button>
 
-        {/* Mobile Menu - Enhanced with proper white background */}
+        {/* Mobile Menu - Enhanced with complete white background coverage */}
         <div 
-          className={`fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out lg:hidden ${
+          className={`fixed inset-0 top-0 left-0 w-full h-full z-40 transform transition-transform duration-300 ease-in-out lg:hidden ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
+          style={{ 
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: '#ffffff'
+          }}
         >
-          {/* White background overlay */}
-          <div className="absolute inset-0 bg-white"></div>
+          {/* Solid white background overlay - multiple layers for complete coverage */}
+          <div className="absolute inset-0 w-full h-full bg-white" style={{ zIndex: 1 }}></div>
+          <div className="absolute inset-0 w-full h-full bg-white" style={{ zIndex: 2 }}></div>
           
           {/* Menu content */}
-          <div className="relative z-10 h-full bg-white">
-            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200">
+          <div className="relative w-full h-full bg-white" style={{ zIndex: 10 }}>
+            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200 bg-white">
               <div className="menuLogo">
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
                   <p className="text-black text-xl sm:text-2xl font-bold">GRAYPIPPLE</p>
                 </Link>
               </div>
-              {/* Close button */}
+              {/* Close button - Only X icon here */}
               <button 
                 onClick={toggleMenu} 
                 className="flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 z-50 relative touch-manipulation"
                 aria-label="Close menu"
               >
-                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 mb-1 sm:mb-1.5 transition-all transform rotate-45 translate-y-1.5 sm:translate-y-2"></div>
-                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 mb-1 sm:mb-1.5 transition-all opacity-0"></div>
-                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 transition-all transform -rotate-45 -translate-y-1.5 sm:-translate-y-2"></div>
+                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 transition-all transform rotate-45 absolute"></div>
+                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 transition-all transform -rotate-45 absolute"></div>
               </button>
             </div>
 
-            <nav className="p-4 sm:p-6 overflow-y-auto max-h-screen bg-white">
+            <nav className="p-4 sm:p-6 overflow-y-auto h-full bg-white" style={{ maxHeight: 'calc(100vh - 80px)' }}>
               <ul className="space-y-4 sm:space-y-6">
                 {/* BRAND Menu */}
                 <li>
