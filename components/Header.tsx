@@ -194,243 +194,258 @@ const Header = () => {
           <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} transition-all ${isMenuOpen ? 'transform -rotate-45 -translate-y-1.5 sm:-translate-y-2' : ''}`}></div>
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Enhanced with proper white background */}
         <div 
-  className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
-    isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-  }`}
-  style={{ backgroundColor: '#ffffff', opacity: 1 }}
->
-          <div className="flex justify-between items-center p-4 sm:p-6 border-b">
-            <div className="menuLogo">
-              <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                <p className="text-black text-xl sm:text-2xl font-bold">GRAYPIPPLE</p>
-              </Link>
+          className={`fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out lg:hidden ${
+            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          {/* White background overlay */}
+          <div className="absolute inset-0 bg-white"></div>
+          
+          {/* Menu content */}
+          <div className="relative z-10 h-full bg-white">
+            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200">
+              <div className="menuLogo">
+                <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                  <p className="text-black text-xl sm:text-2xl font-bold">GRAYPIPPLE</p>
+                </Link>
+              </div>
+              {/* Close button */}
+              <button 
+                onClick={toggleMenu} 
+                className="flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 z-50 relative touch-manipulation"
+                aria-label="Close menu"
+              >
+                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 mb-1 sm:mb-1.5 transition-all transform rotate-45 translate-y-1.5 sm:translate-y-2"></div>
+                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 mb-1 sm:mb-1.5 transition-all opacity-0"></div>
+                <div className="w-5 sm:w-6 h-0.5 bg-gray-900 transition-all transform -rotate-45 -translate-y-1.5 sm:-translate-y-2"></div>
+              </button>
             </div>
+
+            <nav className="p-4 sm:p-6 overflow-y-auto max-h-screen bg-white">
+              <ul className="space-y-4 sm:space-y-6">
+                {/* BRAND Menu */}
+                <li>
+                  <div className="flex flex-col">
+                    <Link 
+                      href="/brand/" 
+                      className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Brand
+                    </Link>
+                    <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
+                      <li>
+                        <Link 
+                          href="/brand/" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Brand Story
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/brand/contact" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Direction
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                {/* MENU Menu */}
+                <li>
+                  <div className="flex flex-col">
+                    <Link 
+                      href="/menu/" 
+                      className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Menu
+                    </Link>
+                    <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
+                      <li>
+                        <Link 
+                          href="/menu/" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          NEW
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/menu/signature" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          SIGNATURE
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/menu/coffee" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          COFFEE
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/menu/noncoffee" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          NON-COFFEE
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/menu/beverage" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          BEVERAGE
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/menu/dessert" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          DESSERT
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                {/* STORE Menu */}
+                <li>
+                  <div className="flex flex-col">
+                    <Link 
+                      href="/store/" 
+                      className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                     Store
+                    </Link>
+                    <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
+                      <li>
+                        <Link 
+                          href="/store/" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Store 
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                {/* NEWS Menu */}
+                <li>
+                  <div className="flex flex-col">
+                    <Link 
+                      href="/news/" 
+                      className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                     News
+                    </Link>
+                    <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
+                      <li>
+                        <Link 
+                          href="/news/" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          News
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/news#events" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Event
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                {/* FRANCHISE Menu */}
+                <li>
+                  <div className="flex flex-col">
+                    <Link 
+                      href="/franchise" 
+                      className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Franchise
+                    </Link>
+                    <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
+                      <li>
+                        <Link 
+                          href="/franchise/1" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Startup competitiveness
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/franchise/2" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Startup Guide
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/franchise/3" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          startup Benefits
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/franchise/4" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                         Startup Costs
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/franchise/5" 
+                          className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Startup Inquiry
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
           </div>
-
-          <nav className="p-4 sm:p-6 overflow-y-auto max-h-screen">
-            <ul className="space-y-4 sm:space-y-6">
-              {/* BRAND Menu */}
-              <li>
-                <div className="flex flex-col">
-                  <Link 
-                    href="/brand/" 
-                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Brand
-                  </Link>
-                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
-                    <li>
-                      <Link 
-                        href="/brand/" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Brand Story
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/brand/contact" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Direction
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              {/* MENU Menu */}
-              <li>
-                <div className="flex flex-col">
-                  <Link 
-                    href="/menu/" 
-                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Menu
-                  </Link>
-                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
-                    <li>
-                      <Link 
-                        href="/menu/" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        NEW
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/menu/signature" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        SIGNATURE
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/menu/coffee" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        COFFEE
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/menu/noncoffee" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        NON-COFFEE
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/menu/beverage" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        BEVERAGE
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/menu/dessert" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        DESSERT
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              {/* STORE Menu */}
-              <li>
-                <div className="flex flex-col">
-                  <Link 
-                    href="/store/" 
-                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                   Store
-                  </Link>
-                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
-                    <li>
-                      <Link 
-                        href="/store/" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Store 
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              {/* NEWS Menu */}
-              <li>
-                <div className="flex flex-col">
-                  <Link 
-                    href="/news/" 
-                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                   News
-                  </Link>
-                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
-                    <li>
-                      <Link 
-                        href="/news/" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        News
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/news#events" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Event
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              {/* FRANCHISE Menu */}
-              <li>
-                <div className="flex flex-col">
-                  <Link 
-                    href="/franchise" 
-                    className="text-lg sm:text-xl font-medium text-gray-900 mb-2 py-2 touch-manipulation"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Franchise
-                  </Link>
-                  <ul className="ml-3 sm:ml-4 space-y-1 sm:space-y-2">
-                    <li>
-                      <Link 
-                        href="/franchise/1" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Startup competitiveness
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/franchise/2" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Startup Guide
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/franchise/3" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        startup Benefits
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/franchise/4" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                       Startup Costs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/franchise/5" 
-                        className="text-sm sm:text-base text-gray-600 hover:text-green-600 py-1 block touch-manipulation"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Startup Inquiry
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
     </header>
