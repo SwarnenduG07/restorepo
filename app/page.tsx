@@ -18,7 +18,9 @@ export default function Home() {
       <Header></Header>
 
       {/* Hero Section */}
-      <Hero />
+        <div className="min-h-[150vh]"> {/* or min-h-[120vh] */}
+    <Hero />
+  </div>
 
       {/* Content sections with background */}
       <div className="">
