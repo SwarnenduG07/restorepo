@@ -133,8 +133,8 @@ export default function BrandPage() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <p className="text-2xl font-bold text-gray-100 mb-4">GOOD PLACE, GOOD COFFEE, GOOD PEOPLE!</p>
-                  <p className="text-lg text-gray-100 max-w-3xl mx-auto">
+                  <p className="text-2xl font-bold text-black mb-4">GOOD PLACE, GOOD COFFEE, GOOD PEOPLE!</p>
+                  <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                     Value beyond the coffee pursued by Gray Pipple! Gray Peeple, with great spaces, 
                     delicious coffee, and great people, creates a culture that is more than just a cafe.
                   </p>
