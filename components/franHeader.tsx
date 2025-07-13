@@ -43,7 +43,7 @@ const HeaderFran = () => {
   // Dynamic text colors based on scroll position
   const textColor = isScrolled ? 'text-gray-900' : 'text-white'
   const logoTextColor = isScrolled ? 'text-black' : 'text-black'
-  const menuBarColor = isScrolled ? 'bg-gray-900' : 'bg-white'
+  const menuBarColor = 'bg-black'
   
   // Dropdown text colors (always dark since dropdown has white background)
   const dropdownTextColor = 'text-gray-800'
