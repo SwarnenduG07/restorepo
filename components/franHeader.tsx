@@ -186,7 +186,7 @@ const HeaderFran = () => {
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMenu} 
-          className="lg:hidden flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 z-50 relative touch-manipulation"
+          className="lg:hidden flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 z-50 relative touch-manipulation bg-white"
           aria-label="Toggle menu"
         >
           <div className={`w-5 sm:w-6 h-0.5 ${menuBarColor} mb-1 sm:mb-1.5 transition-all ${isMenuOpen ? 'transform rotate-45 translate-y-1.5 sm:translate-y-2' : ''}`}></div>
