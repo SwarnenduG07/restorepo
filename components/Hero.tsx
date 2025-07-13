@@ -8,6 +8,24 @@ const Hero = () => {
   const heroRef = useRef(null);
   const scrollTimeoutRef = useRef<any>(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  if (typeof window !== 'undefined') {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }
+}, []);
+
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -59,7 +77,7 @@ const Hero = () => {
   const videoTransitionEnd = 600;
   const videoProgress = Math.min(1, Math.max(0, (scrollY - videoTransitionStart) / (videoTransitionEnd - videoTransitionStart)));
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  
   const baseVideoWidth = isMobile ? 85 : 100;
   const baseVideoHeight = isMobile ? 90 : 100;
 
@@ -75,10 +93,10 @@ const Hero = () => {
     `translateY(${(scrollY - cafeNameMoveStart) * 0.25}px)` : 
     'translateY(0px)';
 
-  const secondaryTextOpacity = scrollY > 550 ? Math.min(1, (scrollY - 550) / 150) : 0;
-  const secondaryTextTransform = scrollY > 800 ? 
-    `translateY(${(scrollY - 800) * 0.15}px)` : 
-    'translateY(0px)';
+  // const secondaryTextOpacity = scrollY > 550 ? Math.min(1, (scrollY - 550) / 150) : 0;
+  // const secondaryTextTransform = scrollY > 800 ? 
+  //   `translateY(${(scrollY - 800) * 0.15}px)` : 
+  //   'translateY(0px)';
 
   const sideContentOpacity = scrollY > 600 ? Math.min(1, (scrollY - 600) / 200) : 0;
   const sideContentTransform = scrollY > 900 ? 
@@ -95,18 +113,14 @@ const Hero = () => {
     'translateY(0px)';
 
   return (
-    <div 
-      ref={heroRef}
-      className="relative overflow-hidden hero-no-bg"
-      style={{ 
-        transform: heroTransform,
-        height: '200vh', // Increased height for more scroll space
-        paddingBottom: '2rem',
-        backgroundColor: 'transparent',
-        background: 'transparent'
-      }}
-    >
-      {/* Scroll Progress Indicator */}
+   <div
+  ref={heroRef}
+  className="relative overflow-hidden hero-no-bg pb-8 bg-transparent h-[150vh] md:h-[200vh]"
+  style={{
+    transform: heroTransform,
+  }}
+>
+      {/* Scroll Progress Indicator
       <div className="fixed top-0 left-0 w-full h-1 bg-black bg-opacity-20 z-50">
         <div 
           className="h-full bg-white transition-all duration-100"
@@ -115,7 +129,7 @@ const Hero = () => {
             opacity: isAnimationActive ? 0.8 : 0
           }}
         />
-      </div>
+      </div> */}
 
       {/* Green Background - starts from green */}
       <div 
@@ -158,41 +172,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Side Content */}
-      <div 
-        className="absolute right-4 sm:right-6 md:right-8 top-1/2 transform -translate-y-1/2 z-20"
-        style={{
-          opacity: sideContentOpacity,
-          transform: `translateY(-50%) ${sideContentTransform}`,
-        }}
-      >
-        <div className="mb-6 sm:mb-8 md:mb-12 flex justify-center">
-          <img 
-            src="/asset/img/common/logo.svg" 
-            alt="GrayPipple Logo" 
-            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 opacity-90"
-          />
-        </div>
-
-        <div className="text-white text-right max-w-xs">
-          <div className="flex flex-col items-center mt-6 sm:mt-8">
-            <div 
-              className="w-6 h-6 sm:w-8 sm:h-8 border border-white rounded-full flex items-center justify-center mb-2 transition-opacity duration-300"
-              style={{ opacity: rectangleIsVisible ? 1 : 0.6 }}
-            >
-              <img 
-                src="/asset/img/main/scroll_arrow.png" 
-                alt="Scroll" 
-                className="w-2 h-2 sm:w-3 sm:h-3"
-              />
-            </div>
-            <p className="text-xs tracking-wider">
-              {rectangleIsVisible ? 'CONTINUE' : 'SCROLL'}
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Initial Hero Text */}
       <div 
         className="absolute inset-0 z-20 flex items-center justify-center"
@@ -227,21 +206,6 @@ const Hero = () => {
           <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-light tracking-widest drop-shadow-lg opacity-80">
             PREMIUM COFFEE EXPERIENCE
           </p>
-        </div>
-      </div>
-
-      {/* Scroll Hint for Mobile */}
-      <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 md:hidden"
-        style={{
-          opacity: Math.max(0, 1 - scrollY / 200),
-        }}
-      >
-        <div className="text-center text-white">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center mb-2 animate-bounce">
-            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-          </div>
-          <p className="text-xs tracking-wider opacity-80">SCROLL</p>
         </div>
       </div>
     </div>
