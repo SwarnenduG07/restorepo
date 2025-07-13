@@ -126,70 +126,70 @@ export default function Home() {
       </section>
 
       {/* Success Story Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 success-story-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slideInUp">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 animate-float">
-              Success Stories
-            </h2>
-            <h3 className="text-3xl sm:text-2xl font-medium text-gray-700 mb-4 sm:mb-6 animate-floatDelay">INTERVIEW</h3>
-            <p className="text-base sm:text-lg text-black font-medium animate-floatDelayMore px-4">
-              Meet our special franchise owners and their success stories.
-            </p>
+      <section className="py-12 sm:py-16 lg:py-20 bg-white success-story-section">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-slideInUp">
+      <h2 className="text-4xl sm:text-3xl md:text-6xl font-bold text-black mb-4 ">
+        Success Stories
+      </h2>
+      <h3 className="text-2xl sm:text-2xl font-medium text-black mb-4 sm:mb-6 ">INTERVIEW</h3>
+      <p className="text-base sm:text-lg text-black font-medium  px-4">
+        Meet our special franchise owners and their success stories.
+      </p>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration bg-white">
+        <CardContent className="p-0">
+          <div className="h-48 sm:h-56 md:h-64 relative overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+              alt="Coffee shop owner"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute bottom-4 left-4">
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 ">
+                <span className="text-green-600 text-xs font-medium">SUCCESS STORY</span>
+              </div>
+            </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slideInLeft">
-              <CardContent className="p-0">
-                <div className="h-48 sm:h-56 md:h-64 relative overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
-                    alt="Coffee shop owner"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 animate-float">
-                      <span className="text-green-600 text-xs font-medium">SUCCESS STORY</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-4 sm:p-6">
-                  <h4 className="text-base sm:text-lg font-medium text-white mb-2 animate-floatSlow leading-snug">
-                    Owner who decided to open a second store in just 6 months
-                  </h4>
-                  <p className="text-sm sm:text-base text-white animate-floatDelay">GrayPipple Changwon Store</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-slideInRight">
-              <CardContent className="p-0">
-                <div className="h-48 sm:h-56 md:h-64 relative overflow-hidden">
-                  <Image
-                    src="https://plus.unsplash.com/premium_photo-1723773731793-79fbc649a9c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhZmUlMjB3YWl0ZXJ8ZW58MHx8MHx8fDA%3D"
-                    alt="Young entrepreneur cafe owner"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 animate-float">
-                      <span className="text-purple-600 text-xs font-medium">SUCCESS STORY</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-4 sm:p-6">
-                  <h4 className="text-base sm:text-lg font-medium text-white mb-2 animate-floatSlow leading-snug">
-                    29-year-old entrepreneur earning $80,000 monthly
-                  </h4>
-                  <p className="text-sm sm:text-base text-white animate-floatDelay">GrayPipple Seomyeon Store</p>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="p-4 sm:p-6">
+            <h4 className="text-base sm:text-lg font-medium text-black mb-2  leading-snug">
+              Owner who decided to open a second store in just 6 months
+            </h4>
+            <p className="text-sm sm:text-base text-gray-600 ">GrayPipple Changwon Store</p>
           </div>
-        </div>
-      </section>
+        </CardContent>
+      </Card>
+      <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300  bg-white">
+        <CardContent className="p-0">
+          <div className="h-48 sm:h-56 md:h-64 relative overflow-hidden">
+            <Image
+              src="https://plus.unsplash.com/premium_photo-1723773731793-79fbc649a9c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhZmUlMjB3YWl0ZXJ8ZW58MHx8MHx8fDA%3D"
+              alt="Young entrepreneur cafe owner"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute bottom-4 left-4">
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 ">
+                <span className="text-purple-600 text-xs font-medium">SUCCESS STORY</span>
+              </div>
+            </div>
+          </div>
+          <div className="p-4 sm:p-6">
+            <h4 className="text-base sm:text-lg font-medium text-black mb-2  leading-snug">
+              29-year-old entrepreneur earning $80,000 monthly
+            </h4>
+            <p className="text-sm sm:text-base text-gray-600 ">GrayPipple Seomyeon Store</p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
 
       {/* Store Locations */}
       <StoreSwiper />
@@ -319,11 +319,11 @@ export default function Home() {
             <div>
               <h4 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 text-black">Site Map</h4>
               <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
-                <li><a href="#brand" className="hover:text-black transition-colors">Brand</a></li>
-                <li><a href="#menu" className="hover:text-black transition-colors">Menu</a></li>
-                <li><a href="#store" className="hover:text-black transition-colors">Stores</a></li>
-                <li><a href="#news" className="hover:text-black transition-colors">News</a></li>
-                <li><a href="#franchise" className="hover:text-black transition-colors">Franchise</a></li>
+                <li><a href="#brand" className="text-black transition-colors">Brand</a></li>
+                <li><a href="#menu" className="text-black transition-colors">Menu</a></li>
+                <li><a href="#store" className="text-black transition-colors">Stores</a></li>
+                <li><a href="#news" className="text-black transition-colors">News</a></li>
+                <li><a href="#franchise" className="text-black transition-colors">Franchise</a></li>
               </ul>
             </div>
             <div>
